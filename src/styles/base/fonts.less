@@ -1,0 +1,26 @@
+// import
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text);
+
+@typo_color: #ffffff;
+@typo_size: 17px;
+@typo: 'Crimson Text';
+@neon_blue: #63dfe6;
+
+html, button {
+	font-size: @typo_size;
+}
+
+html, button, .changelog h3 {
+	font-family: @typo, sans-serif;
+}
+html {
+	line-height: 1.5;
+	color: @typo_color;
+}
+html {
+	font-family: @typo, sans-serif;
+	.user-select(none);
+}
+h1, h2, h3, h4, h5, p, i, span, strong, a, button, blockquote, header li, aside, .flash {
+	.user-select(text);
+}

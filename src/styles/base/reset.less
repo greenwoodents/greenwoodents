@@ -1,0 +1,52 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+	display: block;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	border:none;
+	font-size: 100%;
+	.box-sizing(border-box);
+	outline:none;
+	-webkit-font-smoothing: antialiased;
+}
+
+img {
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+
+button {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner, a::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+	outline: none;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+
+textarea, input {
+	.border-radius(0);
+}
+
+ul {
+	list-style-type: none;
+}
