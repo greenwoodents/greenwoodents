@@ -18,7 +18,7 @@ body {overflow: hidden;}
 	.size(100%);
 	min-height: 900px;
 	min-width: 900px;
-	background-image: url(../images/bg.jpg);
+	background-image: url(../images/bg-alt.jpg);
 	background-size: cover;
 	display: block;
 }
@@ -28,9 +28,26 @@ body {overflow: hidden;}
 	overflow: hidden;
 
 	.container {
+		.transition(all, 2s);
+
+		transform: translateY(-100px);
+		-webkit-transform: translateY(-100px);
+		-ms-transform: translateY(-100px);
+
 		padding-top: 22%;
 		width: 100%;
 		text-align: center;
+
+		visibility: hidden;
+		opacity: 0;
+
+		&.visible {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0px);
+			-webkit-transform: translateY(0px);
+			-ms-transform: translateY(0px);
+		}
 	}
 	
 	h1 {

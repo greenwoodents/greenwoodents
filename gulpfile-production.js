@@ -23,7 +23,7 @@ require('pho-devstack')(gulp, {
     enabled: false
   },
   rename: {
-    enabled: true
+    enabled: false
   },
   watch: {
     enabled: false
