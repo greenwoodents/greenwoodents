@@ -1,0 +1,20 @@
+{
+  "name": "greenwoodents",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "",
+  "bugs": "",
+  "keywords": [],
+  "contributors": [
+    "John Doe <johndoe@example.org>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "~3.6.0",
+    "pho-devstack": "~0.3.0"
+  }
+}
