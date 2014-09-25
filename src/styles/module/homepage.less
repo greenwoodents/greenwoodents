@@ -1,20 +1,63 @@
+//hompage
+
 .homepage-story {
+	text-align: center;
+
 	//typo on homepage
 	.is-quote {
 		font-size: 54px;
 		color: @brown;
 		line-height: 72px;
+		font-weight: 900;
+		width: 100%;
+		font-style: italic;
+		position: relative;
 	}
 
-	h3 {
+	.is-quote:before,
+	.is-quote:after {
+		font-family: 'Playfair Display', serif;
+		font-weight: 700;
+		font-size: 90px;
 		color: @green;
+	} 
+
+	.is-quote:before {
+		content: '“';
+
+	}
+	.is-quote:after {
+		content: '”';
+	}
+
+
+	h3 {
+		color: @green;	
+	}
+	p {
+		color: @lightBrown;
+	}
+
+	h3:after {
+		content: "";
+		width: 22px;
+		height: 1px;
+		margin: 22px auto 0px;
+		background-color: @green;
+		display: block;
 	}
 
 	.classy-divider {
+		text-align: center;
 		font-family: 'Playfair Display', serif;
-		font-style: italic;
 		font-size: 16px;
-		color: @brown;
+		color: @lightBrown;
 		line-height: 36px;
+		font-weight: 400;
+		margin-bottom: 20px;
+	}
+	//margin-bottom
+	.mr-b {
+		margin-bottom: 140px;
 	}
 }

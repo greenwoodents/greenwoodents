@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="15px" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8053) - http://www.bohemiancoding.com/sketch -->
+    <title>nav-ic-moot</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="all-pages-in-one" sketch:type="MSArtboardGroup" transform="translate(-1216.000000, -92.000000)">
+            <g id="Home" sketch:type="MSLayerGroup" transform="translate(-64.000000, 40.000000)">
+                <g id="we-plant-and-craft-app-to-endure" transform="translate(0.000000, 46.000000)"></g>
+                <g id="process:we-plant-and-craft-app-to-endure" transform="translate(0.000000, 46.000000)"></g>
+                <g id="menu:-homepage" transform="translate(1120.000000, 0.000000)">
+                    <g id="opened-menu">
+                        <text id="Moot" sketch:type="MSTextLayer" font-family="Playfair Display SC" font-size="14" font-weight="normal" sketch:alignment="right" line-spacing="32">
+                            <tspan x="181.936523" y="53" fill="#45270C">Moot</tspan>
+                            <tspan x="182.339844" y="85" line-spacing="48" fill="#573411">Home</tspan>
+                            <tspan x="223" y="85" line-spacing="48" fill="#65A639"></tspan>
+                            <tspan x="157.915039" y="133" fill="#45270C">Company</tspan>
+                            <tspan x="223" y="133" font-weight="686" fill="#45270C"></tspan>
+                            <tspan x="182.920898" y="165" fill="#45270C">Work</tspan>
+                        </text>
+                        <g id="illustrations" transform="translate(137.000000, 56.000000)" fill="#62A535" sketch:type="MSShapeGroup">
+                            <path d="M24.75,0.75862069 L35.25,0.75862069 L35.25,7.96551724 L30,7.96551724 C29.910375,7.96551724 29.8239375,7.99794828 29.755875,8.05674138 L27.75,9.79587931 L27.75,8.34482759 C27.75,8.13544828 27.582,7.96551724 27.375,7.96551724 L24.75,7.96551724 L24.75,0.75862069 Z M24,8.34482759 C24,8.5542069 24.168,8.72413793 24.375,8.72413793 L27,8.72413793 L27,10.6206897 C27,10.7688103 27.0853125,10.9034655 27.21825,10.9652931 C27.2685,10.9886207 27.32175,11 27.375,11 C27.46275,11 27.54975,10.9687069 27.619125,10.9087759 L30.13875,8.72413793 L35.625,8.72413793 C35.832,8.72413793 36,8.5542069 36,8.34482759 L36,0.379310345 C36,0.169931034 35.832,0 35.625,0 L24.375,0 C24.168,0 24,0.169931034 24,0.379310345 L24,8.34482759 Z M25.875,2.84482759 L34.125,2.84482759 C34.332,2.84482759 34.5,2.67489655 34.5,2.46551724 C34.5,2.25613793 34.332,2.0862069 34.125,2.0862069 L25.875,2.0862069 C25.668,2.0862069 25.5,2.25613793 25.5,2.46551724 C25.5,2.67489655 25.668,2.84482759 25.875,2.84482759 Z M25.875,4.74137931 L34.125,4.74137931 C34.332,4.74137931 34.5,4.57144828 34.5,4.36206897 C34.5,4.15268966 34.332,3.98275862 34.125,3.98275862 L25.875,3.98275862 C25.668,3.98275862 25.5,4.15268966 25.5,4.36206897 C25.5,4.57144828 25.668,4.74137931 25.875,4.74137931 Z M34.5,6.25862069 C34.5,6.04924138 34.332,5.87931034 34.125,5.87931034 L25.875,5.87931034 C25.668,5.87931034 25.5,6.04924138 25.5,6.25862069 C25.5,6.468 25.668,6.63793103 25.875,6.63793103 L34.125,6.63793103 C34.332,6.63793103 34.5,6.468 34.5,6.25862069 Z" id="Moot"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
