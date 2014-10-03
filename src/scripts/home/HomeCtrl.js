@@ -40,7 +40,32 @@ var mainApp = angular.module('app.home', ['ngRoute', 'ngAnimate']);
     $scope.version = '0';
     $scope.isActive = function(route) {
         return route === $location.path();
-
-
-    }
+    }   
   });
+
+  mainApp.controller('showNavController', function($scope, $location) {
+    //default the menu to not show
+    $scope.showmenu = false;
+
+    $scope.hoverIn = function(){
+      this.showmenu = true;
+    };
+
+    $scope.hoverOut = function(){
+      this.showmenu = false;
+    };
+
+    $scope.click = function(){
+      if ($scope.showmenu) {
+        $scope.showmenu = false;
+      } else {
+        $scope.showmenu = true;
+      };
+    };
+
+  });
+
+
+
+
+

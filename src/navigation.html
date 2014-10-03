@@ -1,5 +1,5 @@
-<nav class="visible" >
-  <div class="menu-button"><div class="icon"></div></div>
+<nav ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" ng-click="click()" ng-class="{hide:!showmenu, visible:showmenu}" ng-controller="showNavController">
+  <div  class="menu-button"><div class="icon"></div></div>
     <div class="navigation-wrap">
       <ul>
         <li class="sticked-top"><a href="http://moot.greenwoodents.com/">
