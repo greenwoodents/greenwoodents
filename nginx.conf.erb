@@ -2,18 +2,18 @@ worker_processes 1;
 error_log stderr;
 pid nginx.pid;
 daemon off;
-
+ 
 events {
         worker_connections 768;
-}
-
+} 
+ 
 http {
         include mime.types;
         server {
                 listen <%= ENV['PORT'] %>;
                 server_name  _;
                 location / {
-                        root /dist;
+                        root /app/dist;
                         index index.html;
                         <% if ENV['LOCK'] %>
                         auth_basic "Restricted";
@@ -21,4 +21,4 @@ http {
                         <% end %>
                 }
         }
-}
+} 
