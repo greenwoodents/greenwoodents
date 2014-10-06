@@ -1,0 +1,24 @@
+worker_processes 1;
+error_log stderr;
+pid nginx.pid;
+daemon off;
+
+events {
+        worker_connections 768;
+}
+
+http {
+        include mime.types;
+        server {
+                listen <%= ENV['PORT'] %>;
+                server_name  _;
+                location / {
+                        root /;
+                        index index.html;
+                        <% if ENV['LOCK'] %>
+                        auth_basic "Restricted";
+                        auth_basic_user_file /app/.htpasswd;
+                        <% end %>
+                }
+        }
+}
