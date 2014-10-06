@@ -12,8 +12,8 @@ http {
         server {
                 listen <%= ENV['PORT'] %>;
                 server_name  _;
-                location /dist {
-                        root /;
+                location / {
+                        root /dist;
                         index index.html;
                         <% if ENV['LOCK'] %>
                         auth_basic "Restricted";
