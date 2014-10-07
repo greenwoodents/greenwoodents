@@ -1,13 +1,23 @@
-<header>
-  <h3 class="has-divider">“A slack hand causes poverty, but the hand of the diligent makes rich.”</h3>
-  <h1>What we’ve done.</h1>
-  <div class="arr"></div>
+<header id="large-header" class="large-header">
+	<div class="content">
+	  <h3 class="has-divider">“A slack hand causes poverty, but the hand of the diligent makes rich.”</h3>
+	  <h1>What we’ve done.</h1>
+	  <div class="arr"></div>
+  </div>
+	<canvas id="demo-canvas"></canvas>
 </header>
 
-<div class="preview-container">
-  <div class="preview-box preview-1"></div>
-  <div class="preview-box preview-2"></div>
-  <div class="preview-box preview-3"></div>
-  <div class="preview-box preview-4"></div>
+
+<div class="grid" ng-controller="worksController">
+	<div ng-repeat="work in works">
+		<figure class="magic-box {{ work.classname }}">
+			<div class="bcg"></div>
+			<figcaption>
+				<h2 class="has-divider">{{ work.title }}</h2>
+				<p>{{ work.content }}</p>
+				<a href="{{ work.href }}"></a>
+			</figcaption>			
+		</figure>
+	</div>
 </div>
 
