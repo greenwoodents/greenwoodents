@@ -136,6 +136,18 @@ var mainApp = angular.module('app.home', ['ngRoute', 'ngAnimate']);
         title:"Metaxa Eshop", 
         content:"Spanish startup from Plug’n’Play accelerator - design, frontend and responsivness", 
         href:""
+      },
+      {  
+        classname:"playerme", 
+        title:"PlayerMe", 
+        content:"Spanish startup from Plug’n’Play accelerator - design, frontend and responsivness", 
+        href:""
+      },      
+      {  
+        classname:"sales-layer", 
+        title:"SalesLayer", 
+        content:"Spanish startup from Plug’n’Play accelerator - design, frontend and responsivness", 
+        href:""
       }
     ];
   });
