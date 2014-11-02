@@ -1,20 +1,5 @@
 {
   "name": "lesshat",
-<<<<<<< HEAD
   "version": "2.0.15",
   "main": "./build/lesshat.less"
-=======
-  "version": "3.0.2",
-  "main": [
-    "./build/lesshat.less",
-    "./build/lesshat-prefixed.less"
-  ],
-  "ignore": [
-    "mixins",
-    "*.md",
-    "*.json",
-    "LICENCE",
-    ".*.*"
-  ]
->>>>>>> 36ad3c27f7bc6690decdd2f25c3abbc465148fef
 }
