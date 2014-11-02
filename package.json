@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "greenwoodents",
+=======
+  "name": "greenwoodentsu",
+>>>>>>> 36ad3c27f7bc6690decdd2f25c3abbc465148fef
   "version": "0.0.0",
   "description": "",
   "homepage": "",
@@ -14,7 +18,16 @@
   },
   "dependencies": {},
   "devDependencies": {
+<<<<<<< HEAD
     "gulp": "~3.6.0",
     "pho-devstack": "~0.3.0"
+=======
+    "gulp": "~3.8.0",
+    "pho-devstack": "~1.4.0",
+    "node.extend": "~1.0.10"
+  },
+  "scripts": {
+    "start": "gulp & open dist/index.html"
+>>>>>>> 36ad3c27f7bc6690decdd2f25c3abbc465148fef
   }
 }

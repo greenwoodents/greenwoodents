@@ -1,4 +1,8 @@
 {
+<<<<<<< HEAD
+=======
+  "browser": true,
+>>>>>>> 36ad3c27f7bc6690decdd2f25c3abbc465148fef
   "node": true,
   "esnext": true,
   "bitwise": true,
@@ -13,6 +17,10 @@
   "regexp": true,
   "undef": true,
   "unused": true,
+<<<<<<< HEAD
+=======
+  "globalstrict": true,
+>>>>>>> 36ad3c27f7bc6690decdd2f25c3abbc465148fef
   "strict": true,
   "trailing": true,
   "smarttabs": true,

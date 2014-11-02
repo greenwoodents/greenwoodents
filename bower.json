@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "package",
   "version": "0.0.0",
   "dependencies": {
@@ -7,3 +8,12 @@
   }
 }
 
+=======
+  "name": "greenwoodentsu",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "~1.2.9",
+    "lesshat": "~3.0.0"
+  }
+}
+>>>>>>> 36ad3c27f7bc6690decdd2f25c3abbc465148fef
