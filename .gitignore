@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-.sass-cache
-.DS_Store
-=======
 .DS_Store
 Thumbs.db
-
-node_modules
-src/bower_components
-
-deploy
-dist
->>>>>>> 36ad3c27f7bc6690decdd2f25c3abbc465148fef
+db.json
+*.log
+public/
+node_modules/
+.deploy*/
