@@ -1,0 +1,125 @@
+<% if (post.next){ %>
+<%
+var color = post.next.projectColor || "#CA7B00";
+%>
+
+<style>
+.another-project-color .background {
+  background-color: <%- color %>;
+}
+.another-project-color:after {
+  background-color: <%- color %>;
+}
+.another-project-color .h2{
+  color: <%- color %>;
+}
+.button.another-project-color-button {
+  color: <%- color %>;
+  border-color: <%- color %>;
+}
+.button.another-project-color-button:hover {
+  background-color: <%- color %>;
+}
+</style>
+
+<div id="buttons" class="buttons another-project-color">
+  <div class="background"></div>
+
+  <div class="next-project-wrap">
+    <div class="dnt-show">
+      <h2 class="project-subtitle">SEE THE NEXT PROJECT</h2>
+      <h1><%= post.next.title %></h1>
+    </div>
+    <div class="values dnt-show">
+      <div class="money-time-what-we-did">
+        <div class="details another-project-color">
+          <span class="h2">HOW MUCH DID IT COST</span>
+          <p class="Sentinel"><%= post.next.howMuch %></p>
+        </div>
+      </div>
+      <img src="../images/line.svg" class="line">
+      <div class="money-time-what-we-did">
+        <div class="details another-project-color">
+          <span class="h2">HOW LONG DID IT TAKE</span>
+          <p class="Sentinel"><%= post.next.howLongItTake %></p>
+        </div>
+      </div>
+      <img src="../images/line.svg" class="line">
+      <div class="money-time-what-we-did last-mtw">
+        <div class="details another-project-color">
+          <span class="h2">WHAT WE DID</span>
+          <p class="Sentinel"><%= post.next.whatWeDid %></p>
+        </div>
+      </div>
+    </div>
+    <br class="clear">
+    <a class="button another-project-color-button" href="<%- url_for(post.next.path) %>">
+      SEE <%= post.next.title %> PROJECT
+    </a>
+  </div>
+</div>
+
+<% } else if (post.prev) { %>
+
+<%
+var postFirts = site.posts.first();
+var color = postFirts.projectColor || "#ff0000";
+%>
+
+<style>
+.another-project-color .background {
+  background-color: <%- color %>;
+}
+.another-project-color:after {
+  background-color: <%- color %>;
+}
+.another-project-color .h2{
+  color: <%- color %>;
+}
+.button.another-project-color-button {
+  color: <%- color %>;
+  border-color: <%- color %>;
+}
+.button.another-project-color-button:hover {
+  background-color: <%- color %>;
+}
+</style>
+
+<div id="buttons" class="buttons another-project-color">
+  <div class="background"></div>
+
+  <div class="next-project-wrap">
+    <div class="dnt-show">
+      <h2 class="project-subtitle">SEE THE NEXT PROJECT</h2>
+      <h1><%= postFirts.title %></h1>
+    </div>
+    <div class="values dnt-show">
+      <div class="money-time-what-we-did">
+        <div class="details another-project-color">
+          <span class="h2">HOW MUCH DID IT COST</span>
+          <p class="Sentinel"><%= postFirts.howMuch %></p>
+        </div>
+      </div>
+      <img src="../images/line.svg" class="line">
+      <div class="money-time-what-we-did">
+        <div class="details another-project-color">
+          <span class="h2">HOW LONG DID IT TAKE</span>
+          <p class="Sentinel"><%= postFirts.howLongItTake %></p>
+        </div>
+      </div>
+      <img src="../images/line.svg" class="line">
+      <div class="money-time-what-we-did last-mtw">
+        <div class="details another-project-color">
+          <span class="h2">WHAT WE DID</span>
+          <p class="Sentinel"><%= postFirts.whatWeDid %></p>
+        </div>
+      </div>
+    </div>
+    <br class="clear">
+    <a class="button another-project-color-button" href="<%- url_for(postFirts.path) %>">
+      SEE <%= postFirts.title %> PROJECT
+    </a>
+  </div>
+</div>
+<% } %>
+

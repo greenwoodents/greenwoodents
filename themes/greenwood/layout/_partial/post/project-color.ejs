@@ -1,0 +1,18 @@
+<%
+var color = post.projectColor || "#CA7B00";
+%>
+<style>
+::selection {
+  background: <%- color %>;
+}
+.project-color {
+  color: <%- color %>;
+}
+.project-color-cara .details:after {
+  background-color: <%- color %>;
+}
+.project-color-heading h2 {
+  color: <%- color %>;
+}
+</style>
+

@@ -1,0 +1,44 @@
+
+    <div page="<%- page.title %>" id="container" class="container">
+      <%- partial('post/project-color') %>
+      <%- partial('post/header') %>
+      <%- partial('post/time-and-money-boxes') %>
+
+
+    <!-- Linner -->
+    <img src="../images/paragraph-line.svg" class="line2">
+
+    <div id="project-previews"  class="project-previews">
+      <div class="container project-color-heading">
+        <%- post.content %>
+      </div>
+      <!-- Ents workin on -->
+      <%- partial('post/ents') %>
+    </div>
+    <!-- Linner -->
+    <img src="../images/paragraph-line.svg" class="line2 exception">
+    <!-- kudos -->
+    <% if (config.kudos) { %>
+      <div id="credits" class="credits">
+        <button class="button-credits">
+          <p class="kudos">Kudos</p>
+          <img src="../images/credits-line.svg" class="line3">
+          <p class="number">13</p>
+        </button>
+      </div>
+     <% } %>
+    <!-- Link to site -->
+    <% if (post.web){ %>
+    <div id="links" class="links">
+      <i class="cursive-opacity">See it live on</i>
+      <a href="http://<%- post.web %>"><%- post.web %></a>
+    </div>
+    <% } %>
+  </div>
+
+
+  <%- partial('post/next-project') %>
+  <%- partial('footer') %>
+
+
+
