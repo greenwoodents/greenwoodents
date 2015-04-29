@@ -9,9 +9,9 @@
       <a href="index.html">Greenwood Ents</a>
     </div>
     <div class="home-link">
-      <% var title = page.title%>
+      <% var title = page.title || "Home"%>
       <% console.log(title); %>
-      <a class="menu-close"><%- title || "Home" %></a>
+      <a class="menu-close"><%- title %></a>
     </div>
     <div class="contact">treebeard@greenwoodents.com / +420 603 541 668</div>
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="30px" height="32px" viewBox="0 0 30 32" version="1.1" class="ent">
