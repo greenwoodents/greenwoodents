@@ -15,7 +15,7 @@ whenWeDidIt: May 2014
 
 projectColor: "#E74D3D"
 projectPreviewImage: /ulovdomov/ulovdomov-project-preview.png
-projectImage: /ulovdomov/ulovdomov-preview.png
+projectImage: /ulovdomov/ulovdomov-preview@2x.png
 
 mh: false
 jh: true

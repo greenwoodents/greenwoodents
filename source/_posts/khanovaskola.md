@@ -15,7 +15,7 @@ whenWeDidIt: September 2014
 
 projectColor: "#169DD4"
 projectPreviewImage: /khanovaskola/khanovaskola-project-preview@medium.png
-projectImage: /khanovaskola/khanovaskola-preview@medium.png
+projectImage: /khanovaskola/khanovaskola-preview@2x.png
 
 mh: true
 jh: false

@@ -15,7 +15,7 @@ whenWeDidIt: November 2014
 
 projectColor: "#169DD4"
 projectPreviewImage: /rozeslat/rozeslat-project-preview.png
-projectImage: /rozeslat/rozeslat-preview.png
+projectImage: /rozeslat/rozeslat-preview@2x.png
 
 mh: false
 jh: true

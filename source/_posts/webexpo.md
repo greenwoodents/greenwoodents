@@ -15,7 +15,7 @@ whenWeDidIt: April 2014
 
 projectColor: "#FF5AAF"
 projectPreviewImage: /webexpo/webexpo-project-preview.png
-projectImage: /webexpo/webexpo-preview.png
+projectImage: /webexpo/webexpo-preview@2x.png
 
 mh: true
 jh: true

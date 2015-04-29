@@ -15,7 +15,7 @@ whenWeDidIt: August 2014
 
 projectColor: "#ed8929"
 projectPreviewImage: /metaxa/metaxa-project-preview.png
-projectImage: /metaxa/metaxa-preview.png
+projectImage: /metaxa/metaxa-preview@2x.png
 
 mh: true
 jh: true

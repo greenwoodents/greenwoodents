@@ -14,7 +14,7 @@ whenWeDidIt: December 2014
 
 projectColor: "#278DCA"
 projectPreviewImage: /webnode/webnode-project-preview.png
-projectImage: /webnode/webnode-preview.png
+projectImage: /webnode/webnode-preview@2x.png
 
 mh: true
 jh: false

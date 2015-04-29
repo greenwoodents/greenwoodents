@@ -15,7 +15,7 @@ whenWeDidIt: May 2014
 
 projectColor: "#AD50FF"
 projectPreviewImage: /playerme/playerme-project-preview.png
-projectImage: /playerme/playerme-preview.png
+projectImage: /playerme/playerme-preview@2x.png
 
 mh: true
 jh: false

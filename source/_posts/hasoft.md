@@ -15,7 +15,7 @@ whenWeDidIt: June 2014
 
 projectColor: "#E7AB4A"
 projectPreviewImage: /hasoft/hasoft-project-preview.png
-projectImage: /hasoft/hasoft-preview.png
+projectImage: /hasoft/hasoft-preview@2x.png
 
 
 mh: true

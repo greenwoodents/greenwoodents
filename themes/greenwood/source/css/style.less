@@ -936,6 +936,7 @@ i {
 
   img {
     width: 100%;
+    display: block;
   }
 }
 
@@ -943,9 +944,27 @@ i {
   padding-top: 30px;
 
   .money-time-what-we-did {
+    transition: 500ms;
     cursor: pointer;
     display: inline-block;
     position: relative;
+
+    .default-detail .h2 {
+      transition: 500ms;
+    }
+
+
+    &:hover {
+      cursor: pointer;
+
+      .details:after {
+        top: 22px;
+      }
+
+      .default-detail .h2 {
+        top: 32px;
+      }
+    }
 
     .alternative-detail {
       height: 0;
@@ -1514,6 +1533,7 @@ button {
       img {
         position: relative;
           top: -90px;
+
       }
     }
 

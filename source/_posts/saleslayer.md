@@ -15,7 +15,7 @@ whenWeDidIt: March 2014
 
 projectColor: "#0FA474"
 projectPreviewImage: /saleslayer/saleslayer-project-preview.png
-projectImage: /saleslayer/saleslayer-preview.png
+projectImage: /saleslayer/saleslayer-preview@2x.png
 
 mh: true
 jh: false
@@ -78,9 +78,6 @@ _We tried to build such a website, that will get your attention, interest and la
   sizes="100%"
   alt="SalasLayer send a request">
 
-
-##HOW IT WORKS ANIMATION
-!! Tohle netusim... chtel bych sem dat gif nebo JS. te animace.
 
 ##UI KIT
 <div class="portraits">
