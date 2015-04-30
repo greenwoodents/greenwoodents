@@ -1,10 +1,10 @@
 .DS_Store
-Thumbs.db
-db.json
 *.log
+Thumbs.db
 public/
 node_modules/
 .deploy*/
+db.json
 nginx.conf.erb
 .nginx
 .jshintrc
