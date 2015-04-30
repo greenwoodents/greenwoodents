@@ -1,0 +1,654 @@
+.project-subtitle {
+  opacity: 0.24;
+  letter-spacing: 1.67px;
+  text-transform: uppercase;
+}
+
+.container {
+  max-width: 1450px;
+}
+
+.reference-header {
+  padding-top: 45px;
+}
+
+.main-preview {
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.28);
+  width: 80%;
+  max-width: @maximalni;
+  margin: 30px auto 0 auto;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.values {
+  padding-top: 30px;
+
+  .money-time-what-we-did {
+    transition: 500ms;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+
+    .default-detail .h2 {
+      transition: 500ms;
+    }
+
+
+    &:hover {
+      cursor: pointer;
+
+      .details:after {
+        top: 22px;
+      }
+
+      .default-detail .h2 {
+        top: 32px;
+      }
+    }
+
+    .alternative-detail {
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+
+      @media @xmedium {
+        overflow: visible;
+      }
+    }
+
+    .default-detail {
+      opacity: 1;
+    }
+
+    &.clicked {
+      .alternative-detail {
+        height: auto;
+        opacity: 1;
+      }
+      .default-detail {
+        height: 0;
+        opacity: 0;
+      }
+
+    }
+  }
+}
+
+.line {
+  margin: 18px auto 20px;
+  display: block;
+}
+
+.line2 {
+  width: 180px;
+  height: 1px;
+  margin: 45px auto 0px;
+}
+
+.description {
+  width: 75%;
+  max-width: @maximalni;
+  padding-bottom: 20px;
+}
+
+.project-previews {
+  h2 {
+    padding: 45px 0 13px;
+    text-transform: uppercase;
+  }
+
+  .portraits {
+    width: 100%;
+    max-width: @maximalni;
+    display: inline-block;
+
+    img {
+      width: 100%;
+    }
+
+    .portrait {
+      width: 48%;
+
+      .mobile-portrait {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+        max-width: 100%;
+      }
+    }
+  }
+
+  .container {
+    width: 90%;
+
+    .container-page {
+      width: 100%;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+    }
+
+    .no-shadow {
+      box-shadow: none;
+    }
+
+    .last, .just-one {
+      margin-bottom: 0;
+    }
+  }
+
+  .participants {
+    overflow: hidden;
+    padding-bottom: 12px;
+    clear: both;
+
+    .team {
+      padding-bottom: 2px;
+      margin: auto;
+      max-width: 400px;
+
+      .team-member {
+        position: relative;
+        top: 2px;
+        margin-top: 13px;
+
+        img {
+          width: 72px;
+        }
+
+        .third {
+          position: absolute; right: -8px; top: -37px;
+        }
+
+        .second {
+          position: absolute; right: -36px; top: -38px;
+        }
+
+        .first {
+          position: absolute; right: -23px; top: -24px;
+        }
+
+        a.link-to-member  {
+          margin-top: 2px;
+          font-family: @gotham;
+          font-size: 10px;
+          font-weight: 400;
+          line-height: 12px;
+          display: inline-block;
+          font-style: normal;
+        }
+
+        a.link-to-member:hover  {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.credits {
+  margin-bottom: 22px;
+
+  .button-credits {
+    width: auto;
+    height: auto;
+    border: none;
+    font-family: @sentinel;
+
+    .kudos {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 18px;
+      border-bottom: 1px solid #212e29;
+    }
+
+    .line3 {
+      width: 55px;
+      height: 1px;
+      margin-top: 3px;
+    }
+
+    .number {
+      font-size: 31px;
+      font-weight: 700;
+      line-height: 36px;
+    }
+  }
+}
+
+
+
+
+
+
+
+@media (min-width: 960px) {
+  .line, .line2 {
+    display: none;
+  }
+
+  .tv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 69%;
+    max-width: 753px;
+    height: 430px;
+    overflow: hidden;
+
+    .screen {
+      margin-left: 30px;
+      background-color: #0b0b0b;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      width: 800px;
+      height: 337px;
+    }
+
+    .screen-overlay {
+      width: 734px;
+      height: 309px;
+      position: absolute;
+      left: 63px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+
+      &::after {
+        content: url('../images/glow.svg');
+        position: absolute;
+        top: 0;
+        right: -33px;
+      }
+    }
+
+    .main-preview {
+      width: 734px;
+      max-width: none;
+      height: 309px;
+      position: absolute;
+      left: 63px;
+      overflow: hidden;
+      margin: 0;
+      box-shadow: none;
+
+
+
+      img {
+        position: relative;
+        top: -90px;
+      }
+    }
+
+    .stand {
+      position: absolute;
+      right: 0;
+      width: 100%;
+
+      .stojan {
+        left: 305px;
+        position: absolute;
+        z-index: 2;
+      }
+
+      .shadow {
+        position: absolute;
+        top: 24px;
+        left: -63px;
+        height: 54px;
+      }
+    }
+  }
+
+  .reference-header {
+    text-align: left;
+    padding: 346px 0 0 68px;
+
+    h1 {
+      font-size: 69px;
+      line-height: 55px;
+      margin-bottom: 15px;
+    }
+
+    .heavy-title-underline {
+      width: 360px;
+      height: 13px;
+      margin: 0;
+      margin-top: 5px;
+      background-color: #212e29;
+    }
+  }
+
+  h1 {
+    font-size: 104px;
+    font-weight: 900;
+    line-height: 104px;
+  }
+
+  .project-subtitle {
+    opacity: 1;
+    letter-spacing: 1.19px;
+  }
+
+  .values {
+    text-align: left;
+    padding: 21px 0 80px 70px;
+    //height: 24px;
+
+    .money-time-what-we-did {
+      //height: 100%;
+      display: inline-block;
+      margin-right: 38px;
+      cursor: pointer;
+      position: relative;
+      float: left;
+
+      .details {
+        transition: 300ms 30ms;
+        float: left;
+        position: relative;
+        max-height: 32px;
+
+
+        &:after {
+          transition: all 500ms;
+          content: '';
+          width: 1px;
+          position: absolute;
+          height: 25px;
+             top: 15px;
+            left: -6px;
+        }
+      }
+      .alternative-detail {
+        //magic here
+        transition: all 500ms 0ms, max-width 100ms 500ms;
+        height: auto;
+        position: relative;
+        bottom: 0;
+        //magic here
+        max-width: 0;
+      }
+
+      &.clicked {
+        .details {
+          transition: 500ms 900ms;
+          max-height: 300px;
+
+          &:after {
+            height: 81px;
+          }
+        }
+
+        .default-detail {
+          height: auto;
+          opacity: 1;
+        }
+        .alternative-detail {
+          //magic here
+          transition: all 500ms 200ms, max-width 500ms 0s;
+          margin: 14px 0 0 0;
+          position: relative;
+          max-width: 300px;
+        }
+      }
+    }
+
+    .last-mtw {
+      margin-right: 0;
+    }
+
+    .Sentinel {
+      //margin-left: 9px;
+      font-size: 20px;
+      position: relative;
+      line-height: 20px;
+      top: -15px;
+      margin: 0;
+    }
+
+    .short-line {
+      padding-right: 6px;
+      position: relative;
+      top: 9px;
+      width: 1px;
+      height: 24px;
+    }
+  }
+
+  .Sentinel {
+    font-size: 31px;
+    font-weight: 700;
+    line-height: 38px;
+  }
+
+  .project-previews {
+    h2 {
+      clear: both;
+      padding: 25px 0 25px 0;
+    }
+
+    .portraits {
+      max-width: 666px;
+      top: -35px;
+      position: relative;
+      margin-bottom: -35px;
+    }
+
+    .container {
+      width: 97%;
+      max-width: 1280px;
+
+      .left {
+        margin-bottom: 0;
+        max-width: 49%;
+        float: left;
+      }
+
+      .right {
+        max-width: 49%;
+        float: right;
+      }
+    }
+
+    .participants {
+      overflow: visible;
+
+      .team {
+        max-width: none;
+        display: inline-block;
+        margin: 57px 20px 0 20px;
+        min-width: 800px;
+        max-height: 164px; //problem s IE ... posouval vse dolu
+
+        .team-member {
+          margin: 0;
+          display: inline-block;
+          width: 33%;
+
+          img {
+            opacity: 0.07;
+            z-index: -1;
+            width: 111px;
+            display: block;
+          }
+
+          .first, .second, .third {
+            position: relative;
+            top: -93px;
+            right: 0;
+            transition: all .5s ease-in-out, opacity .5s ease-in-out;
+          }
+
+          &:hover .first, &:hover .second, &:hover .third {
+            top: -113px;
+            opacity: 1;
+          }
+
+          .members-name {
+            position: relative;
+            transition: top .5s ease-in-out;
+            top: 0;
+            overflow: hidden; // resi IE problem s posouvanim ostatnich zucastnenych
+          }
+
+          &:hover .members-name {
+            top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .exception {
+    display: block;
+    margin: 0px auto 25px auto;
+    width: 180px;
+    position: relative;
+    top: -24px;
+  }
+
+  .buttons {
+    margin-top: 80px;
+
+
+    .values {
+      padding: 35px 0 50px;
+      display: inline-block;
+    }
+
+    .project-subtitle {
+        margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .tv {
+    width: 58%;
+    max-width: none;
+  }
+
+  .reference-header {
+    text-align: left;
+    padding: 71px 0 0 68px;
+    max-width: none;
+
+    .mezera { //oddalování h1 v závislosti na výšce
+      height: 0;
+      width: 100%;
+      padding-bottom: 21.338%;
+    }
+
+    h1 {
+      font-size: 104px;
+      line-height: 85px;
+    }
+
+    .heavy-title-underline {
+      width: 440px;
+      height: 16px;
+    }
+  }
+
+  .values {
+    padding: 40px 0 90px 70px;
+
+    .Sentinel {
+      font-size: 31px;
+      top: -15px;
+    }
+  }
+}
+
+
+.description {
+  font-family: @gotham;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  width: 75%;
+
+  a {
+    opacity: 1 !important;
+  }
+
+  a:hover {
+    opacity: 1;
+    color: #000;
+    cursor: pointer;
+  }
+
+
+  em {
+    margin-top: 30px;
+    display: block;
+    color: rgba(144, 150, 148, .8);
+    font-family: 'Sentinel A','Sentinel B',Sentinel;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 19px;
+  }
+
+  @media @xlarge {
+    width: 530px;
+    font-size: 31px;
+    line-height: 38px;
+
+     em {
+      font-size: 20px;
+      line-height: 28px;
+     }
+  }
+}
+
+
+
+
+
+@media @xlarge {
+  .values .money-time-what-we-did .details:after {
+    height: 28px;
+    top: 18px;
+    left: -9px;
+  }
+}
+
+//values
+//
+.values .h2 {
+  position: relative;
+  top: 36px;
+  display: inline;
+
+  @media @xmedium {
+    top: 24px;
+  }
+
+  @media @xlarge {
+    top: 30px;
+  }
+}
+
+
+@media @small {
+  .links {
+    i, a {
+      font-weight: 700 !important;
+    }
+  }
+}
+
+.links {
+  a {
+    font-style: italic;
+  }
+}
+
+.cursive-opacity {
+   opacity: 0.5;
+}
+
+
+
+

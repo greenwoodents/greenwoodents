@@ -1,0 +1,83 @@
+@entiZelena: #92CD00;
+
+@xlarge:  ~"only screen and (min-width: 1280px)";
+@large:   ~"only screen and (min-width: 960px)";
+@xmedium :  ~"only screen and (min-width: 959px)";
+@medium:    ~"only screen and (min-width: 768px)";
+@small:    ~"only screen and (max-width: 680px)";
+
+@maximalni: 555px; /*šířka, do které se to bude roztahovat, než bude 960*/
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.nobr {
+  white-space: nowrap;
+}
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+.body-homepage {
+  overflow: hidden;
+
+  .menu-button {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  outline: none;
+}
+
+
+::selection {
+  background-color: #92cd00;
+  color: #fff;
+}
+
+body {
+  background-color: #fff;
+  margin: 0;
+  text-align: center;
+  color: #212e29;
+  font-family: @sentinel;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 19px;
+}
+
+.main {
+  background-color: #fff;
+}
+
+.body-homepage {
+  background-color: rgb(22, 27, 46);
+
+  .main {
+    background-color: rgb(22, 27, 46);
+    position: relative;
+    z-index: 50;
+  }
+}
+
+
+
+@media (max-width: 959px) {
+  .dnt-show {
+    display: none;
+  }
+}

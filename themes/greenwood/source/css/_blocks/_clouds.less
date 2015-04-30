@@ -1,0 +1,232 @@
+.clouds {
+  li {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    z-index: 45;
+    display: block;
+    opacity: 0;
+  }
+}
+
+.clouds-wrap {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-top: -300px;
+}
+
+.pace-done {
+  .inline-clouds li {
+    -webkit-animation: wide-mrak 20000ms infinite linear; /* Safari 4+ */
+    animation:         wide-mrak 20000ms infinite linear; /* IE 10+, Fx 29+ */
+  }
+
+  .inline-small-clouds li {
+    -webkit-animation: small-mrak 17000ms infinite linear; /* Safari 4+ */
+    animation:         small-mrak 17000ms infinite linear; /* IE 10+, Fx 29+ */
+  }
+
+  .inline-bottom-clouds li {
+    -webkit-animation: quick-mrak  10000ms infinite linear; /* Safari 4+ */
+    animation:         quick-mrak  10000ms infinite linear; /* IE 10+, Fx 29+ */
+  }
+
+  .inline-top-clouds li {
+    -webkit-animation: small-mrak 17000ms infinite linear; /* Safari 4+ */
+    animation:         small-mrak 17000ms infinite linear; /* IE 10+, Fx 29+ */
+  }
+}
+
+.inline-clouds {
+  position: absolute;
+
+  li {
+    width: 382px;
+    height: 37px;
+    background-image: url(../images/hp-mrak-wide.png);
+
+
+    &:nth-child(1) {
+      -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+      animation-delay: 2s;
+    }
+
+    &:nth-child(2) {
+      -webkit-animation-delay: 12s; /* Chrome, Safari, Opera */
+      animation-delay: 12s;
+    }
+  }
+}
+
+
+@-webkit-keyframes wide-mrak {
+  0%   { opacity: 0;  .translate3d(0%, 0, 0);}
+  10%  { opacity: .8}
+  100% { opacity: .8;  .translate3d(250%, 0, 0);}
+}
+@keyframes wide-mrak {
+  0%   { opacity: 0;  .translate3d(0%, 0, 0);}
+  10%  { opacity: .8}
+  100% { opacity: .8;  .translate3d(250%, 0, 0);}
+}
+
+
+
+.inline-small-clouds {
+  position: absolute;
+
+  li {
+    width: 146px;
+    height: 14px;
+    background-image: url(../images/hp-mrak-small.png);
+
+    &:nth-child(1) {
+      -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+      animation-delay: 2s;
+    }
+
+    &:nth-child(2) {
+      -webkit-animation-delay: 11s; /* Chrome, Safari, Opera */
+      animation-delay: 11s;
+    }
+  }
+}
+
+
+@-webkit-keyframes small-mrak {
+  0%   { opacity: 0;  .transform( translate3d(0, 0, 0) scale(.5) );}
+  50%  { opacity: .8}
+  100% { opacity: 0; .transform( translate3d(155px, -50px, 0) scale(1.5) );}
+}
+@keyframes small-mrak {
+  0%   { opacity: 0;  .translate3d(0%, 0, 0);}
+  100% { opacity: 8.;  .translate3d(200%, 0, 0);}
+}
+
+
+
+.inline-bottom-clouds {
+  position: absolute;
+
+  li {
+    width: 198px;
+    height: 19px;
+    background-image: url(../images/hp-mrak-bottom.png);
+
+    &:nth-child(1) {
+      -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+      animation-delay: 2s;
+    }
+  }
+}
+
+
+@-webkit-keyframes quick-mrak {
+  0%   { opacity: 0;  .translate3d(0%, 0, 0);}
+  50%  { opacity: .8}
+  100% { opacity: 0;  .translate3d(50%, 0, 0);}
+}
+@keyframes quick-mrak {
+  0%   { opacity: 0;  .translate3d(0%, 0, 0);}
+  50%  { opacity: .8}
+  100% { opacity: 0;  .translate3d(50%, 0, 0);}
+}
+
+
+.inline-top-clouds {
+  position: absolute;
+
+  li {
+    width: 146px;
+    height: 14px;
+    background-image: url(../images/hp-mrak-up.png);
+
+    &:nth-child(1) {
+      -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+      animation-delay: 2s;
+    }
+
+    &:nth-child(2) {
+      -webkit-animation-delay: 11s; /* Chrome, Safari, Opera */
+      animation-delay: 11s;
+    }
+  }
+}
+
+
+@-webkit-keyframes small-mrak {
+  0%   { opacity: 0;  .transform( translate3d(0, 0, 0) scale(.5) );}
+  50%  { opacity: .8}
+  100% { opacity: 0; .transform( translate3d(155px, -50px, 0) scale(1.5) );}
+}
+@keyframes small-mrak {
+  0%   { opacity: 0;  .translate3d(0%, 0, 0);}
+  100% { opacity: 8.;  .translate3d(200%, 0, 0);}
+}
+
+
+@1580:  ~"only screen and (min-width: 1580px)";
+@1120:  ~"only screen and (min-width: 1120px)";
+
+.clouds-wrap {
+  @media @small {
+    display: none;
+  }
+  .inline-top-clouds  {
+    bottom: 42%;
+    right: 31%;
+
+    @media @1580 {
+      bottom: 42%;
+      right: 31%;
+    }
+  }
+  .inline-clouds {
+    bottom: 40%;
+    right: 30%;
+
+    @media @1120 {
+      right: 50%;
+    }
+
+    @media @1580 {
+      bottom: 40%;
+      right: 30%;
+    }
+  }
+  .inline-small-clouds {
+    bottom: 21%;
+    right: 39%;
+
+    @media @1120 {
+      bottom: 22%;
+      right: 44%;
+    }
+
+    @media @1580 {
+      bottom: 10%;
+      right: 39%;
+    }
+  }
+  .inline-bottom-clouds {
+    bottom: 19%;
+    right: 44%;
+
+    @media @1120 {
+      bottom: 16%;
+      right: 55%;
+    }
+
+
+    @media @1580 {
+      bottom: 0%;
+      right: 44%;
+    }
+  }
+}

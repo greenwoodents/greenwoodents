@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch Beta 3.3 (11523) - http://www.bohemiancoding.com/sketch -->
+    <title>instagram-icon</title>
+    <desc>Created with Sketch Beta.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="SalesLayer" sketch:type="MSArtboardGroup" transform="translate(-259.000000, -3683.000000)" fill="#FFFFFF">
+            <g id="footer" sketch:type="MSLayerGroup" transform="translate(0.000000, 3496.000000)">
+                <g id="VISIT-SALESLAYER.COM-2" transform="translate(33.000000, 173.000000)" sketch:type="MSShapeGroup">
+                    <path d="M227.5,14 L226,14 L226,29 L227.5,29 L239.5,29 L241,29 L241,14 L239.5,14 L227.5,14 Z M233.5,18.5 C235.15,18.5 236.5,19.85 236.5,21.5 C236.5,23.15 235.15,24.5 233.5,24.5 C231.85,24.5 230.5,23.15 230.5,21.5 C230.5,19.85 231.85,18.5 233.5,18.5 L233.5,18.5 Z M227.875,27.5 C227.65,27.5 227.5,27.35 227.5,27.125 L227.5,20.75 L229.075,20.75 C229,20.975 229,21.275 229,21.5 C229,23.975 231.025,26 233.5,26 C235.975,26 238,23.975 238,21.5 C238,21.275 238,20.975 237.925,20.75 L239.5,20.75 L239.5,27.125 C239.5,27.35 239.35,27.5 239.125,27.5 L227.875,27.5 L227.875,27.5 Z M239.5,17.375 C239.5,17.6 239.35,17.75 239.125,17.75 L237.625,17.75 C237.4,17.75 237.25,17.6 237.25,17.375 L237.25,15.875 C237.25,15.65 237.4,15.5 237.625,15.5 L239.125,15.5 C239.35,15.5 239.5,15.65 239.5,15.875 L239.5,17.375 L239.5,17.375 Z" id="instagram-icon"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

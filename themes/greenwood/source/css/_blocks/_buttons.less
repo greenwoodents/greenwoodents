@@ -1,0 +1,83 @@
+button, a {
+  cursor: pointer;
+
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+a {
+  position: relative;
+  top: 0;
+  transition: all .2s ease-in-out;
+}
+
+a:link, a:visited, a:active {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+a:active {
+  top: 2px;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/*Projects buttons*/
+.button,
+button {
+  display: block;
+  width: 258px;
+  padding: 15px 0;
+  box-sizing: border-box;
+  border: 1px solid #212e29;
+  background: none;
+  color: #212e29;
+  font-family: @gotham;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  margin: 0 auto;
+  outline: none;
+  transition: background 0.3s;
+  text-transform: uppercase;
+}
+
+
+.w {
+  border-color: white;
+  color: white;
+  position: relative;
+}
+
+.w:hover {
+  color: #212e29;
+  background-color: white;
+}
+
+.instagram-icon {
+  position: absolute;
+  right: 25px;
+}
+
+.w:hover .instagram-icon {
+  fill: #2c2e2d;
+}
+
+
+.button.w.button-instagram {
+  color: #fff;
+
+  &:hover {
+    color: #212e29;
+  }
+}
+
+.menu-button {
+  cursor: pointer;
+}

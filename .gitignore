@@ -1,0 +1,14 @@
+.DS_Store
+*.log
+Thumbs.db
+
+dist/
+public/
+node_modules/
+.deploy*/
+
+db.json
+nginx.conf.erb
+.nginx
+.jshintrc
+.jscsrc

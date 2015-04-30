@@ -1,0 +1,363 @@
+/////////////////
+//homepage
+////////////////
+///
+///
+///
+.sipecka {
+  width: 12px;
+  height: 12px;
+  stroke: #282a3b;
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+  position: relative;
+  top: 2px;
+  left: -3px;
+}
+
+.main, body, html {
+  height: 100%;
+}
+
+.homepage-menu-button {
+  transition: 300ms;
+  position: relative;
+  font-family: @gotham;
+  font-size: 10px;
+  color: #282A3B;
+  line-height: 12px;
+  display: inline-block;
+  margin-top: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &::before {
+    transition: 300ms;
+    content: '';
+    width: 10px;
+    height: 13px;
+    display: block;
+    position: absolute;
+    top: -2px;
+    right: -15px;
+    background-image: url(../images/double-arr-hp.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    .translateX(0px);
+
+    -webkit-animation: puls-right 4500ms 2000ms infinite ease-in-out; /* Safari 4+ */
+    animation:         puls-right 4500ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
+  }
+
+  &:hover::before {
+    transition: 300ms;
+    right: -28px;
+
+  }
+
+  &:active {
+    top: 1px;
+  }
+}
+
+
+.pace-done .homepage {
+  .contact-info {
+    transition: 500ms 1700ms ease-out;
+    opacity: 1;
+    .translateY(0px);
+  }
+  .logo {
+    transition: 500ms 1650ms;
+    .translateY(0px);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .background {
+    &-back {
+      transition: opacity 3000ms 0ms ease-in-out;
+      opacity: 1;
+    }
+
+    &-smoke {
+      -webkit-animation: smoke 20000ms 2000ms infinite ease-in-out; /* Safari 4+ */
+      animation:         smoke 20000ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
+    }
+
+    &-front-tree {
+      transition: all 2000ms ease-in-out;
+      opacity: 1;
+      bottom: -5%;
+      visibility: visible;
+    }
+
+    &-clouds {
+      -webkit-animation: from-left-to-right 700000ms 2000ms infinite linear; /* Safari 4+ */
+      animation:         from-left-to-right 700000ms 2000ms infinite linear; /* IE 10+, Fx 29+ */
+    }
+
+    &-front {
+      transition: all 2000ms ease-in-out;
+      bottom: -5%;
+      opacity: 1;
+    }
+  }
+
+  .title{
+    transition: all 1000ms 1000ms ease-out;
+    .translateY(0px);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+.homepage{
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  color: #a2957f;
+  font-family: @gotham;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+
+  .contact-info {
+    position: absolute;
+    bottom: 47px;
+    left: 0;
+    right: 0;
+    font-family: @gotham;
+    font-size: 10px;
+    color: #A2957F;
+    line-height: 12px;
+    text-align: center;
+    z-index: 80;
+    opacity: 0;
+    .translateY(10px);
+
+    p {
+      line-height: 24px;
+      opacity: .8;
+
+      a {
+        color: #CFC6AC;
+        opacity: 1;
+
+        &:hover {
+          color: rgb(158, 184, 59);
+        }
+
+      }
+    }
+  }
+
+  .logo {
+    display: block;
+    position: absolute;
+    z-index: 30;
+    top: 20px;
+    right: 20px;
+    width: 34px;
+    height: 40px;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    opacity: 0;
+    visibility: hidden;
+    .translateY(-10px);
+  }
+
+  .background {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/hp-background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+
+    &-back {
+      opacity: 0;
+    }
+
+    &-smoke {
+      width: 100%;
+      height: 737px;
+      background-image: url(../images/hp-smog.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      position: absolute;
+      bottom: 9%;
+      left: 0;
+      z-index: 35;
+      opacity: 0;
+
+      &.animate {
+        -webkit-animation: smoke 20000ms 2000ms infinite ease-in-out; /* Safari 4+ */
+        animation:         smoke 20000ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
+      }
+    }
+
+    &-front-tree {
+      width: 100%;
+      height: 100%;
+      background-image: url(../images/hp-front-tree.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      top: auto;
+      left: 0;
+      z-index: 60;
+      bottom: -10%;
+      opacity: 0;
+      visibility: hidden;
+
+    }
+
+    &-clouds {
+      width: 100%;
+      height: 380px;
+      background-image: url(../images/hp-clouds.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      position: absolute;
+      bottom: 25%;
+      left: 0;
+      z-index: 15;
+
+      opacity: 0;
+      .translateX(-20%);
+
+      &.animate {
+        -webkit-animation: from-left-to-right 700000ms 2000ms infinite linear; /* Safari 4+ */
+        animation:         from-left-to-right 700000ms 2000ms infinite linear; /* IE 10+, Fx 29+ */
+      }
+    }
+
+    &-front {
+      background-image: url(../images/hp-front.png);
+      z-index: 20;
+      height: 110%;
+      top: auto;
+      bottom: -10%;
+      opacity: 0;
+
+      &.animate {
+        transition: all 2000ms ease-out;
+        bottom: -5%;
+      }
+    }
+  }
+}
+
+.title{
+  z-index: 80;
+  position: absolute;
+  /* top: 0; */
+  left: 0;
+  right: 0;
+  bottom: 40%;
+  opacity: 0;
+  visibility: hidden;
+  .translateY(10px);
+
+  &.animate {
+    transition: all 1000ms 1000ms ease-out;
+    .translateY(0px);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .homepage-title {
+    font-family: @sentinel;
+    color: #1c1f2c;
+    font-size: 71px;
+    font-weight: 900;
+    line-height: 71px;
+
+    .time-title {
+      font-size: 64px;
+      line-height: 64px;
+      position: relative;
+      left: -30px;
+      top: 31px;
+    }
+
+    .reveals-the-title {
+      font-size: 15px;
+      line-height: 15px;
+      position: relative;
+      top: 25px;
+      left: -37px;
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+  /*Homepage*/
+  .title{
+    margin-top: 114px;
+
+    .homepage-title {
+      font-size: 126px;
+      line-height: 126px;
+
+      .time-title {
+        font-size: 114px;
+        line-height: 114px;
+        left: -56px;
+        top: 54px;
+      }
+
+      .reveals-the-title {
+        font-size: 27px;
+        line-height: 27px;
+        top: 42px;
+        left: -64px;
+      }
+    }
+
+    .dvojta-sipecka {
+      top: 30px;
+    }
+  }
+  /*Konec Homepage*/
+}
+
+@media (min-width: 960px) {
+  .line, .line2 {
+    display: none;
+  }
+
+  /*Homepage*/
+  .title{
+    margin-top: 39px;
+
+    .dvojta-sipecka {
+      display: inline-block;
+      .sipecka {
+        transform: rotate(0deg);
+      }
+
+      &::before {
+        content: "CHECK OUR PROJECTS";
+        color: #282a3b;
+      }
+    }
+  }
+  /*Konec Homepage*/
+}

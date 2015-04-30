@@ -1,0 +1,15 @@
+<%- partial('_partial/head') %>
+
+<body>
+
+  <%- partial('_partial/loader') %>
+
+  <div class="body-wrap">
+    <%- partial('_partial/menu') %>
+    <section class='main' id="main"><%- body %></section>
+  </div>
+
+  <%- js('js/libs') %>
+  <%- js('js/script') %>
+</body>
+</html>
