@@ -38,7 +38,7 @@ function addLoad () {
 
         menu.classList.add('active');
         body.classList.add('menuActive');
-        main.style.maxHeight =  innerHeight + "px";
+        main.style.maxHeight =  innerHeight + 'px';
 
         setTimeout(function() {
           window.scrollTo(0,0);
@@ -52,7 +52,7 @@ function addLoad () {
 
         body.classList.remove('menuActive');
         body.classList.add('menuClose');
-        main.style.maxHeight =  "100%";
+        main.style.maxHeight =  '100%';
         menu.style.position = 'fixed';
       });
     });

@@ -164,7 +164,7 @@
       @delay: 300ms;
       color: #d9d9d9;
       margin-top: 11px;
-      transition: all 300ms 0, opacity @delay @delay;
+      transition: all 300ms 0ms, opacity @delay @delay;
       width: auto;
       height: auto;
       max-height: 100%;
@@ -350,6 +350,8 @@ body.menuActive {
         display: block;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
         position: relative;
+        @delay: 300ms;
+        transition: all 300ms 0ms, opacity @delay @delay;
         float: left;
 
         a.project-overlay:hover {
