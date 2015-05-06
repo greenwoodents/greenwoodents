@@ -26,7 +26,7 @@ fd: false
 
 <div id="description" class="description">
 Player.me is a facebook only for gamers. And that’s the advantage instead of replies like “stop playing, go to school” you hear “let’s play one more time”. And the community is pretty big.
-_It’s only project we’ve designed dark up until now. It has come in the hard times (~leaving [Source] (http://www.madebysource.com)), there was not much work, so we lowered our rates on half. However we’re glad that we’ve become part of their jorney._
+_It’s only project we’ve designed dark up until now. It has come in the hard times (~leaving [Source](http://www.madebysource.com)), there was not much work, so we lowered our rates on half. However we’re glad that we’ve become part of their jorney._
 </div>
 
 ##Homepage & onboarding
