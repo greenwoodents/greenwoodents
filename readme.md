@@ -2,7 +2,6 @@
 Powered by [Hexo.io](https://github.com/hexojs/hexo)
 
 ###Development
-
 Run
 ```
 $ npm install
