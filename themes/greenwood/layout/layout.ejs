@@ -1,15 +1,26 @@
 <%- partial('_partial/head') %>
 
 <body>
-
   <%- partial('_partial/loader') %>
-
   <div class="body-wrap">
     <%- partial('_partial/menu') %>
     <section class='main' id="main"><%- body %></section>
   </div>
 
+
   <%- js('js/libs') %>
   <%- js('js/script') %>
+  <script>
+  var swipe = new SwipeMe(document.body,
+    {
+    accessClasses: {
+      right: 'menu-active'
+    },
+    direction: ['right']
+  });
+
+
+
+  </script>
 </body>
 </html>

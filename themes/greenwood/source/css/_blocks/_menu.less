@@ -1,24 +1,84 @@
-.menuActive .menu-button {
-  z-index: 0;
-}
+.menu-active-left,
+.menu-active {
+  overflow-y: visible;
 
-.body-homepage .menu {
-  &.close {
-    -webkit-animation: menu-close 500ms ease-in-out; /* Safari 4+ */
-    animation:         menu-close 500ms ease-in-out; /* IE 10+, Fx 29+ */
+  .main {
+    max-height: 0px;
+    overflow: hidden;
   }
 
-  &.next {
-    -webkit-animation: menu-close-left 500ms ease-in-out; /* Safari 4+ */
-    animation:         menu-close-left 500ms ease-in-out; /* IE 10+, Fx 29+ */
-  }
-
-  &.active {
+  .menu {
     opacity: 1;
     visibility: visible;
+    .translateX(0%);
+    position: relative;
 
-    -webkit-animation: menu-open 500ms ease-in-out; /* Safari 4+ */
-    animation:         menu-open 500ms ease-in-out; /* IE 10+, Fx 29+ */
+    .menu-button {
+      z-index: 0;
+    }
+  }
+
+  //STATES
+  //On Homepage and for mobile on all pages
+  // <-|X
+  &.menu-from-right-open .menu {
+    -webkit-animation: fadein-from-right 500ms ease-in-out;
+    animation:         fadein-from-right 500ms ease-in-out;
+  }
+  // ->|X
+  &.menu-from-right-close .menu {
+    -webkit-animation: fadeout-to-right 500ms ease-in-out;
+    animation:         fadeout-to-right 500ms ease-in-out;
+  }
+  // X|->
+  &.menu-from-left-open .menu {
+    -webkit-animation: fadein-from-left 500ms ease-in-out;
+    animation:         fadein-from-left 500ms ease-in-out;
+  }
+  // X|<-
+  &.menu-from-left-close .menu {
+    -webkit-animation: fadeout-to-left 500ms ease-in-out;
+    animation:         fadeout-to-left 500ms ease-in-out;
+  }
+}
+
+
+
+.menu-close {
+  .main {
+    transition: 500ms ease-in-out;
+    .translateX(0%);
+  }
+}
+
+
+
+
+
+.main {
+  max-height: 99999999px;
+}
+
+
+.body-homepage.button-click .menu {
+  -webkit-animation: fadeout-to-right 500ms ease-in-out;
+  animation:         fadeout-to-right 500ms ease-in-out;
+}
+
+.button-click .menu {
+  -webkit-animation: fadeout-to-left 500ms ease-in-out;
+  animation:         fadeout-to-left 500ms ease-in-out;
+}
+
+.swipe-closing .menu {
+  -webkit-animation: fadeout-to-right 500ms ease-in-out;
+  animation:         fadeout-to-right 500ms ease-in-out;
+}
+
+@media @small {
+  .menu-button {
+    visibility: hidden;
+    opacity: 0;
   }
 }
 
@@ -37,26 +97,6 @@
   opacity: 0;
   visibility: hidden;
   .translateX(100%);
-
-  &.close {
-    -webkit-animation: menu-close-left 500ms ease-in-out; /* Safari 4+ */
-    animation:         menu-close-left 500ms ease-in-out; /* IE 10+, Fx 29+ */
-  }
-
-  &.next {
-    -webkit-animation: menu-close-left 500ms ease-in-out; /* Safari 4+ */
-    animation:         menu-close-left 500ms ease-in-out; /* IE 10+, Fx 29+ */
-  }
-
-  &.active {
-    opacity: 1;
-    visibility: visible;
-    .translateX(0);
-
-    -webkit-animation: menu-open-alt 500ms ease-in-out; /* Safari 4+ */
-    animation:         menu-open-alt 500ms ease-in-out; /* IE 10+, Fx 29+ */
-  }
-
 
   &-close {
     text-transform: uppercase;
@@ -100,6 +140,15 @@
     }
   }
 
+  .project-info-text {
+    margin-left: 10px;
+
+    a {
+      opacity: 1;
+      font-weight: 600;
+    }
+  }
+
   .menu-header {
     padding-top: 20px;
     text-align: center;
@@ -114,6 +163,9 @@
     .contact {
       letter-spacing: 0.5px;
       color: #91816d;
+      .tel {
+        opacity: 1;
+      }
     }
 
     .ent {
@@ -126,6 +178,10 @@
     padding: 26px 0 13px 33px;
     font-size: 20px;
     line-height: 29px;
+
+    @media @small {
+      padding: 26px 2% 13px 31px;
+    }
 
     a {
       font-family: @sentinel;
@@ -151,7 +207,6 @@
         font-family: "Gotham A", "Gotham B", 'Gotham Book';
       }
     }
-
   }
 
   .menu-wrap {
@@ -159,6 +214,10 @@
     list-style: none;
     overflow: hidden;
     padding: 40px 0;
+
+    @media @small {
+      padding: 20px 0;
+    }
 
     .menu-block {
       @delay: 300ms;
@@ -169,6 +228,7 @@
       height: auto;
       max-height: 100%;
       max-width: 100% !important;
+      position: relative;
 
       &.fltr-hidden {
         transition: all 300ms @delay, opacity @delay 0ms;
@@ -198,6 +258,12 @@
     text-align: right;
     width: 15px;
     display: inline-block;
+
+    @media @small {
+      position: absolute;
+      left: -13px;
+      top: 11px;
+    }
   }
 
   .light-text {
@@ -248,19 +314,8 @@
 }
 
 
-body.menuActive {
-  overflow-y: visible;
-}
 
-.menuActive .main {
-  max-height: 0px;
-  overflow: hidden;
-}
 
-.menuClose .main {
-   transition: 500ms ease-in-out;
-  .translateX(0%);
-}
 
 .project-overlay {
     @media @small {

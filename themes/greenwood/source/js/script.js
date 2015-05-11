@@ -1,5 +1,5 @@
 Pace.once('done', addLoad);
-function addLoad () {
+function addLoad() {
   document.querySelector('.body-wrap').classList.add('loaded');
   document.body.classList.add('web-loaded');
 }
@@ -12,7 +12,7 @@ function addLoad () {
     } else if ( elem.attachEvent ) {
         elem.attachEvent( "on" + type, eventHandle );
     } else {
-        elem["on"+type]=eventHandle;
+        elem["on" + type]=eventHandle;
     }
   };
 ////
@@ -24,38 +24,48 @@ function addLoad () {
       document.querySelector('.menu-close').innerHTML = page;
     }
 
+    var clearAllMenuState = function() {
+      var body = document.body;
+      body.classList.remove('menu-active');
+      body.classList.remove('menu-active-left');
+      body.classList.remove('menu-from-left-open');
+      body.classList.remove('menu-from-right-open');
+    }
+
     var jsOpenMenu = document.querySelectorAll('.js-open-menu');
     [].forEach.call(jsOpenMenu , function(element, index, array) {
       var body = document.body;
-      var menu = document.querySelector('.js-menu');
-      var closeButton = document.querySelector('.js-menu .menu-close');
-      var innerHeight =  window.innerHeight;
-      var main = document.getElementById('main');
 
       element.addEventListener('click', function() {
-        body.classList.remove('menuClose');
-        menu.classList.remove('close');
+        clearAllMenuState();
 
-        menu.classList.add('active');
-        body.classList.add('menuActive');
-        main.style.maxHeight =  innerHeight + 'px';
-
-        setTimeout(function() {
-          window.scrollTo(0,0);
-          menu.style.position = 'absolute';
-        }, 500);
-      });
-
-      closeButton.addEventListener('click', function() {
-        menu.classList.remove('active');
-        menu.classList.add('close');
-
-        body.classList.remove('menuActive');
-        body.classList.add('menuClose');
-        main.style.maxHeight =  '100%';
-        menu.style.position = 'fixed';
+        body.classList.add('menu-active');
+        body.classList.add('menu-from-right-open');
       });
     });
+
+    var jsOpenMenuLeft = document.querySelectorAll('.js-open-menu-left');
+    [].forEach.call(jsOpenMenuLeft , function(element, index, array) {
+      var body = document.body;
+
+      element.addEventListener('click', function() {
+        clearAllMenuState();
+
+        body.classList.add('menu-active');
+        body.classList.add('menu-active-left');
+        body.classList.add('menu-from-left-open');
+      });
+    });
+
+    var closeButton = document.querySelector('.menu-close');
+    closeButton.addEventListener('click', function() {
+      clearAllMenuState();
+      document.body.classList.add('button-click');
+      setTimeout(function(){
+        document.body.classList.remove('button-click');
+      }, 500)
+    });
+
 
     var jsDetails = document.querySelectorAll('.js-hidden-box');
     [].forEach.call(jsDetails , function(element, index, array) {
@@ -63,7 +73,6 @@ function addLoad () {
         element.classList.toggle('clicked');
       });
     });
-
 
     var feed = document.querySelectorAll('#instafeed');
     [].forEach.call(feed , function(element, index, array) {
@@ -238,22 +247,12 @@ var projectOverlay = document.querySelectorAll('.project-overlay');
 
                 document.getElementById('main').classList.remove('content-pending');
 
-                if (document.body.classList.contains('menuActive')) {
-                  var menu = document.querySelector('.js-menu');
+                if (document.body.classList.contains('menu-active')) {
                   var body = document.body;
 
-                  menu.classList.remove('active');
-                  menu.classList.add('next');
-
-                  body.classList.remove('menuActive');
-                  body.classList.add('menuClose');
+                  body.classList.remove('menu-active');
 
 
-
-                  setTimeout(function() {
-                    main.style.maxHeight =  "100%";
-                    menu.style.position = 'fixed';
-                  }, 500);
                   document.getElementById('main').classList.add('is-here');
 
                 } else {
