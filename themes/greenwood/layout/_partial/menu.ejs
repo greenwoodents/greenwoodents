@@ -41,8 +41,10 @@
         <div class="project-info">
           <div class="numbers"><%- i %></div>
           <div class="project-info-text">
-            <a href="<%- url_for(post.path) %>"><%- post.title %></a>
-            <span class="light-text"><%- post.country %></span>
+            <a href="<%- url_for(post.path) %>">
+              <span class="project-info-title"><%- post.title %></span>
+              <span class="project-info-subtitle light-text"><%- post.country %></span>
+            </a>
           </div>
         </div>
       </div>

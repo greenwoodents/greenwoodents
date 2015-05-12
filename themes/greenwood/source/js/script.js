@@ -17,19 +17,20 @@ function addLoad() {
   };
 ////
 
+
+var clearAllMenuState = function() {
+  var body = document.body;
+  body.classList.remove('menu-active');
+  body.classList.remove('menu-active-left');
+  body.classList.remove('menu-from-left-open');
+  body.classList.remove('menu-from-right-open');
+};
+
 //Components
   function components(data) {
     if (data) {
       var page = data[0].getAttribute('page') || "Home";
       document.querySelector('.menu-close').innerHTML = page;
-    }
-
-    var clearAllMenuState = function() {
-      var body = document.body;
-      body.classList.remove('menu-active');
-      body.classList.remove('menu-active-left');
-      body.classList.remove('menu-from-left-open');
-      body.classList.remove('menu-from-right-open');
     }
 
     var jsOpenMenu = document.querySelectorAll('.js-open-menu');
@@ -63,7 +64,7 @@ function addLoad() {
       document.body.classList.add('button-click');
       setTimeout(function(){
         document.body.classList.remove('button-click');
-      }, 500)
+      }, 500);
     });
 
 
@@ -249,10 +250,7 @@ var projectOverlay = document.querySelectorAll('.project-overlay');
 
                 if (document.body.classList.contains('menu-active')) {
                   var body = document.body;
-
-                  body.classList.remove('menu-active');
-
-
+                  clearAllMenuState();
                   document.getElementById('main').classList.add('is-here');
 
                 } else {
@@ -261,12 +259,22 @@ var projectOverlay = document.querySelectorAll('.project-overlay');
 
                 window.scrollTo(0,0);
                 window.components($content);
+
+
               }
         }
     }).data('smoothState');
 })(jQuery);
 ////
 
+
+var swipe = new SwipeMe(document.body,
+  {
+  accessClasses: {
+    right: 'menu-active'
+  },
+  direction: ['right']
+});
 
 
 
