@@ -1,7 +1,7 @@
 date: 2015-03-02 01:00:00
 
 title: Webexpo
-subTitle: 1 weekend, 1400 web professionals
+subTitle: 1 weekend, 1 400 web professionals
 web: www.webexpo.com
 country: Czech republic
 
@@ -15,7 +15,9 @@ whenWeDidIt: April 2014
 
 projectColor: "#FF5AAF"
 projectPreviewImage: /webexpo/webexpo-project-preview.png
+
 projectImage: /webexpo/webexpo-preview@2x.png
+projectImagePosition:
 
 mh: true
 jh: true
@@ -25,8 +27,8 @@ fd: false
 
 
 <div id="description" class="description">
-WebExpo is more kind of a big meeting of all Czech designers, developers and marketers that focus on the web. It’s taken place in Prague every autumn since 2008.
-_It all started with creating a “coming soon” page and continued with designing whole identity for the 7th year, phone app, t-shirts, etc.. Webexpo is primarly about meeting people — so we higlighted the message with using photos from past years._
+WebExpo is the biggest conference in Central Europe about web. It’s been in Prague every year since 2008.
+_We created identity for Webexpo 2014. The identity underlined that Webexpo is about people/contacts._
 </div>
 
 ##Website

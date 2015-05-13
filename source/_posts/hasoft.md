@@ -15,7 +15,9 @@ whenWeDidIt: June 2014
 
 projectColor: "#E7AB4A"
 projectPreviewImage: /hasoft/hasoft-project-preview.png
+
 projectImage: /hasoft/hasoft-preview@2x.png
+projectImagePosition:
 
 
 mh: true
@@ -26,7 +28,7 @@ fd: false
 
 
 <div id="description" class="description">
-HA-SOFT is czech software for forest management with 93% market share.
+HA-SOFT is Czech software for forest management with 93% market share.
 _[@martihalik](http://martinhalik.cz) first designed the website in cooperation with [@proficio](http://www.proficio.cz) and later we designed a new visual identity._
 </div>
 

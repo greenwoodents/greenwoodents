@@ -15,7 +15,9 @@ whenWeDidIt: August 2014
 
 projectColor: "#ed8929"
 projectPreviewImage: /metaxa/metaxa-project-preview.png
+
 projectImage: /metaxa/metaxa-preview@2x.png
+projectImagePosition:
 
 mh: true
 jh: true
@@ -23,8 +25,8 @@ fd: true
 ---
 
 <div id="description" class="description">
-Do you drink? Then you probably know this greek liquid that tastes like sun.
-_Two projects in one. Metaxa czech official site and metaxa e-commerce. We did it in cooperation with [@TL5](http://www.tl5.cz) agency and took care of design and whole development. Btw the ecommerce is running on [#Shopify](http://www.shopify.com)._
+Do you drink? Then you probably know this greek spirit that tastes like the Sun.
+_We designed and developed Czech website and e-commerce for Metaxa with content from [@TL5](http://www.tl5.cz) agency. The e-commerce is running on [Shopify](http://www.shopify.com)._
 </div>
 
 

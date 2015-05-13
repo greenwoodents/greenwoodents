@@ -15,7 +15,9 @@ whenWeDidIt: November 2014
 
 projectColor: "#169DD4"
 projectPreviewImage: /rozeslat/rozeslat-project-preview.png
+
 projectImage: /rozeslat/rozeslat-preview@2x.png
+projectImagePosition:
 
 mh: false
 jh: true
@@ -26,7 +28,7 @@ fd: false
 
 <div id="description" class="description">
 Sometimes teachers need to text or call everyone. Why should they pay that from their own pocket?
-_Rozeslat makes it simply for teachers to text their classes and it’s free. Credits belongs also to [@davidvesely](http://davidvesely.cz) and @misisnik for development._
+_Rozeslat makes it simple for teachers to text their classes and it’s free. Credits belongs also to [@davidvesely](http://davidvesely.cz) and @misisnik for development._
 </div>
 
 ##Homepage & onboarding

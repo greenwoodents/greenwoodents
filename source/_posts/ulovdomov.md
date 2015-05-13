@@ -15,7 +15,9 @@ whenWeDidIt: May 2014
 
 projectColor: "#E74D3D"
 projectPreviewImage: /ulovdomov/ulovdomov-project-preview.png
+
 projectImage: /ulovdomov/ulovdomov-preview@2x.png
+projectImagePosition:
 
 mh: false
 jh: true
@@ -25,8 +27,8 @@ fd: false
 
 
 <div id="description" class="description">
-Have you think about relocating? Try [Ulovdomov.cz](http://www.ulovdomov.cz) it’s designed to help you find what you are looking for.
-_UlovDomov is a local startup that needed to design their platform. It was first [@henne](http://dribbble.com/henne22) complex project so we agreed on lower price._
+Have you thought about relocating to Czech? Try [Ulovdomov.cz](http://www.ulovdomov.cz).
+_UlovDomov is a local startup that needed to design their platform. It was the first @henne complex project._
 </div>
 
 ##Search for a new home

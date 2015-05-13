@@ -15,7 +15,9 @@ whenWeDidIt: September 2014
 
 projectColor: "#169DD4"
 projectPreviewImage: /khanovaskola/khanovaskola-project-preview@medium.png
+
 projectImage: /khanovaskola/khanovaskola-preview@2x.png
+projectImagePosition:
 
 mh: true
 jh: false
@@ -24,7 +26,7 @@ fd: false
 
 <div id="description" class="description">
 Khan Academy had 400 millions views on YouTube in 2014. Khanova škola is their Czech younger brother.
-_Khanova škola is a love product. It’s working — people use it everyday, it’s free and for everyone. That was the time when we come up with idea on [@Rozeslat](http://www.rozeslat.com)._
+_Khanova škola is a lovely product. It’s working — people use it everyday and it’s free for everyone._
 </div>
 
 ##Homepage & onboarding

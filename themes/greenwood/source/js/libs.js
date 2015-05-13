@@ -86,6 +86,7 @@ window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.style
             // If the side we're trying to expose isn't already open and if we're allowed to expose the panel
                 utils.addClass(container, options.accessClasses[access]);
                 body.classList.add('menu-from-right-open');
+                window.scrollTo(0, 0);
             }
         }
     },

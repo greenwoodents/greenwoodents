@@ -1,7 +1,7 @@
 date: 2015-03-01 01:00:00
 
 title: SalesLayer
-subTitle: Manage your product
+subTitle: Manage your products
 web: www.saleslayer.com
 country: Spain
 
@@ -15,7 +15,9 @@ whenWeDidIt: March 2014
 
 projectColor: "#0FA474"
 projectPreviewImage: /saleslayer/saleslayer-project-preview.png
+
 projectImage: /saleslayer/saleslayer-preview@2x.png
+projectImagePosition:
 
 mh: true
 jh: false
@@ -25,8 +27,8 @@ fd: true
 
 
 <div id="description" class="description">
-SalesLayer helps you manage your products and connect with resalers, ecommerce and hundreds more.
-_We tried to build such a website, that will get your attention, interest and later convince you to contact the sale support._
+SalesLayer helps you manage your products and connect with resellers, e-commerce and hundreds more.
+_We tried to build such a website, that will get your attention, interest and later convince you to contact the sales support._
 </div>
 
 
