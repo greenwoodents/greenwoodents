@@ -33,18 +33,18 @@ _We designed and developed Czech website and e-commerce for Metaxa with content 
 ##Responsive layout
 <div class="portraits">
   <div class="portrait left">
-  <img class="mobile-portrait"
-    src="/metaxa/metaxa-shop-mobile.png"
-    srcset="/metaxa/metaxa-shop-mobile@2x.png 2000w,
+  <img class="lazyload mobile-portrait"
+    data-src="/metaxa/metaxa-shop-mobile.png"
+    data-srcset="/metaxa/metaxa-shop-mobile@2x.png 2000w,
             /metaxa/metaxa-shop-mobile.png 1280w,
             /metaxa/metaxa-shop-mobile@small.png 800w,"
     sizes="100%"
     alt="Metaxa Shop - mobile preview">
   </div>
   <div class="portrait right">
-    <img class="mobile-portrait"
-      src="/metaxa/metaxa-shop-product-mobile.png"
-      srcset="/metaxa/metaxa-shop-product-mobile@2x.png 2000w,
+    <img class="lazyload mobile-portrait"
+      data-src="/metaxa/metaxa-shop-product-mobile.png"
+      data-srcset="/metaxa/metaxa-shop-product-mobile@2x.png 2000w,
               /metaxa/metaxa-shop-product-mobile.png 1280w,
               /metaxa/metaxa-shop-product-mobile@small.png 800w,"
       sizes="100%"
@@ -53,58 +53,58 @@ _We designed and developed Czech website and e-commerce for Metaxa with content 
 </div>
 
 ##Metaxa.cz
-<img class="container-page"
-  src="/metaxa/metaxa-produkty.png"
-  srcset="/metaxa/metaxa-produkty@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/metaxa/metaxa-produkty.png"
+  data-srcset="/metaxa/metaxa-produkty@2x.png 2000w,
           /metaxa/metaxa-produkty.png 1280w,
           /metaxa/metaxa-produkty@small.png 800w,"
   sizes="100%"
   alt="Metaxa products">
 
-<img class="container-page"
-  src="/metaxa/metaxa-historie.png"
-  srcset="/metaxa/metaxa-historie@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/metaxa/metaxa-historie.png"
+  data-srcset="/metaxa/metaxa-historie@2x.png 2000w,
           /metaxa/metaxa-historie.png 1280w,
           /metaxa/metaxa-historie@small.png 800w,"
   sizes="100%"
   alt="Metaxa history">
 
-<img class="container-page left"
-  src="/metaxa/metaxa-degustacni-vlastnosti.png"
-  srcset="/metaxa/metaxa-degustacni-vlastnosti@2x.png 2000w,
+<img class="lazyload container-page left"
+  data-src="/metaxa/metaxa-degustacni-vlastnosti.png"
+  data-srcset="/metaxa/metaxa-degustacni-vlastnosti@2x.png 2000w,
           /metaxa/metaxa-degustacni-vlastnosti.png 1280w,
           /metaxa/metaxa-degustacni-vlastnosti.png 800w,"
   sizes="100%"
   alt="How to drink Metaxa">
 
-<img class="container-page right"
-  src="/metaxa/metaxa-koktejl.png"
-  srcset="/metaxa/metaxa-koktejl@2x.png 2000w,
+<img class="lazyload container-page right"
+  data-src="/metaxa/metaxa-koktejl.png"
+  data-srcset="/metaxa/metaxa-koktejl@2x.png 2000w,
           /metaxa/metaxa-koktejl.png 1280w,
           /metaxa/metaxa-koktejl.png 800w,"
   sizes="100%"
   alt="How to prepare Metaxa">
 
 ##Metaxa shop
-<img class="container-page"
-  src="/metaxa/metaxa-shop-homepage.png"
-  srcset="/metaxa/metaxa-shop-homepage@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/metaxa/metaxa-shop-homepage.png"
+  data-srcset="/metaxa/metaxa-shop-homepage@2x.png 2000w,
           /metaxa/metaxa-shop-homepage.png 1280w,
           /metaxa/metaxa-shop-homepage@small.png 800w,"
   sizes="100%"
   alt="Metaxa shop">
 
-<img class="container-page left"
-  src="/metaxa/metaxa-shop-product.png"
-  srcset="/metaxa/metaxa-shop-product@2x.png 2000w,
+<img class="lazyload container-page left"
+  data-src="/metaxa/metaxa-shop-product.png"
+  data-srcset="/metaxa/metaxa-shop-product@2x.png 2000w,
           /metaxa/metaxa-shop-product.png 1280w,
           /metaxa/metaxa-shop-product.png 800w,"
   sizes="100%"
   alt="Metaxa shop product page">
 
-<img class="container-page right"
-  src="/metaxa/metaxa-shop-basket.png"
-  srcset="/metaxa/metaxa-shop-basket@2x.png 2000w,
+<img class="lazyload container-page right"
+  data-src="/metaxa/metaxa-shop-basket.png"
+  data-srcset="/metaxa/metaxa-shop-basket@2x.png 2000w,
           /metaxa/metaxa-shop-basket.png 1280w,
           /metaxa/metaxa-shop-basket.png 800w,"
   sizes="100%"
