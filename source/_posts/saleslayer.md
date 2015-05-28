@@ -35,18 +35,18 @@ _We tried to build such a website, that will get your attention, interest and la
 ##RESPONSIVE LAYOUT
 <div class="portraits">
   <div class="portrait left">
-    <img class="mobile-portrait"
-    src="/saleslayer/mobile-portrait-retailers.png"
-    srcset="/saleslayer/mobile-portrait-retailers@2x.png 2000w,
+    <img class="lazyload mobile-portrait"
+    data-src="/saleslayer/mobile-portrait-retailers.png"
+    data-srcset="/saleslayer/mobile-portrait-retailers@2x.png 2000w,
             /saleslayer/mobile-portrait-retailers.png 1280w,
             /saleslayer/mobile-portrait-retailers.png 800w,"
     sizes="100%"
     alt="SalesLayer for Retailers - mobile preview">
   </div>
   <div class="portrait right">
-    <img class="mobile-portrait"
-    src="/saleslayer/saleslayer-responsive-layout-2.png"
-    srcset="/saleslayer/saleslayer-responsive-layout-2@2x.png 2000w,
+    <img class="lazyload mobile-portrait"
+    data-src="/saleslayer/saleslayer-responsive-layout-2.png"
+    data-srcset="/saleslayer/saleslayer-responsive-layout-2@2x.png 2000w,
             /saleslayer/saleslayer-responsive-layout-2.png 1280w,
             /saleslayer/saleslayer-responsive-layout-2.png 800w,"
     sizes="100%"
@@ -56,25 +56,25 @@ _We tried to build such a website, that will get your attention, interest and la
 
 
 ##DESKTOP PAGES
-<img class="container-page"
-  src="/saleslayer/saleslayer-desktop-b2c.png"
-  srcset="/saleslayer/saleslayer-desktop-b2c@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/saleslayer/saleslayer-desktop-b2c.png"
+  data-srcset="/saleslayer/saleslayer-desktop-b2c@2x.png 2000w,
           /saleslayer/saleslayer-desktop-b2c.png 1280w,
           /saleslayer/saleslayer-desktop-b2c@small.png 800w,"
   sizes="100%"
   alt="SalesLayer B2C page">
 
-<img class="container-page"
-  src="/saleslayer/saleslayer-desktop-agencies.png"
-  srcset="/saleslayer/saleslayer-desktop-agencies@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/saleslayer/saleslayer-desktop-agencies.png"
+  data-srcset="/saleslayer/saleslayer-desktop-agencies@2x.png 2000w,
           /saleslayer/saleslayer-desktop-agencies.png 1280w,
           /saleslayer/saleslayer-desktop-agencies@small.png 800w,"
   sizes="100%"
   alt="SalesLayer for Agencies - white label">
 
-<img class="container-page"
-  src="/saleslayer/saleslayer-desktop-request.png"
-  srcset="/saleslayer/saleslayer-desktop-request@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/saleslayer/saleslayer-desktop-request.png"
+  data-srcset="/saleslayer/saleslayer-desktop-request@2x.png 2000w,
           /saleslayer/saleslayer-desktop-request.png 1280w,
           /saleslayer/saleslayer-desktop-request@small.png 800w,"
   sizes="100%"
@@ -84,18 +84,18 @@ _We tried to build such a website, that will get your attention, interest and la
 ##UI KIT
 <div class="portraits">
   <div class="portrait left">
-    <img class="mobile-portrait"
-    src="/saleslayer/saleslayer-ui-kit-1.png"
-    srcset="/saleslayer/saleslayer-ui-kit-1@2x.png 2000w,
+    <img class="lazyload mobile-portrait"
+    data-src="/saleslayer/saleslayer-ui-kit-1.png"
+    data-srcset="/saleslayer/saleslayer-ui-kit-1@2x.png 2000w,
             /saleslayer/saleslayer-ui-kit-1.png 1280w,
             /saleslayer/saleslayer-ui-kit-1.png 800w,"
     sizes="100%"
     alt="SalesLayer UI kit for phones">
   </div>
   <div class="portrait right">
-    <img class="mobile-portrait"
-    src="/saleslayer/saleslayer-ui-kit-2.png"
-    srcset="/saleslayer/saleslayer-ui-kit-2@2x.png 2000w,
+    <img class="lazyload mobile-portrait"
+    data-src="/saleslayer/saleslayer-ui-kit-2.png"
+    data-srcset="/saleslayer/saleslayer-ui-kit-2@2x.png 2000w,
             /saleslayer/saleslayer-ui-kit-2.png 1280w,
             /saleslayer/saleslayer-ui-kit-2.png 800w,"
     sizes="100%"

@@ -30,33 +30,33 @@ _Khanova škola is a lovely product. It’s working — people use it everyd
 </div>
 
 ##Homepage & onboarding
-<img class="container-page"
-  src="/khanovaskola/khanovaskola-homepage@medium.png"
-  srcset="/khanovaskola/khanovaskola-homepage@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/khanovaskola/khanovaskola-homepage@medium.png"
+  data-srcset="/khanovaskola/khanovaskola-homepage@2x.png 2000w,
           /khanovaskola/khanovaskola-homepage@medium.png 1280w,
           /khanovaskola/khanovaskola-homepage@small.png 800w,"
   sizes="100%"
   alt="Khanova škola homepag">
 
-<img class="container-page"
-  src="/khanovaskola/khanovaskola-vyber@medium.png"
-  srcset="/khanovaskola/khanovaskola-vyber@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/khanovaskola/khanovaskola-vyber@medium.png"
+  data-srcset="/khanovaskola/khanovaskola-vyber@2x.png 2000w,
           /khanovaskola/khanovaskola-vyber@medium.png 1280w,
           /khanovaskola/khanovaskola-vyber@small.png 800w,"
   sizes="100%"
   alt="Khanova škola - Vyber si obor ">
 
-<img class="container-page"
-  src="/khanovaskola/khanovaskola-math@medium.png"
-  srcset="/khanovaskola/khanovaskola-math@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/khanovaskola/khanovaskola-math@medium.png"
+  data-srcset="/khanovaskola/khanovaskola-math@2x.png 2000w,
           /khanovaskola/khanovaskola-math@medium.png 1280w,
           /khanovaskola/khanovaskola-math@small.png 800w,"
   sizes="100%"
   alt="Matematika pro střední a základní školy">
 
-<img class="container-page"
-  src="/khanovaskola/khanovaskola-video@medium.png"
-  srcset="/khanovaskola/khanovaskola-video@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/khanovaskola/khanovaskola-video@medium.png"
+  data-srcset="/khanovaskola/khanovaskola-video@2x.png 2000w,
           /khanovaskola/khanovaskola-video@medium.png 1280w,
           /khanovaskola/khanovaskola-video@small.png 800w,"
   sizes="100%"
@@ -65,20 +65,20 @@ _Khanova škola is a lovely product. It’s working — people use it everyd
 
 ##Responsivness
 
-<div class="portraits">
-  <div class="portrait left">
-  <img class="mobile-portrait"
-    src="/khanovaskola/khanovaskola-mobile-dashboard@medium.png"
-    srcset="/khanovaskola/khanovaskola-mobile-dashboard@2x.png 2000w,
+<div class="lazyload portraits">
+  <div class="lazyload portrait left">
+  <img class="lazyload mobile-portrait"
+    data-src="/khanovaskola/khanovaskola-mobile-dashboard@medium.png"
+    data-srcset="/khanovaskola/khanovaskola-mobile-dashboard@2x.png 2000w,
             /khanovaskola/khanovaskola-mobile-dashboard@medium.png 1280w,
             /khanovaskola/khanovaskola-mobile-dashboard@small.png 800w,"
     sizes="100%"
     alt="Responsive dashboard ">
   </div>
-  <div class="portrait right">
-    <img class="mobile-portrait"
-    src="/khanovaskola/khanovaskola-mobile-blok@medium.png"
-    srcset="/khanovaskola/khanovaskola-mobile-blok@2x.png 2000w,
+  <div class="lazyload portrait right">
+    <img class="lazyload mobile-portrait"
+    data-src="/khanovaskola/khanovaskola-mobile-blok@medium.png"
+    data-srcset="/khanovaskola/khanovaskola-mobile-blok@2x.png 2000w,
             /khanovaskola/khanovaskola-mobile-blok@medium.png 1280w,
             /khanovaskola/khanovaskola-mobile-blok@small.png 800w,"
     sizes="100%"
@@ -87,33 +87,33 @@ _Khanova škola is a lovely product. It’s working — people use it everyd
 </div>
 
 ##Learning process
-<img class="container-page left"
-  src="/khanovaskola/khanovaskola-exercise@medium.png"
-  srcset="/khanovaskola/khanovaskola-exercise@2x.png 2000w,
+<img class="lazyload container-page left"
+  data-src="/khanovaskola/khanovaskola-exercise@medium.png"
+  data-srcset="/khanovaskola/khanovaskola-exercise@2x.png 2000w,
           /khanovaskola/khanovaskola-exercise@medium.png 1280w,
           /khanovaskola/khanovaskola-exercise@small.png 800w,"
   sizes="100%"
   alt="Math exercise design">
 
-<img class="container-page right"
-  src="/khanovaskola/khanovaskola-article@medium.png"
-  srcset="/khanovaskola/khanovaskola-article@2x.png 2000w,
+<img class="lazyload container-page right"
+  data-src="/khanovaskola/khanovaskola-article@medium.png"
+  data-srcset="/khanovaskola/khanovaskola-article@2x.png 2000w,
           /khanovaskola/khanovaskola-article@medium.png 1280w,
           /khanovaskola/khanovaskola-article@small.png 800w,"
   sizes="100%"
   alt="Article">
 
-<img class="container-page"
-  src="/khanovaskola/khanovaskola-login@medium.png"
-  srcset="/khanovaskola/khanovaskola-login@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/khanovaskola/khanovaskola-login@medium.png"
+  data-srcset="/khanovaskola/khanovaskola-login@2x.png 2000w,
           /khanovaskola/khanovaskola-login@medium.png 1280w,
           /khanovaskola/khanovaskola-login@small.png 800w,"
   sizes="100%"
   alt="Login">
 
-<img class="container-page"
-  src="/khanovaskola/khanovaskola-logout@medium.png"
-  srcset="/khanovaskola/khanovaskola-logout@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/khanovaskola/khanovaskola-logout@medium.png"
+  data-srcset="/khanovaskola/khanovaskola-logout@2x.png 2000w,
           /khanovaskola/khanovaskola-logout@medium.png 1280w,
           /khanovaskola/khanovaskola-logout@small.png 800w,"
   sizes="100%"

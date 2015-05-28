@@ -2,7 +2,12 @@ Pace.once('done', addLoad);
 function addLoad() {
   document.querySelector('.body-wrap').classList.add('loaded');
   document.body.classList.add('web-loaded');
+  console.log('LOADED');
+  feedInit();
 }
+
+
+
 
 //Helper function
   var addEvent = function(elem, type, eventHandle) {
@@ -31,6 +36,11 @@ var clearAllMenuState = function() {
     if (data) {
       var page = data[0].getAttribute('page') || "Home";
       document.querySelector('.menu-close').innerHTML = page;
+    }
+
+    //post load
+    if (document.querySelector('.body-wrap').classList.contains('loaded')) {
+      feedInit();
     }
 
     var jsOpenMenu = document.querySelectorAll('.js-open-menu');
@@ -77,20 +87,6 @@ var clearAllMenuState = function() {
       element.addEventListener('click', function() {
         element.classList.toggle('clicked');
       });
-    });
-
-    var feed = document.querySelectorAll('#instafeed');
-    [].forEach.call(feed , function(element, index, array) {
-      var feed = new Instafeed({
-        get: 'user',
-        clientId: '1fbd28fc3ac2446190809988d7bdbab7',
-        userId: 1650642267,
-        accessToken: '1650642267.467ede5.f7b1d8f9e1f4423b910d327f28f7b517',
-        resolution: 'standard_resolution',
-        limit: 7,
-        template: '<img src="{{image}}" />'
-      });
-      feed.run();
     });
 
     var homepage = document.querySelector('.homepage');
@@ -278,9 +274,24 @@ var projectOverlay = document.querySelectorAll('.project-overlay');
 })(jQuery);
 ////
 
+function feedInit(){
+  console.log('FEED');
+  var feed = document.querySelectorAll('#instafeed');
+  [].forEach.call(feed , function(element, index, array) {
+    var feed = new Instafeed({
+      get: 'user',
+      clientId: '1fbd28fc3ac2446190809988d7bdbab7',
+      userId: 1650642267,
+      accessToken: '1650642267.467ede5.f7b1d8f9e1f4423b910d327f28f7b517',
+      resolution: 'standard_resolution',
+      limit: 7,
+      template: '<img src="{{image}}" />'
+    });
+    feed.run();
+  });
+}
 
-var swipe = new SwipeMe(document.body,
-  {
+var swipe = new SwipeMe(document.body,{
   accessClasses: {
     right: 'menu-active'
   },

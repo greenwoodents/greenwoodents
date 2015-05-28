@@ -33,17 +33,17 @@ _[@martihalik](http://martinhalik.cz) first designed the website in cooperation 
 </div>
 
 ##Website
-<img class="container-page"
-  src="/hasoft/hasoft-home.png"
-  srcset="/hasoft/hasoft-home@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/hasoft/hasoft-home.png"
+  data-srcset="/hasoft/hasoft-home@2x.png 2000w,
           /hasoft/hasoft-home.png 1280w,
           /hasoft/hasoft-home@small.png 800w,"
   sizes="100%"
   alt="HA-SOFT homepage">
 
-<img class="container-page"
-  src="/hasoft/article.png"
-  srcset="/hasoft/article@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/hasoft/article.png"
+  data-srcset="/hasoft/article@2x.png 2000w,
           /hasoft/article.png 1280w,
           /hasoft/article@small.png 800w,"
   sizes="100%"
@@ -53,18 +53,18 @@ _[@martihalik](http://martinhalik.cz) first designed the website in cooperation 
 ##Business cards
 <div class="portraits">
   <div class="portrait left">
-    <img class="mobile-portrait"
-    src="/hasoft/hasoft-business-cards-2.png"
-    srcset="/hasoft/hasoft-business-cards-2@2x.png 2000w,
+    <img class="lazyload mobile-portrait"
+    data-src="/hasoft/hasoft-business-cards-2.png"
+    data-srcset="/hasoft/hasoft-business-cards-2@2x.png 2000w,
             /hasoft/hasoft-business-cards-2.png 1280w,
             /hasoft/hasoft-business-cards-2@small.png 800w,"
     sizes="100%"
     alt="Business cards design">
   </div>
   <div class="portrait right">
-    <img class="mobile-portrait"
-    src="/hasoft/hasoft-business-cards.png"
-    srcset="/hasoft/hasoft-business-cards@2x.png 2000w,
+    <img class="lazyload mobile-portrait"
+    data-src="/hasoft/hasoft-business-cards.png"
+    data-srcset="/hasoft/hasoft-business-cards@2x.png 2000w,
             /hasoft/hasoft-business-cards.png 1280w,
             /hasoft/hasoft-business-cards@small.png 800w,"
     sizes="100%"
@@ -73,17 +73,17 @@ _[@martihalik](http://martinhalik.cz) first designed the website in cooperation 
 </div>
 
 ##Brand
-<img class="container-page"
-  src="/hasoft/hasoft-identity.png"
-  srcset="/hasoft/hasoft-identity@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/hasoft/hasoft-identity.png"
+  data-srcset="/hasoft/hasoft-identity@2x.png 2000w,
           /hasoft/hasoft-identity.png 1280w,
           /hasoft/hasoft-identity@small.png 800w,"
   sizes="100%"
   alt="Examples how to work with HA-SOFT brand">
 
-<img class="container-page"
-  src="/hasoft/hasoft-identity.png"
-  srcset="/hasoft/hasoft-logo@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/hasoft/hasoft-identity.png"
+  data-srcset="/hasoft/hasoft-logo@2x.png 2000w,
           /hasoft/hasoft-logo.png 1280w,
           /hasoft/hasoft-logo@small.png 800w,"
   sizes="100%"

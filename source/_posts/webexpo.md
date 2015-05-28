@@ -32,17 +32,17 @@ _We created identity for Webexpo 2014. The identity underlined that Webexpo is a
 </div>
 
 ##Website
-<img class="container-page"
-  src="/webexpo/webexpo-homepage.png"
-  srcset="/webexpo/webexpo-homepage@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/webexpo/webexpo-homepage.png"
+  data-srcset="/webexpo/webexpo-homepage@2x.png 2000w,
           /webexpo/webexpo-homepage.png 1280w,
           /webexpo/webexpo-homepage@small.png 800w,"
   sizes="100%"
   alt="Webexpo Homepage">
 
-<img class="container-page"
-  src="/webexpo/webexpo-speaker.png"
-  srcset="/webexpo/webexpo-speaker@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/webexpo/webexpo-speaker.png"
+  data-srcset="/webexpo/webexpo-speaker@2x.png 2000w,
           /webexpo/webexpo-speaker.png 1280w,
           /webexpo/webexpo-speaker@small.png 800w,"
   sizes="100%"
@@ -51,18 +51,18 @@ _We created identity for Webexpo 2014. The identity underlined that Webexpo is a
 ##Mobile app
 <div class="portraits">
   <div class="portrait left">
-    <img class="mobile-portrait"
-    src="/webexpo/webexpo-mobile-program.png"
-    srcset="/webexpo/webexpo-mobile-program@2x.png 2000w,
+    <img class="lazyload mobile-portrait"
+    data-src="/webexpo/webexpo-mobile-program.png"
+    data-srcset="/webexpo/webexpo-mobile-program@2x.png 2000w,
             /webexpo/webexpo-mobile-program.png 1280w,
             /webexpo/webexpo-mobile-program.png 800w,"
     sizes="100%"
     alt="Design of Webexpo mobile app">
   </div>
   <div class="portrait right">
-    <img class="mobile-portrait"
-    src="/webexpo/webexpo-mobile-upozorneni.png"
-    srcset="/webexpo/webexpo-mobile-upozorneni@2x.png 2000w,
+    <img class="lazyload mobile-portrait"
+    data-src="/webexpo/webexpo-mobile-upozorneni.png"
+    data-srcset="/webexpo/webexpo-mobile-upozorneni@2x.png 2000w,
             /webexpo/webexpo-mobile-upozorneni.png 1280w,
             /webexpo/webexpo-mobile-upozorneni.png 800w,"
     sizes="100%"
@@ -72,9 +72,9 @@ _We created identity for Webexpo 2014. The identity underlined that Webexpo is a
 
 ##Mailing
 
-<img class="container-page"
-  src="/webexpo/webexpo-newsletter.png"
-  srcset="/webexpo/webexpo-newsletter@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/webexpo/webexpo-newsletter.png"
+  data-srcset="/webexpo/webexpo-newsletter@2x.png 2000w,
           /webexpo/webexpo-newsletter.png 1280w,
           /webexpo/webexpo-newsletter@small.png 800w,"
   sizes="100%"
@@ -82,9 +82,9 @@ _We created identity for Webexpo 2014. The identity underlined that Webexpo is a
 
 ##T-shirts
 
-<img class="container-page"
-  src="/webexpo/webexpo-tshirts.png"
-  srcset="/webexpo/webexpo-tshirts@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/webexpo/webexpo-tshirts.png"
+  data-srcset="/webexpo/webexpo-tshirts@2x.png 2000w,
           /webexpo/webexpo-tshirts.png 1280w,
           /webexpo/webexpo-tshirts@small.png 800w,"
   sizes="100%"

@@ -32,9 +32,9 @@ _How to present quality work in “virtual reality”. Nowadays quality  is repr
 </div>
 
 ##One long homepage
-<img class="container-page"
-  src="/primehammer/primehammer-long-homepage.png"
-  srcset="/primehammer/primehammer-long-homepage@2x.png 2000w,
+<img class="lazyload container-page"
+  data-src="/primehammer/primehammer-long-homepage.png"
+  data-srcset="/primehammer/primehammer-long-homepage@2x.png 2000w,
           /primehammer/primehammer-long-homepage.png 1280w,
           /primehammer/primehammer-long-homepage@small.png 800w,"
   sizes="100%"
