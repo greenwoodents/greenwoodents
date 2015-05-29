@@ -102,14 +102,10 @@
     text-transform: uppercase;
     left: 20px;
 
-    &:after {
+    .ic-closing {
       content: '';
       width: 8px;
       height: 13px;
-      background-image: url(../images/close-ic.svg);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
       position: absolute;
       top: 0px;
       left: -13px;
@@ -183,6 +179,10 @@
       padding: 26px 2% 13px 31px;
     }
 
+    &.deferload a {
+      background-image: url('../images/menu-underline.svg');
+    }
+
     a {
       font-family: @sentinel;
       opacity: .27;
@@ -190,7 +190,6 @@
       font-weight: 700;
       cursor: pointer;
 
-      background-image: url('../images/menu-underline.svg');
       background-repeat: repeat-x;
       background-position: bottom;
 

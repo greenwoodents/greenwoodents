@@ -31,8 +31,9 @@
   cursor: pointer;
   padding: 20px 20px;
   box-sizing: border-box;
+  cursor: pointer;
 
-  &::before {
+  .double-arr-ic {
     transition: 300ms;
     content: '';
     width: 10px;
@@ -41,17 +42,13 @@
     position: absolute;
     top: 20px;
     right: -1px;
-    background-image: url(../images/double-arr-hp.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
     .translateX(0px);
 
     -webkit-animation: puls-right 4500ms 2000ms infinite ease-in-out; /* Safari 4+ */
     animation:         puls-right 4500ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
   }
 
-  &:hover::before {
+  &:hover .double-arr-ic {
     transition: 300ms;
     right: -28px;
 
@@ -163,11 +160,6 @@
     right: 20px;
     width: 34px;
     height: 40px;
-    background-image: url(../images/logo.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-
     opacity: 0;
     visibility: hidden;
     .translateY(-10px);

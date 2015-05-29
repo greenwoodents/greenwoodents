@@ -1,11 +1,38 @@
+.spritegen(@x: 0, @y: 0, @width: 0, @height: 0) {
+    background-position: @x @y;
+    width: @width;
+    height: @height;
+}
+
+.clouds {
+
+  li {
+    background-image: url(../images/hp-sprite.png);
+    background-repeat: no-repeat;
+    display: block;
+  }
+
+  &.inline-bottom-clouds li {
+    .spritegen(-5px, -5px, 198px, 19px);
+  }
+
+  &.inline-small-clouds li {
+     .spritegen(-213px, -5px, 146px, 14px);
+  }
+
+  &.inline-top-clouds li {
+    .spritegen(-213px, -29px, 66px, 16px);
+  }
+
+  &.inline-clouds li {
+    .spritegen(-5px, -55px, 382px, 31px);
+  }
+}
+
 .clouds {
   li {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
     position: absolute;
     z-index: 45;
-    display: block;
     opacity: 0;
   }
 }
@@ -47,10 +74,6 @@
   position: absolute;
 
   li {
-    width: 382px;
-    height: 37px;
-    background-image: url(../images/hp-mrak-wide.png);
-
 
     &:nth-child(1) {
       -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
@@ -82,10 +105,6 @@
   position: absolute;
 
   li {
-    width: 146px;
-    height: 14px;
-    background-image: url(../images/hp-mrak-small.png);
-
     &:nth-child(1) {
       -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
       animation-delay: 2s;
@@ -106,7 +125,7 @@
 }
 @keyframes small-mrak {
   0%   { opacity: 0;  .translate3d(0%, 0, 0);}
-  100% { opacity: 8.;  .translate3d(200%, 0, 0);}
+  100% { opacity: .8;  .translate3d(200%, 0, 0);}
 }
 
 
@@ -115,9 +134,6 @@
   position: absolute;
 
   li {
-    width: 198px;
-    height: 19px;
-    background-image: url(../images/hp-mrak-bottom.png);
 
     &:nth-child(1) {
       -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
@@ -143,9 +159,6 @@
   position: absolute;
 
   li {
-    width: 146px;
-    height: 14px;
-    background-image: url(../images/hp-mrak-up.png);
 
     &:nth-child(1) {
       -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */

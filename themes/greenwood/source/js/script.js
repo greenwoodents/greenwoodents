@@ -1,15 +1,17 @@
 Pace.once('done', addLoad);
+
 function addLoad() {
   document.querySelector('.body-wrap').classList.add('loaded');
   document.body.classList.add('web-loaded');
-  console.log('LOADED');
+
+  defferAll();
   feedInit();
 }
 
 
 
 
-//Helper function
+//Helper functions
   var addEvent = function(elem, type, eventHandle) {
     if (elem == null || typeof(elem) == 'undefined') return;
     if ( elem.addEventListener ) {
@@ -19,6 +21,13 @@ function addLoad() {
     } else {
         elem["on" + type]=eventHandle;
     }
+  };
+
+  var defferAll = function() {
+    [].forEach.call(document.querySelectorAll('.defer'), function(el,i,a) {
+      el.classList.remove('defer');
+      el.classList.add('deferload');
+    });
   };
 ////
 
