@@ -1,15 +1,19 @@
 <%- partial('_partial/head') %>
 
-<body>
+<body class="<% if (is_home()){ %>body-homepage<% } else { %>body-post<% } %>">
   <%- partial('_partial/loader') %>
   <div class="body-wrap">
     <section class='main' id="main"><%- body %></section>
     <%- partial('_partial/menu') %>
   </div>
 
-  <%- js('js/imageload') %>
+
   <%- js('js/libs') %>
   <%- js('js/script') %>
 
 </body>
 </html>
+
+
+
+
