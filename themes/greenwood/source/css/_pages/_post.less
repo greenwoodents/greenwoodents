@@ -154,7 +154,7 @@
         top: 2px;
         margin-top: 13px;
 
-        img {
+        .participants-head {
           width: 72px;
         }
 
@@ -182,6 +182,53 @@
 
         a.link-to-member:hover  {
           opacity: 1;
+        }
+      }
+    }
+
+    @media @large {
+      overflow: visible;
+
+
+      .team {
+        max-width: none;
+        display: inline-block;
+        margin: 57px 20px 0 20px;
+        min-width: 800px;
+        max-height: 164px;
+
+        .team-member {
+          margin: 0;
+          display: inline-block;
+          width: 33%;
+          cursor: pointer;
+
+          .participants-head {
+            opacity: 0.07;
+            z-index: -1;
+            width: 111px;
+            display: block;
+            position: relative;
+            top: -93px;
+            right: 0;
+            transition: all .5s ease-in-out, opacity .5s ease-in-out;
+          }
+
+          &:hover .participants-head {
+            top: -113px;
+            opacity: 1;
+          }
+
+          .members-name {
+            position: relative;
+            transition: top .5s ease-in-out;
+            top: 0;
+            overflow: hidden;
+          }
+
+          &:hover .members-name {
+            top: 20px;
+          }
         }
       }
     }
@@ -224,7 +271,7 @@
 
 
 
-@media (min-width: 960px) {
+@media @large {
   .line, .line2 {
     display: none;
   }
@@ -449,54 +496,6 @@
         float: right;
       }
     }
-
-    .participants {
-      overflow: visible;
-
-      .team {
-        max-width: none;
-        display: inline-block;
-        margin: 57px 20px 0 20px;
-        min-width: 800px;
-        max-height: 164px; //problem s IE ... posouval vse dolu
-
-        .team-member {
-          margin: 0;
-          display: inline-block;
-          width: 33%;
-
-          img {
-            opacity: 0.07;
-            z-index: -1;
-            width: 111px;
-            display: block;
-          }
-
-          .first, .second, .third {
-            position: relative;
-            top: -93px;
-            right: 0;
-            transition: all .5s ease-in-out, opacity .5s ease-in-out;
-          }
-
-          &:hover .first, &:hover .second, &:hover .third {
-            top: -113px;
-            opacity: 1;
-          }
-
-          .members-name {
-            position: relative;
-            transition: top .5s ease-in-out;
-            top: 0;
-            overflow: hidden; // resi IE problem s posouvanim ostatnich zucastnenych
-          }
-
-          &:hover .members-name {
-            top: 20px;
-          }
-        }
-      }
-    }
   }
 
   .exception {
@@ -522,7 +521,7 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media @xlarge {
   .tv {
     width: 58%;
     max-width: none;

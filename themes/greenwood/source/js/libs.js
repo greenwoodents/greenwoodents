@@ -84,7 +84,6 @@ window.lazySizesConfig.preloadAfterLoad = true;
                   utils.removeClass(container, "swipe-closing");
                 }, 500)
 
-                console.log(utils);
             } else if ( ! utils.hasClass(container, options.accessClasses[access]) && options.direction.indexOf(access) !== -1) {
             // If the side we're trying to expose isn't already open and if we're allowed to expose the panel
                 utils.addClass(container, options.accessClasses[access]);

@@ -1,0 +1,12 @@
+jh:
+  name: "Jan Henneberg"
+  link: "http://dribbble.com/henne22"
+  img:  "../images/janhenneberg.png"
+fd:
+  name: "Filip Daniško"
+  link: "http://github.com/fdanisko"
+  img:  "../images/filipdanisko.png"
+mh:
+  name: "Martin Halík"
+  link: "http://dribbble.com/martinhalik"
+  img:  "../images/martinhalik.png"

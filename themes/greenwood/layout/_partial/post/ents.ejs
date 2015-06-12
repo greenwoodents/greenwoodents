@@ -1,36 +1,25 @@
-<div id="participants" class="participants">
+<div class="participants">
   <h2 class="project-color">ENTS WORKING ON THIS</h2>
   <div id="team" class="team">
-    <% if (post.jh === true) { %>
-    <div class="team-member">
-      <div class="members-name">
-        <p class="Sentinel">Jan Henneberg</p>
-        <a href="http://dribbble.com/henne22" class="link-to-member">dribbble.com/henne22</a>
-      </div>
-      <img class='lazyload' data-src="../images/janhenneberg.png" class="third">
-    </div>
-    <% } %>
+   <% var ents = site.data.ents,
+          keys = Object.keys(ents),
+          key = "",
+          ent = "";
 
-    <% if (post.fd === true) { %>
-    <div class="team-member">
-      <div class="members-name">
-        <p class="Sentinel">Filip Daniško</p>
-        <a href="http://github.com/fdanisko" class="link-to-member">github.com/fdanisko</a>
+    for (var i = 0; i < keys.length; i++) {
+      key = keys[i];
+      ent = ents[key];
+      if(post[key] === true){ %>
+      <div class="team-member">
+        <div class="members-name">
+          <p class="Sentinel"><%- ent.name %></p>
+          <a href="<%- ent.link %>" class="link-to-member"><%- ent.link %></a>
+        </div>
+        <img class='lazyload participants-head ' data-src="<%- ent.img %>" >
       </div>
-      <img class='lazyload' data-src="../images/filipdanisko.png" class="second">
-    </div>
-    <% } %>
+    <% }}; %>
 
 
-    <% if (post.mh === true){ %>
-    <div class="team-member">
-      <div class="members-name">
-        <p class="Sentinel">Martin Halík</p>
-        <a href="http://dribbble.com/martinhalik" class="link-to-member">dribbble.com/martinhalik</a>
-      </div>
-      <img class='lazyload' data-src="../images/martinhalik.png" class="first">
-    </div>
-    <% } %>
 
   </div>
 </div>

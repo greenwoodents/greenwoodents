@@ -30,8 +30,9 @@
   </div>
 
   <ul class="js-filtr-content menu-wrap">
-  <% var posts = site.posts.sort('date', -1) %>
-  <% posts.each(function(post, i){ %>
+  <% var posts = site.posts.sort('date', -1);
+
+     posts.each(function(post, i){ %>
     <% var i = i + 1 %>
     <li filter-class="<%- post.filterSetting %>" class="menu-block">
       <a href="<%- url_for(post.path) %>" class="project-overlay" >
