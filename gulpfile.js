@@ -1,11 +1,13 @@
 var gulp = require('gulp'),
     path = require('path'),
     cssmin = require('gulp-cssmin'),
-    del = require('del');
-    imagemin = require('gulp-imagemin');
-    pngquant = require('imagemin-pngquant');
-    uglify = require('gulp-uglify');
-    minifyHTML = require('gulp-minify-html');
+    del = require('del'),
+    imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant'),
+    uglify = require('gulp-uglify'),
+    minifyHTML = require('gulp-minify-html'),
+    gulpif = require('gulp-if'),
+    useref = require('gulp-useref');
 
 gulp.task('css', function() {
    gulp.src('public/css/style.css')
@@ -18,9 +20,14 @@ gulp.task('scripts', function() {
    .pipe(gulp.dest('./dist/js/'));
 });
 gulp.task('html', function() {
-   gulp.src('public/**/*.html')
-   .pipe(minifyHTML())
-   .pipe(gulp.dest('./dist/'));
+  var assets = useref.assets();
+
+  return gulp.src('public/**/*.html')
+    .pipe(assets)
+    .pipe(gulpif('*.js', uglify()))
+    .pipe(assets.restore())
+    .pipe(useref())
+    .pipe(gulp.dest('./dist/'));
 });
 gulp.task('images', function(cb) {
   gulp.src('source/**/*.{png,jpg,jpeg,ico,svg}')
