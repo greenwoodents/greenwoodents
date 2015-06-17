@@ -19,6 +19,13 @@ gulp.task('scripts', function() {
    .pipe(uglify())
    .pipe(gulp.dest('./dist/js/'));
 });
+gulp.task('fonts', function() {
+   gulp.src('public/fonts/**/*.eot')
+   .pipe(gulp.dest('./dist/fonts/'));
+
+  gulp.src('public/fonts/**/*.css')
+   .pipe(gulp.dest('./dist/fonts/'));
+});
 gulp.task('html', function() {
   var assets = useref.assets();
 
@@ -52,7 +59,7 @@ gulp.task('images:copy', function() {
    .pipe(gulp.dest('./dist/'));
 });
 //default
-gulp.task('default', ['css', 'scripts', 'html', 'images:copy']);
+gulp.task('default', ['html', 'css', 'scripts', 'fonts', 'images:copy']);
 
 
 
