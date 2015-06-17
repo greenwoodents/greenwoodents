@@ -2,7 +2,7 @@ date: 2015-03-02 01:00:00
 
 title: Webexpo
 subTitle: 1 weekend, 1 400 web professionals
-web: www.webexpo.com
+web: www.webexpo.cz
 country: Czech republic
 
 howMuch: $ 1 850 ~

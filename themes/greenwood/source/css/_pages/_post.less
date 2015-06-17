@@ -41,13 +41,14 @@
 
     &:hover {
       cursor: pointer;
+      @media @large {
+        .details:after {
+          top: 22px;
+        }
 
-      .details:after {
-        top: 22px;
-      }
-
-      .default-detail .h2 {
-        top: 32px;
+        .default-detail .h2 {
+          top: 32px;
+        }
       }
     }
 
@@ -67,8 +68,12 @@
 
     &.clicked {
       .alternative-detail {
-        height: 50px;
+        height: 40px;
         opacity: 1;
+
+        @media @large {
+          height: 50px;
+        }
       }
       .default-detail {
         height: 0;
@@ -152,25 +157,34 @@
       .team-member {
         position: relative;
         top: 2px;
-        margin-top: 13px;
+        margin-top: 25px;
 
         .participants-head {
           width: 72px;
         }
 
-        .third {
-          position: absolute; right: -8px; top: -37px;
+        &:nth-child(1) {
+          margin-top: 0;
         }
 
-        .second {
-          position: absolute; right: -36px; top: -38px;
+
+        &:nth-child(odd) {
+          .participants-head {
+            position: absolute; right: -23px; top: -38px;
+          }
         }
 
-        .first {
-          position: absolute; right: -23px; top: -24px;
+        &:nth-child(even) {
+          .participants-head {
+            position: absolute; right: -36px; top: -38px;
+          }
         }
 
-        a.link-to-member  {
+        .name {
+          font-size: 20px;
+        }
+
+        .link-to-member  {
           margin-top: 2px;
           font-family: @gotham;
           font-size: 10px;
@@ -178,17 +192,37 @@
           line-height: 12px;
           display: inline-block;
           font-style: normal;
+          color: #979797;
         }
 
-        a.link-to-member:hover  {
+        .link-to-member:hover  {
           opacity: 1;
+        }
+      }
+
+      @media screen and (min-width: 680px) and (max-width: 960px) {
+        max-width: 100%;
+
+        .team-member {
+          display: inline-block;
+        }
+
+        .members-name {
+          margin-right: 90px;
+        }
+
+        .team-member:nth-child(odd),
+        .team-member:nth-child(even) {
+          .participants-head {
+            right: 14px;
+            top: -24px;
+          }
         }
       }
     }
 
     @media @large {
       overflow: visible;
-
 
       .team {
         max-width: none;
@@ -203,15 +237,18 @@
           width: 33%;
           cursor: pointer;
 
-          .participants-head {
-            opacity: 0.07;
-            z-index: -1;
-            width: 111px;
-            display: block;
-            position: relative;
-            top: -93px;
-            right: 0;
-            transition: all .5s ease-in-out, opacity .5s ease-in-out;
+          &:nth-child(odd),
+          &:nth-child(even) {
+            .participants-head {
+              opacity: 0.07;
+              z-index: -1;
+              width: 111px;
+              display: block;
+              position: relative;
+              top: -93px;
+              right: 0;
+              transition: all .5s ease-in-out, opacity .5s ease-in-out;
+            }
           }
 
           &:hover .participants-head {
@@ -618,6 +655,10 @@
   position: relative;
   top: 36px;
   display: inline;
+
+  @media @medium {
+    top: 0px;
+  }
 
   @media @xmedium {
     top: 24px;

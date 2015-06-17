@@ -12,8 +12,8 @@
       if(post[key] === true){ %>
       <div class="team-member">
         <div class="members-name">
-          <p class="Sentinel"><%- ent.name %></p>
-          <a href="<%- ent.link %>" class="link-to-member"><%- ent.link %></a>
+          <p class="Sentinel name"><%- ent.name %></p>
+          <a href="<%- ent.link %>" class="link-to-member"><%- ent.link.replace('http://', '') %></a>
         </div>
         <img class='lazyload participants-head ' data-src="<%- ent.img %>" >
       </div>

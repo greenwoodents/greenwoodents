@@ -113,8 +113,11 @@
     }
 
     &-smoke {
-      -webkit-animation: smoke 20000ms 2000ms infinite ease-in-out; /* Safari 4+ */
-      animation:         smoke 20000ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
+
+      @media @large {
+        -webkit-animation: smoke 20000ms 2000ms infinite ease-in-out; /* Safari 4+ */
+        animation:         smoke 20000ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
+      }
     }
 
     &-front-tree {
