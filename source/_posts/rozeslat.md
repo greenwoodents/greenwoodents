@@ -18,6 +18,7 @@ projectPreviewImage: /rozeslat/rozeslat-project-preview.png
 
 projectImage: /rozeslat/rozeslat-preview@2x.png
 projectImagePosition:
+projectImagePositionLeft:
 
 mh: false
 jh: true

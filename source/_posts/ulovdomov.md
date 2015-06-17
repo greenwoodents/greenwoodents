@@ -17,7 +17,8 @@ projectColor: "#E74D3D"
 projectPreviewImage: /ulovdomov/ulovdomov-project-preview.png
 
 projectImage: /ulovdomov/ulovdomov-preview@2x.png
-projectImagePosition:
+projectImagePosition: -20%
+projectImagePositionLeft:
 
 mh: false
 jh: true

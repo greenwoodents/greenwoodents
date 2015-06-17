@@ -17,7 +17,8 @@ projectColor: "#6B6F86"
 projectPreviewImage: /primehammer/primehammer-project-preview.png
 
 projectImage: /primehammer/primehammer-preview@2x.png
-projectImagePosition:
+projectImagePosition: -19%
+projectImagePositionLeft:
 
 mh: false
 jh: true

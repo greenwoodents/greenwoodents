@@ -17,7 +17,8 @@ projectColor: "#169DD4"
 projectPreviewImage: /khanovaskola/khanovaskola-project-preview@medium.png
 
 projectImage: /khanovaskola/khanovaskola-preview@2x.png
-projectImagePosition:
+projectImagePosition: -20%
+projectImagePositionLeft: 0%
 
 mh: true
 jh: false

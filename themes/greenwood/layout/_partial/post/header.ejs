@@ -9,7 +9,7 @@
     <div id="screen" class="screen">
       <div id="main-preview" class="main-preview">
         <img src="<%- post.projectImage %>" class="main-preview-image"
-        style="top:<% if(post.projectImagePosition){ %> <%- post.projectImagePosition %> <% } else { %>-40%<% } %>;">
+        style="top:<% if(post.projectImagePosition){ %> <%- post.projectImagePosition %> <% } else { %>-40%<% } %>;left:<% if(post.projectImagePositionLeft){ %> <%- post.projectImagePositionLeft %> <% } else { %>0%<% } %>;">
       </div>
       <div id="screen-overlay" class="screen-overlay"></div>
     </div>

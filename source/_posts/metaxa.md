@@ -18,6 +18,7 @@ projectPreviewImage: /metaxa/metaxa-project-preview.png
 
 projectImage: /metaxa/metaxa-preview@2x.png
 projectImagePosition:
+projectImagePositionLeft:
 
 mh: true
 jh: true

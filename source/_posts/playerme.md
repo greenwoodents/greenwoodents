@@ -17,7 +17,8 @@ projectColor: "#AD50FF"
 projectPreviewImage: /playerme/playerme-project-preview.png
 
 projectImage: /playerme/playerme-preview@2x.png
-projectImagePosition:
+projectImagePosition: -30%
+projectImagePositionLeft: -3%
 
 mh: true
 jh: false

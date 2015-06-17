@@ -17,7 +17,8 @@ projectColor: "#FF5AAF"
 projectPreviewImage: /webexpo/webexpo-project-preview.png
 
 projectImage: /webexpo/webexpo-preview@2x.png
-projectImagePosition:
+projectImagePosition: -7%
+projectImagePositionLeft:
 
 mh: true
 jh: true

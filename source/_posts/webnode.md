@@ -16,7 +16,8 @@ projectColor: "#278DCA"
 projectPreviewImage: /webnode/webnode-project-preview.png
 
 projectImage: /webnode/webnode-preview@2x.png
-projectImagePosition:
+projectImagePosition: -48%
+projectImagePositionLeft:
 
 mh: true
 jh: false

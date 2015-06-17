@@ -17,7 +17,8 @@ projectColor: "#E7AB4A"
 projectPreviewImage: /hasoft/hasoft-project-preview.png
 
 projectImage: /hasoft/hasoft-preview@2x.png
-projectImagePosition:
+projectImagePosition: -38%
+projectImagePositionLeft: 0%
 
 
 mh: true

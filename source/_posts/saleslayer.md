@@ -17,7 +17,8 @@ projectColor: "#0FA474"
 projectPreviewImage: /saleslayer/saleslayer-project-preview.png
 
 projectImage: /saleslayer/saleslayer-preview@2x.png
-projectImagePosition:
+projectImagePosition: -30%
+projectImagePositionLeft:
 
 mh: true
 jh: false
