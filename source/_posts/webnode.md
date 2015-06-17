@@ -30,13 +30,13 @@ _It was all about designing the best homepage in the world. This project was led
 </div>
 
 ##3rd round
-<img class="lazyload container-page"
-  data-src="/webnode/webnode-3rd-round-chinese.png"
-  data-srcset="/webnode/webnode-3rd-round-chinese@2x.png 2000w,
-          /webnode/webnode-3rd-round-chinese.png 1280w,
-          /webnode/webnode-3rd-round-chinese@small.png 800w,"
-  sizes="100%"
-  alt="3rd version Chinese typo">
+{% responsive /webnode/webnode-3rd-round-chinese.png %}
+3rd version Chinese typo
+{% endresponsive %}
+
+{% responsive /webnode/webnode-3rd-round-accountant.png,/webnode/webnode-3rd-round-architect.png %}
+Accountant homepage,3rd as architect version
+{% endresponsive %}
 
 <img class="lazyload container-page left"
   data-src="/webnode/webnode-3rd-round-accountant.png"
