@@ -38,6 +38,16 @@
       transition: 500ms;
     }
 
+    @media @small {
+      transition: 200ms;
+      padding: 12px 25px;
+      &:active{
+      border-radius: 2px;
+      padding: 10px 25px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.13);
+      }
+    }
+
 
     &:hover {
       cursor: pointer;
@@ -105,6 +115,10 @@
   h2 {
     padding: 45px 0 13px;
     text-transform: uppercase;
+
+    @media @small {
+      padding-top: 15px;
+    }
   }
 
   .portraits {
@@ -482,7 +496,6 @@
     }
 
     .Sentinel {
-      //margin-left: 9px;
       font-size: 20px;
       position: relative;
       line-height: 20px;
@@ -509,6 +522,7 @@
     h2 {
       clear: both;
       padding: 25px 0 25px 0;
+
     }
 
     .portraits {
@@ -651,36 +665,35 @@
 
 //values
 //
-.values .h2 {
-  position: relative;
-  top: 36px;
-  display: inline;
-
-  @media @medium {
+.values {
+  p {
+    font-size: 20px;
+    margin-top: 5px;
+  }
+  .h2 {
+    position: relative;
     top: 0px;
-  }
-
-  @media @xmedium {
-    top: 24px;
-  }
-
-  @media @xlarge {
-    top: 30px;
-  }
-}
+    display: inline;
 
 
-@media @small {
-  .links {
-    i, a {
-      font-weight: 700 !important;
+    @media @xmedium {
+      top: 24px;
+    }
+
+    @media @xlarge {
+      top: 30px;
     }
   }
 }
 
+
+
 .links {
-  a {
+  a,i {
     font-style: italic;
+    color: #212E29;
+    opacity: 0.5;
+    font-weight: 400 !important;
   }
 }
 

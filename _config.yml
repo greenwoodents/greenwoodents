@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: GreenWoodEnts.com
+title: Greenwoodents.com
 subtitle: Time reveals the Quality
 description:
 author: Treebeard
@@ -69,3 +69,7 @@ theme: greenwood
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type:
+
+
+browser_sync:
+  xip: true
