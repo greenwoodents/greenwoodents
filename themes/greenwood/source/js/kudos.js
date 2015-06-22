@@ -6,17 +6,20 @@ var Kudos = (function(){
   var visible = {};
 
   var config = {
-    startingNumber: 56,
+    startingNumber: 58,
     wrapper: document.querySelector(".js-kudos"),
     container: document.querySelector(".kudos-counter"),
+    text: document.querySelector('.js-kudos > p'),
     numberClass: 'kudos-number',
     animateClass: 'kudos-animate',
     animation: {
       speed: 300,
       numberPosition: [25,0],
-      helperPosition: [0,0]
+      helperPosition: [13,0]
     }
   };
+
+  var animationRuning = false;
 
   console.log(config);
 
@@ -38,7 +41,7 @@ var Kudos = (function(){
 
       var element = document.createElement('DIV');
           element.classList.add(config.numberClass);
-          element.innerHTML = '<p class="kudos-number-helper" style="top:'+config.animation.helperPosition[0]+'px; opacity: .1;">'+ numbers.helpers[i] +'</p>' +
+          element.innerHTML = '<p class="kudos-number-helper" style="top:'+config.animation.helperPosition[0]+'px; opacity: 0;">'+ numbers.helpers[i] +'</p>' +
                               '<p class="kudos-number-visible" style="top:'+config.animation.numberPosition[0]+'px; opacity: 1;">'+ numbers.raw[i] || 0 +'</p>';
 
           if(!(numbers.helpers[i] === numbers.raw[i])){
@@ -69,6 +72,10 @@ var Kudos = (function(){
       numbers.helpers[o] = helperNumber.charAt(o);
     };
 
+    //add liteners
+    config.wrapper.addEventListener("mouseover", hoverListener, false);
+    config.wrapper.addEventListener("mouseout", hoverOutListener, false);
+
     //generate numbers
     generateNumbers();
   };
@@ -83,24 +90,44 @@ var Kudos = (function(){
       var helper = el.querySelector('.kudos-number-helper');
       var number = el.querySelector('.kudos-number-visible');
 
-      var start = null;
-
-
-      function step(timestamp) {
-        if (!start) start = timestamp;
-        var progress = timestamp - start;
-        number.style.top = Math.min(progress/10, 60) + "px";
-        console.log(number.style.top);
-        if (progress < 2000) {
-          window.requestAnimationFrame(step);
+      Velocity(number, {top: [36, 26], opacity: [1,1]}, {duration: 500, easing: "easeIn",
+        complete: function(){
+          Velocity(helper, {top: [26, 8]}, {delay: 500, duration: 2200, easing: [ 500, 12 ], begin: function(){
+            helper.classList.add('showme');
+            done();
+          }});
+          Velocity(number, {top: [46, 36], opacity: [0, 1]}, {delay: 100, duration: 500, easing: "easeIn"});
         }
-      }
-
-      window.requestAnimationFrame(step);
+      });
     });
   };
   //make public
   visible.animate = animate;
+
+  var hoverListener = function(e) {
+    console.log(e);
+
+    if(!(animationRuning === 'finished')){
+      config.text.innerHTML = "Don't move!";
+    }
+
+
+    if(animationRuning === false){
+      animate();
+      animationRuning = true;
+    }
+  };
+
+  var hoverOutListener = function(e) {
+
+  };
+
+  var done = function() {
+    animationRuning = 'finished';
+    config.text.innerHTML = "Thanks!";
+    console.log('animation done');
+  }
+  visible.done = done;
 
 
   init(config.startingNumber);
