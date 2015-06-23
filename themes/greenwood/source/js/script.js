@@ -233,6 +233,9 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
   //Components
   var components = function(data) {
+
+    window.location.hash = '😮';
+
     if (data) {
       var page = data[0].getAttribute('page') || "Home";
       document.querySelector('.menu-page-title').innerHTML = page;

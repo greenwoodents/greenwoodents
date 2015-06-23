@@ -3,33 +3,76 @@ var Kudos = (function(){
   //todo
   // - callback
   // - display funkce pro menu, asi urpavit generate numbers
-  var visible = {};
+  var visible = {},
 
-  var config = {
+  config = {
     startingNumber: 58,
-    wrapper: document.querySelector(".js-kudos"),
-    container: document.querySelector(".kudos-counter"),
-    text: document.querySelector('.js-kudos > p'),
+    wrapper: ".js-kudos",
+    container: ".kudos-counter",
+    text: '.js-kudos > p',
     numberClass: 'kudos-number',
     animateClass: 'kudos-animate',
     animation: {
-      speed: 300,
       numberPosition: [25,0],
-      helperPosition: [13,0]
+      helperPosition: [8,0]
+    },
+    dialog: {
+      intro: "Kudos",
+      hover: "Don't move!",
+      finish: "Thanks!",
     }
-  };
+  },
 
-  var animationRuning = false;
+  configInit =  false,
+  animations = [],
+  animationRuning = false,
+  animationFinish = false,
 
-  console.log(config);
-
-  var numbers = {
+  numbers = {
     raw: [],
     helpers: []
   };
-  //make public
-  visible.numbers = numbers;
+  //make config public
   visible.config = config;
+
+  var init = function(startingNumberUser){
+
+    if(configInit === false){
+      config.wrapper = document.querySelector(config.wrapper);
+      config.container = document.querySelector(config.container);
+      config.text = document.querySelector(config.text);
+
+      configInit = true;
+    }
+
+    if(startingNumberUser){
+      config.startingNumber = startingNumberUser;
+    }
+
+    //make raw numbers
+    var number = config.startingNumber.toString();
+    for (var i = 0; i < number.length; i++) {
+      numbers.raw[i] = number.charAt(i);
+    };
+
+    //make helpers
+    var helperNumber = (config.startingNumber + 1).toString();
+    for (var o = 0; o < helperNumber.length; o++) {
+      numbers.helpers[o] = helperNumber.charAt(o);
+    };
+
+    //add liteners
+    config.wrapper.addEventListener("mouseover", hoverListener, false);
+    config.wrapper.addEventListener("mouseleave", hoverOutListener, false);
+
+    //generate numbers
+    generateNumbers();
+
+    //prepareAnimation
+    prepareAnimation();
+  };
+  //make public
+  visible.init = init;
 
   var generateNumbers = function() {
     var docFrag = document.createDocumentFragment();
@@ -53,84 +96,63 @@ var Kudos = (function(){
     config.container.innerHTML = "";
     config.container.appendChild(docFrag);
   };
-
-  var init = function(startingNumber){
-
-    if(startingNumber){
-      config.startingNumber = startingNumber;
-    }
-
-    //make raw numbers
-    var number = config.startingNumber.toString();
-    for (var i = 0; i < number.length; i++) {
-      numbers.raw[i] = number.charAt(i);
-    };
-
-    //make helpers
-    var helperNumber = (config.startingNumber + 1).toString();
-    for (var o = 0; o < helperNumber.length; o++) {
-      numbers.helpers[o] = helperNumber.charAt(o);
-    };
-
-    //add liteners
-    config.wrapper.addEventListener("mouseover", hoverListener, false);
-    config.wrapper.addEventListener("mouseout", hoverOutListener, false);
-
-    //generate numbers
-    generateNumbers();
-  };
-  //make public
-  visible.init = init;
-
-
-  var animate = function() {
+  var prepareAnimation = function() {
     var elToAnimate = document.querySelectorAll('.'+config.animateClass);
 
     [].forEach.call(elToAnimate, function(el,i,a) {
       var helper = el.querySelector('.kudos-number-helper');
       var number = el.querySelector('.kudos-number-visible');
 
-      Velocity(number, {top: [36, 26], opacity: [1,1]}, {duration: 500, easing: "easeIn",
-        complete: function(){
-          Velocity(helper, {top: [26, 8]}, {delay: 500, duration: 2200, easing: [ 500, 12 ], begin: function(){
-            helper.classList.add('showme');
-            done();
-          }});
-          Velocity(number, {top: [46, 36], opacity: [0, 1]}, {delay: 100, duration: 500, easing: "easeIn"});
-        }
-      });
+      var tl = new TimelineLite({paused:true});
+      tl.to(number, 0.5, {top: 36})
+      .to(number, 0.5, {top: 46, opacity: 0})
+      .call(function(){done();})
+      .to(helper, 1, {opacity: 1}, '-=0.25')
+      .to(helper, 2.2, {top: 25, ease:Elastic.easeOut}, '-=1');
+
+      animations[i] = tl;
     });
   };
-  //make public
-  visible.animate = animate;
-
-  var hoverListener = function(e) {
-    console.log(e);
-
-    if(!(animationRuning === 'finished')){
-      config.text.innerHTML = "Don't move!";
+  var animate = function() {
+    if(animationFinish === false){
+      [].forEach.call(animations, function(anim,i,a) {
+        anim.restart();
+      });
     }
-
-
+  };
+  var hoverListener = function(e) {
+    if(animationFinish === false){
+      config.text.innerHTML = config.dialog.hover;
+    }
     if(animationRuning === false){
       animate();
       animationRuning = true;
     }
   };
-
   var hoverOutListener = function(e) {
-
+    if(animationFinish === false){
+      [].forEach.call(animations, function(anim,i,a) {
+        anim.reverse();
+      });
+      animationRuning = false;
+      config.text.innerHTML = config.dialog.intro;
+    }
   };
-
   var done = function() {
-    animationRuning = 'finished';
-    config.text.innerHTML = "Thanks!";
-    console.log('animation done');
-  }
-  visible.done = done;
+    animationFinish = true;
+    animationRuning = false;
+    config.text.innerHTML = config.dialog.finish;
 
+    //user code
+    extendDone();
+  }
+
+
+  //callback
+  var extendDone = function() {}
+  visible.extendDone = extendDone;
 
   init(config.startingNumber);
   return visible;
 })();
-console.log(Kudos.numbers);
+console.log(Kudos);
