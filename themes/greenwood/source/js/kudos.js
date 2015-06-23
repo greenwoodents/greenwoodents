@@ -37,6 +37,11 @@ var Kudos = (function(){
 
   var init = function(startingNumberUser){
 
+    numbers = {
+      raw: [],
+      helpers: []
+    };
+
     if(configInit === false){
       config.wrapper = document.querySelector(config.wrapper);
       config.container = document.querySelector(config.container);
@@ -95,10 +100,7 @@ var Kudos = (function(){
           docFrag.appendChild(element);
     });
 
-    console.log(docFrag);
-    console.log(config.container.innerHTML);
     config.container.innerHTML = "";
-    console.log(config.container.innerHTML);
     config.container.appendChild(docFrag);
   };
   var prepareAnimation = function() {
