@@ -6,7 +6,7 @@ var Kudos = (function(){
   var visible = {},
 
   config = {
-    startingNumber: 58,
+    startingNumber: 59,
     wrapper: ".js-kudos",
     container: ".kudos-counter",
     text: '.js-kudos > p',
@@ -77,6 +77,7 @@ var Kudos = (function(){
   var generateNumbers = function() {
     var docFrag = document.createDocumentFragment();
 
+
     [].forEach.call(numbers.helpers, function(num,i,a) {
       if(numbers.raw[i] === undefined){
         numbers.raw[i] = "";
@@ -93,10 +94,18 @@ var Kudos = (function(){
 
           docFrag.appendChild(element);
     });
+
+    console.log(docFrag);
+    console.log(config.container.innerHTML);
     config.container.innerHTML = "";
+    console.log(config.container.innerHTML);
     config.container.appendChild(docFrag);
   };
   var prepareAnimation = function() {
+    animations = [];
+    animationRuning = false;
+    animationFinish = false;
+
     var elToAnimate = document.querySelectorAll('.'+config.animateClass);
 
     [].forEach.call(elToAnimate, function(el,i,a) {
@@ -121,6 +130,7 @@ var Kudos = (function(){
     }
   };
   var hoverListener = function(e) {
+    console.log('hover');
     if(animationFinish === false){
       config.text.innerHTML = config.dialog.hover;
     }
@@ -142,6 +152,8 @@ var Kudos = (function(){
     animationFinish = true;
     animationRuning = false;
     config.text.innerHTML = config.dialog.finish;
+
+    window.location.hash = '😮';
 
     //user code
     extendDone();
