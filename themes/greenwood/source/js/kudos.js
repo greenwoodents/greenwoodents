@@ -6,7 +6,7 @@ var Kudos = (function(){
   var visible = {},
 
   config = {
-    startingNumber: 59,
+    startingNumber: 0,
     wrapper: ".js-kudos",
     container: ".kudos-counter",
     text: '.js-kudos > p',
@@ -23,7 +23,10 @@ var Kudos = (function(){
     }
   },
 
-  configInit =  false,
+  wrapper,
+  container,
+  text,
+
   animations = [],
   animationRuning = false,
   animationFinish = false,
@@ -35,20 +38,18 @@ var Kudos = (function(){
   //make config public
   visible.config = config;
 
-  var init = function(startingNumberUser){
+  var init = function(startingNumberUser, initiDone){
+    console.log('<INITKUDOS></INITKUDOS>');
 
     numbers = {
       raw: [],
       helpers: []
     };
 
-    if(configInit === false){
-      config.wrapper = document.querySelector(config.wrapper);
-      config.container = document.querySelector(config.container);
-      config.text = document.querySelector(config.text);
+    wrapper = document.querySelector(config.wrapper);
+    container = document.querySelector(config.container);
+    text = document.querySelector(config.text);
 
-      configInit = true;
-    }
 
     if(startingNumberUser){
       config.startingNumber = startingNumberUser;
@@ -67,14 +68,18 @@ var Kudos = (function(){
     };
 
     //add liteners
-    config.wrapper.addEventListener("mouseover", hoverListener, false);
-    config.wrapper.addEventListener("mouseleave", hoverOutListener, false);
+    wrapper.addEventListener("mouseover", hoverListener, false);
+    wrapper.addEventListener("mouseleave", hoverOutListener, false);
 
     //generate numbers
     generateNumbers();
 
-    //prepareAnimation
-    prepareAnimation();
+    if(!(initiDone)){
+      //prepareAnimation
+      prepareAnimation();
+    } else {
+      done();
+    };
   };
   //make public
   visible.init = init;
@@ -100,8 +105,8 @@ var Kudos = (function(){
           docFrag.appendChild(element);
     });
 
-    config.container.innerHTML = "";
-    config.container.appendChild(docFrag);
+    container.innerHTML = "";
+    container.appendChild(docFrag);
   };
   var prepareAnimation = function() {
     animations = [];
@@ -117,7 +122,7 @@ var Kudos = (function(){
       var tl = new TimelineLite({paused:true});
       tl.to(number, 0.5, {top: 36})
       .to(number, 0.5, {top: 46, opacity: 0})
-      .call(function(){done();})
+      .call(function(){_done();})
       .to(helper, 1, {opacity: 1}, '-=0.25')
       .to(helper, 2.2, {top: 25, ease:Elastic.easeOut}, '-=1');
 
@@ -126,15 +131,22 @@ var Kudos = (function(){
   };
   var animate = function() {
     if(animationFinish === false){
+
+      console.log(animations.reverse());
+
       [].forEach.call(animations, function(anim,i,a) {
-        anim.restart();
+        console.log(i);
+        setTimeout(function(){
+          anim.restart();
+        }, i*400)
+
       });
     }
   };
   var hoverListener = function(e) {
     console.log('hover');
     if(animationFinish === false){
-      config.text.innerHTML = config.dialog.hover;
+      text.innerHTML = config.dialog.hover;
     }
     if(animationRuning === false){
       animate();
@@ -147,26 +159,110 @@ var Kudos = (function(){
         anim.reverse();
       });
       animationRuning = false;
-      config.text.innerHTML = config.dialog.intro;
+      text.innerHTML = config.dialog.intro;
     }
+  };
+
+  var _done = function() {
+    done();
+    extendDone();
   };
   var done = function() {
     animationFinish = true;
     animationRuning = false;
-    config.text.innerHTML = config.dialog.finish;
-
+    text.innerHTML = config.dialog.finish;
     window.location.hash = '😮';
-
-    //user code
-    extendDone();
   }
-
+  visible.done = done;
 
   //callback
-  var extendDone = function() {}
+  var extendDone = function() {
+    KudosFirebase.add();
+  }
   visible.extendDone = extendDone;
 
-  init(config.startingNumber);
   return visible;
 })();
+
+
+
+var KudosFirebase = (function() {
+  var firebase = new Firebase("https://ents-testing.firebaseio.com/"),
+  firebaseKudos = firebase.child('kudos'),
+  authData = firebase.getAuth();
+  visible = {};
+
+
+
+  var init = function() {
+    var authData = firebase.getAuth();
+    if(authData == null){
+      // authenticate the user
+      firebase.authAnonymously(function(err, authenticationData) {});
+    }
+
+    console.log('ININIT');
+    var key = document.location.pathname.replace(/[\/-]/g,'');
+    console.log(key);
+    firebaseKudos.child(key).on('value', function(snapshot){
+      if(snapshot){
+        var article = snapshot.val();
+        var likeCount = 0;
+        if(article){
+          for(var prop in article.likes){
+            likeCount++;
+          }
+        }
+      }
+      firebaseKudos.child(key).child('likes').child(authData.uid).once('value', function(snap){
+        if(snap.val() !== null){
+          console.log('hlasoval');
+          Kudos.init(likeCount, true);
+        } else {
+          Kudos.init(likeCount);
+        }
+      });
+    });
+  };
+  visible.init = init;
+
+  var addKudo = function(){
+    var kudo = function() {
+      console.log(authData);
+      if (authData) {
+        firebaseKudos
+          .child(key)
+          .child('likes')
+          .child(authData.uid)
+          .set({
+              count: 1
+          });
+        }
+    };
+
+    var key = document.location.pathname.replace(/[\/-]/g,'');
+    var authData = firebase.getAuth();
+    if(authData == null){
+      // authenticate the user
+      firebase.authAnonymously(function(err, authenticationData) {
+        kudo();
+      });
+    } else {
+      kudo()
+    }
+
+
+
+  };
+  visible.add = addKudo;
+  return visible;
+})();
+
+app.extFn.push(KudosFirebase.init);
+console.log(app);
+
+console.log(app);
+console.log(KudosFirebase);
 console.log(Kudos);
+
+

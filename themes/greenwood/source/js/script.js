@@ -4,6 +4,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
   'use strict';
 
   var app = {};
+  var executeExternalFunctions = [];
+  app.extFn = executeExternalFunctions;
 
   //Helper functions
   var addEvent = function(elem, type, eventHandle) {
@@ -231,10 +233,10 @@ Pace.once('done', function(){app.afterLoadInitial();});
     });
   };
 
+
+
   //Components
   var components = function(data) {
-
-
 
     if (data) {
       var page = data[0].getAttribute('page') || "Home";
@@ -302,11 +304,17 @@ Pace.once('done', function(){app.afterLoadInitial();});
       });
     }
 
+    for (var i = executeExternalFunctions.length - 1; i >= 0; i--) {
+      console.log(executeExternalFunctions, executeExternalFunctions[i]);
+      executeExternalFunctions[i].call()
+    };
+
     //init feed
     feedInit();
   };
   //make visible
   app.components = components;
+
 
 
 
