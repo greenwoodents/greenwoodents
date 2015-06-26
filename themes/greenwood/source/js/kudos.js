@@ -239,7 +239,6 @@ var KudosFirebase = (function() {
           });
         }
     };
-
     var key = document.location.pathname.replace(/[\/-]/g,'');
     var authData = firebase.getAuth();
     if(authData == null){
