@@ -29,8 +29,9 @@ date: 2015-06-12 00:00:00
 
 
 <div id="description" class="description">
-Bigger than HTC — still unknown to most of us.
-_The biggest client we’ve ever had. If you have time check their [http://www.coolpad.com/index.html](Chinese site)._
+Bigger than HTC, but still unknown to most of us.
+_The biggest client we’ve ever had. Lot of complications. Chinese HQ couldn’t access Google Drive, Basecamp neither Dropbox. What then? E-mail, call conferences (US — Czech-China) and Chinese FTP._
+
 </div>
 
 ##RESPONSIVE LAYOUT

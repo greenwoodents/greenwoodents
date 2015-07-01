@@ -189,7 +189,7 @@ var Kudos = (function(){
     animationFinish = true;
     animationRuning = false;
     text.innerHTML = config.dialog.finish;
-    history.replaceState(undefined, undefined, "#😮")
+    //history.replaceState(undefined, undefined, "#😮")
   }
   visible.done = done;
 

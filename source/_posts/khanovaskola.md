@@ -27,7 +27,7 @@ fd: false
 
 <div id="description" class="description">
 Khan Academy had 400 millions views on YouTube in 2014. Khanova škola is their Czech younger brother.
-_Khanova škola is a lovely product. It’s working — people use it everyday and it’s free for everyone._
+_It’s like a dream to work on a product that is working, people use it everyday and it’s even free._
 </div>
 
 ##Homepage & onboarding
