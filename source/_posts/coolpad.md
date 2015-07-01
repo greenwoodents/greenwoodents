@@ -16,7 +16,7 @@ whenWeDidIt: March 2014
 projectColor: '#97BD00'
 projectPreviewImage: /coolpad/coolpad_preview_@2x.png
 projectImage: /coolpad/tv.png
-projectImagePosition: '-7%'
+projectImagePosition: '0%'
 
 mh: false
 jh: true
@@ -30,7 +30,7 @@ date: 2015-06-12 00:00:00
 
 <div id="description" class="description">
 Bigger than HTC, but still unknown to most of us.
-_The biggest client we’ve ever had. Lot of complications. Chinese HQ couldn’t access Google Drive, Basecamp neither Dropbox. What then? E-mail, call conferences (US — Czech-China) and Chinese FTP._
+_The biggest client we’ve ever had. Lot of complications. Chinese HQ couldn’t access Google Drive, Basecamp neither Dropbox. What then? We took a step back and started using E-mail, call conferences (US — Czech — China) and Chinese FTP for communication._
 
 </div>
 
