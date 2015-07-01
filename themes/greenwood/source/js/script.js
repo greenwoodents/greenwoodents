@@ -48,6 +48,13 @@ Pace.once('done', function(){app.afterLoadInitial();});
         template: '<img src="{{image}}" />'
       });
       feed.run();
+
+      document.querySelector('.button-instagram').addEventListener('click', function(){
+        //GA Event
+        ga('send', 'event', 'instagram', 'clicked');
+      })
+
+
     });
   };
 

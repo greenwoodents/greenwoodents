@@ -39,8 +39,6 @@ var Kudos = (function(){
   visible.config = config;
 
   var init = function(startingNumberUser, initiDone){
-    console.log('<INITKUDOS></INITKUDOS>');
-
     numbers = {
       raw: [],
       helpers: []
@@ -70,6 +68,7 @@ var Kudos = (function(){
     //add liteners
     wrapper.addEventListener("mouseover", hoverListener, false);
     wrapper.addEventListener("mouseleave", hoverOutListener, false);
+    wrapper.addEventListener("click", click, false);
 
     //generate numbers
     generateNumbers();
@@ -80,6 +79,9 @@ var Kudos = (function(){
     } else {
       done();
     };
+
+    wrapper.classList.remove('hidden');
+    wrapper.classList.add('show-from-bottom');
   };
   //make public
   visible.init = init;
@@ -126,6 +128,7 @@ var Kudos = (function(){
       .to(helper, 1, {opacity: 1}, '-=0.25')
       .to(helper, 2.2, {top: 25, ease:Elastic.easeOut}, '-=1');
 
+
       animations[i] = tl;
     });
   };
@@ -144,34 +147,49 @@ var Kudos = (function(){
     }
   };
   var hoverListener = function(e) {
-    console.log('hover');
-    if(animationFinish === false){
-      text.innerHTML = config.dialog.hover;
+
+    if(!(window.matchMedia("(max-width: 680px)").matches)){
+      if(animationFinish === false){
+        text.innerHTML = config.dialog.hover;
+      }
+
+      if(animationRuning === false){
+        animate();
+        animationRuning = true;
+      }
     }
-    if(animationRuning === false){
-      animate();
-      animationRuning = true;
-    }
+
   };
   var hoverOutListener = function(e) {
-    if(animationFinish === false){
-      [].forEach.call(animations, function(anim,i,a) {
-        anim.reverse();
-      });
-      animationRuning = false;
-      text.innerHTML = config.dialog.intro;
+    if(!(window.matchMedia("(max-width: 680px)").matches)){
+      if(animationFinish === false){
+        [].forEach.call(animations, function(anim,i,a) {
+          anim.reverse();
+        });
+        animationRuning = false;
+        text.innerHTML = config.dialog.intro;
+      }
+    }
+  };
+
+  var click = function() {
+    if(window.matchMedia("(max-width: 680px)").matches) {
+      document.querySelector('.kudos-number-visible').setAttribute('style', 'top:'+config.animation.helperPosition[0]+'px; opacity: 0;');
+      document.querySelector('.kudos-number-helper').setAttribute('style', 'top:'+config.animation.numberPosition[0]+'px; opacity: 1;');
     }
   };
 
   var _done = function() {
     done();
-    extendDone();
+    setTimeout(function() {
+      extendDone();
+    }, 2000);
   };
   var done = function() {
     animationFinish = true;
     animationRuning = false;
     text.innerHTML = config.dialog.finish;
-    window.location.hash = '😮';
+    history.replaceState(undefined, undefined, "#😮")
   }
   visible.done = done;
 
@@ -194,41 +212,66 @@ var KudosFirebase = (function() {
 
 
 
+
+
   var init = function() {
+    var kudos = document.querySelectorAll('.js-kudos') || false;
+    if(kudos.length <= 0){
+      console.log('true');
+      return false;
+    }
+
     var authData = firebase.getAuth();
     if(authData == null){
       // authenticate the user
       firebase.authAnonymously(function(err, authenticationData) {});
     }
 
+
     console.log('ININIT');
     var key = document.location.pathname.replace(/[\/-]/g,'');
     console.log(key);
     firebaseKudos.child(key).on('value', function(snapshot){
-      if(snapshot){
-        var article = snapshot.val();
-        var likeCount = 0;
-        if(article){
-          for(var prop in article.likes){
-            likeCount++;
+
+      var initKudos = function(authData) {
+        if(snapshot){
+          var article = snapshot.val();
+          var likeCount = 0;
+          if(article){
+            for(var prop in article.likes){
+              likeCount++;
+            }
           }
         }
+
+        firebaseKudos.child(key).child('likes').child(authData.uid).once('value', function(snap){
+          if(snap.val() !== null){
+            console.log('hlasoval', likeCount);
+            Kudos.init(likeCount, true);
+          } else {
+            console.log('Nehlasoval', likeCount);
+            Kudos.init(likeCount);
+          }
+        });
+      };
+
+
+    var authData = firebase.getAuth();
+    if(authData == null){
+        firebase.authAnonymously(function(err, authenticationData) {
+          initKudos(authenticationData);
+        });
+      } else {
+        initKudos(authData);
       }
-      firebaseKudos.child(key).child('likes').child(authData.uid).once('value', function(snap){
-        if(snap.val() !== null){
-          console.log('hlasoval');
-          Kudos.init(likeCount, true);
-        } else {
-          Kudos.init(likeCount);
-        }
-      });
     });
+
   };
   visible.init = init;
 
   var addKudo = function(){
+
     var kudo = function() {
-      console.log(authData);
       if (authData) {
         firebaseKudos
           .child(key)
@@ -237,8 +280,12 @@ var KudosFirebase = (function() {
           .set({
               count: 1
           });
-        }
+
+        //GA EVENT
+        ga('send', 'event', 'kudos', 'added');
+      }
     };
+
     var key = document.location.pathname.replace(/[\/-]/g,'');
     var authData = firebase.getAuth();
     if(authData == null){
@@ -249,19 +296,13 @@ var KudosFirebase = (function() {
     } else {
       kudo()
     }
-
-
-
   };
+
   visible.add = addKudo;
   return visible;
 })();
 
 app.extFn.push(KudosFirebase.init);
-console.log(app);
 
-console.log(app);
-console.log(KudosFirebase);
-console.log(Kudos);
 
 

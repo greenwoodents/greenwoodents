@@ -76,6 +76,25 @@
 .project-color-heading h2 {
   color: #278DCA;
 }
+.links a:hover,
+.links a:active {
+  color: #278DCA;
+}
+@media only screen and (max-width: 680px) {
+  .js-kudos:active {
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  .js-kudos:active p {
+    color: #278DCA !important;
+  }
+  .js-kudos:active .kudos-line {
+    background-color: #278DCA;
+  }
+}
 </style>
 
 
@@ -201,14 +220,15 @@
 
     </div>
     <!-- Linner -->
-    <img src="../images/paragraph-line.svg" class="line2 exception">
+    <img src="../images/paragraph-line.svg" class="line2">
     <!-- Link to site -->
-    <div class="kudos js-kudos">
+    <div class="wrapper">
+<div class="kudos js-kudos hidden">
     <p>Kudos</p>
     <div class="kudos-line"></div>
     <div class="kudos-counter">
-
     </div>
+</div>
 </div>
 
 

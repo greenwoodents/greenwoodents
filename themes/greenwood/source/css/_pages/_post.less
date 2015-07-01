@@ -100,9 +100,14 @@
 }
 
 .line2 {
+  display: block !important;
   width: 180px;
   height: 1px;
   margin: 45px auto 0px;
+
+  @media @medium {
+    margin: 68px auto 0px;
+  }
 }
 
 .description {
@@ -176,9 +181,10 @@
         .participants-head {
           width: 72px;
         }
-
-        &:nth-child(1) {
-          margin-top: 0;
+        @media @small {
+          &:nth-child(1) {
+            margin-top: 0;
+          }
         }
 
 
@@ -243,7 +249,7 @@
         display: inline-block;
         margin: 57px 20px 0 20px;
         min-width: 800px;
-        max-height: 164px;
+        max-height: 74px;
 
         .team-member {
           margin: 0;
@@ -551,7 +557,6 @@
 
   .exception {
     display: block;
-    margin: 0px auto 25px auto;
     width: 180px;
     position: relative;
     top: -24px;

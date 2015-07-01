@@ -76,6 +76,25 @@
 .project-color-heading h2 {
   color: #FF5AAF;
 }
+.links a:hover,
+.links a:active {
+  color: #FF5AAF;
+}
+@media only screen and (max-width: 680px) {
+  .js-kudos:active {
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  .js-kudos:active p {
+    color: #FF5AAF !important;
+  }
+  .js-kudos:active .kudos-line {
+    background-color: #FF5AAF;
+  }
+}
 </style>
 
 
@@ -203,21 +222,22 @@
 
     </div>
     <!-- Linner -->
-    <img src="../images/paragraph-line.svg" class="line2 exception">
+    <img src="../images/paragraph-line.svg" class="line2">
     <!-- Link to site -->
-    <div class="kudos js-kudos">
+    <div class="wrapper">
+<div class="kudos js-kudos hidden">
     <p>Kudos</p>
     <div class="kudos-line"></div>
     <div class="kudos-counter">
-
     </div>
+</div>
 </div>
 
 
     
     <div id="links" class="links">
       <i class="cursive-opacity">See it live on</i>
-      <a href="http://www.webexpo.cz">www.webexpo.cz</a>
+      <a target="_blank" href="http://www.webexpo.cz">www.webexpo.cz</a>
     </div>
     
   </div>

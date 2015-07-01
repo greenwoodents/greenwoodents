@@ -88,6 +88,25 @@ Busine">
 .project-color-heading h2 {
   color: #E7AB4A;
 }
+.links a:hover,
+.links a:active {
+  color: #E7AB4A;
+}
+@media only screen and (max-width: 680px) {
+  .js-kudos:active {
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  .js-kudos:active p {
+    color: #E7AB4A !important;
+  }
+  .js-kudos:active .kudos-line {
+    background-color: #E7AB4A;
+  }
+}
 </style>
 
 
@@ -207,21 +226,22 @@ Busine">
 
     </div>
     <!-- Linner -->
-    <img src="../images/paragraph-line.svg" class="line2 exception">
+    <img src="../images/paragraph-line.svg" class="line2">
     <!-- Link to site -->
-    <div class="kudos js-kudos">
+    <div class="wrapper">
+<div class="kudos js-kudos hidden">
     <p>Kudos</p>
     <div class="kudos-line"></div>
     <div class="kudos-counter">
-
     </div>
+</div>
 </div>
 
 
     
     <div id="links" class="links">
       <i class="cursive-opacity">See it live on</i>
-      <a href="http://www.ha-soft.cz">www.ha-soft.cz</a>
+      <a target="_blank" href="http://www.ha-soft.cz">www.ha-soft.cz</a>
     </div>
     
   </div>

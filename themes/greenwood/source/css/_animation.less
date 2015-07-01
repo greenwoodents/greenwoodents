@@ -93,12 +93,17 @@
 
 
 @-webkit-keyframes show-from-bottom {
-  0%   { opacity: 1;  .transform(translateY(80px));}
-  100% { opacity: 1;  .transform(translateY(40px));}
+  0%   { opacity: 0;}
+  100% { opacity: 1;}
 }
 @keyframes show-from-bottom {
-  0%   { opacity: 1;  .transform(translateX(80px));}
-  100% { opacity: 1;  .transform(translateX(40px));}
+  0%   { opacity: 0;}
+  100% { opacity: 1;}
+}
+
+.show-from-bottom {
+  animation: show-from-bottom 1000ms ease-in;
+  -webkit-animation: show-from-bottom 1000ms ease-in;
 }
 
 @-webkit-keyframes smoke {
