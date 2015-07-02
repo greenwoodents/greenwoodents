@@ -7,22 +7,19 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     minifyHTML = require('gulp-minify-html'),
     gulpif = require('gulp-if'),
-    useref = require('gulp-useref');
+    useref = require('gulp-useref'),
+    cachebust = require('gulp-cache-bust');
 
-var CacheBuster = require('gulp-cachebust');
 
-var cachebust = new CacheBuster();
 
 gulp.task('css', function() {
    gulp.src('public/css/style.css')
    .pipe(cssmin())
-   .pipe(cachebust.resources())
    .pipe(gulp.dest('./dist/css/'));
 });
 gulp.task('scripts', function() {
    gulp.src('public/js/**/*.js')
    .pipe(uglify())
-   .pipe(cachebust.resources())
    .pipe(gulp.dest('./dist/js/'));
 });
 gulp.task('fonts', function() {
@@ -71,7 +68,7 @@ gulp.task('images:copy', function() {
 gulp.task('default', ['css', 'scripts', 'fonts', 'images:copy'],function(){
 
   return gulp.src('public/**/*.html')
-         .pipe(cachebust.references())
+    .pipe(cachebust({type: 'timestamp'}))
          .pipe(minifyHTML())
          .pipe(gulp.dest('./dist/'));
 });
