@@ -322,9 +322,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
   //make visible
   app.components = components;
 
-
-
-
   //make it global.
   window.app = app;
 

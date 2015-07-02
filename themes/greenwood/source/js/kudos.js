@@ -7,9 +7,9 @@ var Kudos = (function(){
 
   config = {
     startingNumber: 0,
-    wrapper: ".js-kudos",
+    wrapper: ".script-kudos",
     container: ".kudos-counter",
-    text: '.js-kudos > p',
+    text: '.script-kudos > p',
     numberClass: 'kudos-number',
     animateClass: 'kudos-animate',
     animation: {
@@ -215,7 +215,7 @@ var KudosFirebase = (function() {
 
 
   var init = function() {
-    var kudos = document.querySelectorAll('.js-kudos') || false;
+    var kudos = document.querySelectorAll('.script-kudos') || false;
     if(kudos.length <= 0){
       console.log('true');
       return false;

@@ -9,32 +9,27 @@ var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     useref = require('gulp-useref');
 
+var CacheBuster = require('gulp-cachebust');
+
+var cachebust = new CacheBuster();
+
 gulp.task('css', function() {
    gulp.src('public/css/style.css')
    .pipe(cssmin())
+   .pipe(cachebust.resources())
    .pipe(gulp.dest('./dist/css/'));
 });
 gulp.task('scripts', function() {
    gulp.src('public/js/**/*.js')
    .pipe(uglify())
+   .pipe(cachebust.resources())
    .pipe(gulp.dest('./dist/js/'));
 });
 gulp.task('fonts', function() {
    gulp.src('public/fonts/**/*.eot')
    .pipe(gulp.dest('./dist/fonts/'));
-
   gulp.src('public/fonts/**/*.css')
    .pipe(gulp.dest('./dist/fonts/'));
-});
-gulp.task('html', function() {
-  var assets = useref.assets();
-
-  return gulp.src('public/**/*.html')
-    .pipe(assets)
-    .pipe(gulpif('*.js', uglify()))
-    .pipe(assets.restore())
-    .pipe(useref())
-    .pipe(gulp.dest('./dist/'));
 });
 gulp.task('images', function(cb) {
   gulp.src('source/**/*.{png,jpg,jpeg,ico,svg}')
@@ -45,6 +40,20 @@ gulp.task('images', function(cb) {
   }))
   .pipe(gulp.dest('./source/'));
 });
+
+
+
+// gulp.task('html', function() {
+//   var assets = useref.assets();
+//   return gulp.src('public/**/*.html')
+//     .pipe(assets)
+//     .pipe(gulpif('*.js', uglify()))
+//     .pipe(assets.restore())
+//     .pipe(useref())
+//     .pipe(gulp.dest('./dist/'));
+// });
+
+
 
 
 //clean
@@ -59,7 +68,13 @@ gulp.task('images:copy', function() {
    .pipe(gulp.dest('./dist/'));
 });
 //default
-gulp.task('default', ['html', 'css', 'scripts', 'fonts', 'images:copy']);
+gulp.task('default', ['css', 'scripts', 'fonts', 'images:copy'],function(){
+
+  return gulp.src('public/**/*.html')
+         .pipe(cachebust.references())
+         .pipe(minifyHTML())
+         .pipe(gulp.dest('./dist/'));
+});
 
 
 
