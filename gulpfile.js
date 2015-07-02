@@ -69,8 +69,8 @@ gulp.task('default', ['css', 'scripts', 'fonts', 'images:copy'],function(){
 
   return gulp.src('public/**/*.html')
     .pipe(cachebust({type: 'timestamp'}))
-         .pipe(minifyHTML())
-         .pipe(gulp.dest('./dist/'));
+    .pipe(minifyHTML())
+    .pipe(gulp.dest('./dist/'));
 });
 
 

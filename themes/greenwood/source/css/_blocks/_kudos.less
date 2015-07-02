@@ -31,19 +31,11 @@
 
   @media @small {
     p, .kudos-line {
-      transition: 500ms;
+      transition: transform 500ms;
     }
 
     &:active {
      .scale(1.5);
-
-     p {
-      color: red !important;
-     }
-     .kudos-line {
-      background-color: red;
-     }
-
     }
   }
 
@@ -70,6 +62,7 @@
     p {
       font-size: 31px;
       font-family: Sentinel-Black;
+      font-weight: 600;
       font-size: 31px;
       color: #212E29;
       line-height: 37px;
