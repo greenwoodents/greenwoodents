@@ -118,6 +118,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
   //Initial
   var initial = function() {
 
+
+
     //menu filtering init.
     var jsShow = document.querySelectorAll('.js-filtr a');
     [].forEach.call(jsShow , function(button, index, btnarray) {
@@ -238,6 +240,10 @@ Pace.once('done', function(){app.afterLoadInitial();});
       },
       direction: ['right']
     });
+
+
+    KudosFirebase.initMenu();
+
   };
 
 

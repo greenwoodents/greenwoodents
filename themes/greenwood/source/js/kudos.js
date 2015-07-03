@@ -134,11 +134,7 @@ var Kudos = (function(){
   };
   var animate = function() {
     if(animationFinish === false){
-
-      console.log(animations.reverse());
-
       [].forEach.call(animations, function(anim,i,a) {
-        console.log(i);
         setTimeout(function(){
           anim.restart();
         }, i*400)
@@ -210,14 +206,9 @@ var KudosFirebase = (function() {
   authData = firebase.getAuth();
   visible = {};
 
-
-
-
-
   var init = function() {
     var kudos = document.querySelectorAll('.script-kudos') || false;
-    if(kudos.length <= 0){
-      console.log('true');
+    if(kudos.length <= 0) {
       return false;
     }
 
@@ -227,12 +218,8 @@ var KudosFirebase = (function() {
       firebase.authAnonymously(function(err, authenticationData) {});
     }
 
-
-    console.log('ININIT');
     var key = document.location.pathname.replace(/[\/-]/g,'');
-    console.log(key);
     firebaseKudos.child(key).on('value', function(snapshot){
-
       var initKudos = function(authData) {
         if(snapshot){
           var article = snapshot.val();
@@ -246,18 +233,14 @@ var KudosFirebase = (function() {
 
         firebaseKudos.child(key).child('likes').child(authData.uid).once('value', function(snap){
           if(snap.val() !== null){
-            console.log('hlasoval', likeCount);
             Kudos.init(likeCount, true);
           } else {
-            console.log('Nehlasoval', likeCount);
             Kudos.init(likeCount);
           }
         });
       };
-
-
-    var authData = firebase.getAuth();
-    if(authData == null){
+      var authData = firebase.getAuth();
+      if(authData == null){
         firebase.authAnonymously(function(err, authenticationData) {
           initKudos(authenticationData);
         });
@@ -265,12 +248,33 @@ var KudosFirebase = (function() {
         initKudos(authData);
       }
     });
-
   };
   visible.init = init;
 
-  var addKudo = function(){
+  var initMenu = function() {
+    var menuBlock = document.querySelectorAll('.menu-block');
+    [].forEach.call(menuBlock, function(el,i,a) {
+      var title = el.querySelector('.project-info-title').innerHTML.toLowerCase().replace('.','').replace('#','').replace('$','').replace(',','').trim();
+      var counter = el.querySelector('.count-of-kudos');
 
+      firebaseKudos.child(title).on('value', function(snapshot){
+        if(snapshot){
+          var article = snapshot.val();
+          var likeCount = 0;
+          if(article){
+            for(var prop in article.likes) {
+              likeCount++;
+            }
+          }
+        }
+        counter.innerText = likeCount
+
+      });
+    });
+  };
+  visible.initMenu = initMenu;
+
+  var addKudo = function(){
     var kudo = function() {
       if (authData) {
         firebaseKudos
@@ -297,10 +301,11 @@ var KudosFirebase = (function() {
       kudo()
     }
   };
-
   visible.add = addKudo;
   return visible;
 })();
+
+
 
 app.extFn.push(KudosFirebase.init);
 
