@@ -88,6 +88,11 @@
   bottom: 0;
   z-index: 90;
 
+  @media @small {
+    visibility: hidden;
+    opacity: 0;
+  }
+
   pointer-events: none;
   transition: 400ms 100ms;
   opacity: 0;
@@ -109,8 +114,10 @@
   }
 }
 
-.menu-block:hover .kudos-view {
-  opacity: 1;
-  visibility: visible;
-  .translateY(0);
+@media @medium {
+  .menu-block:hover .kudos-view {
+    opacity: 1;
+    visibility: visible;
+    .translateY(0);
+  }
 }

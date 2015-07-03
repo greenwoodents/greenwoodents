@@ -248,22 +248,25 @@
         margin: 1.25% 0.7%;
         font-family: 'Sentinel A','Sentinel B',Sentinel;
       }
-      &:hover {
-        .project-info-title {
-          font-size: 31px;
-          margin-bottom: 10px;
-          line-height: 36px;
-        }
+      @media @medium {
+        &:hover {
+          .project-info-title {
+            font-size: 31px;
+            margin-bottom: 10px;
+            line-height: 36px;
+          }
 
-        .project-info-subtitle {
-          font-size: 14px;
-          font-weight: 400;
+          .project-info-subtitle {
+            font-size: 14px;
+            font-weight: 400;
 
-          &.light-text {
-            margin-top: 9px;
+            &.light-text {
+              margin-top: 9px;
+            }
           }
         }
       }
+
     }
   }
 
