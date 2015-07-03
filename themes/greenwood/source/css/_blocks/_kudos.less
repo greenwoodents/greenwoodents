@@ -39,7 +39,6 @@
     }
   }
 
-
   .kudos-line {
     transition: 500ms;
     width: 55px;
@@ -74,4 +73,41 @@
       transform-style: preserve-3d;
     }
   }
+}
+
+.kudos-view {
+  color: #FFFFFF;
+  font-family: @sentinel;
+  font-size: 14px;
+  line-height: 16.79px;
+  position: absolute;
+  top: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90;
+
+  transition: 400ms;
+  opacity: 0;
+  visibility: hidden;
+  .translateY(40px);
+
+  .kudos-line {
+    background: #FFFFFF;
+    width: 55px;
+    height: 1px;
+    margin-top: 5px;
+  }
+
+  .count-of-kudos {
+    font-family: @sentinel;
+    font-size: 31px;
+    line-height: 37px;
+  }
+}
+
+.menu-block:hover .kudos-view {
+  opacity: 1;
+  visibility: visible;
+  .translateY(0);
 }
