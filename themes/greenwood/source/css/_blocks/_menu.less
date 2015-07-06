@@ -154,6 +154,12 @@
       margin-bottom: 6px;
       font-size: 20px;
       line-height: 22px;
+      a {
+        font-family: @sentinel;
+        color: #212E29;
+        font-weight: 800;
+
+      }
     }
 
     .contact {
@@ -181,26 +187,54 @@
 
 
     a {
+      position: relative;
       font-family: @sentinel;
       opacity: 1;
-      opacity: 300ms;
       font-weight: 700;
       cursor: pointer;
       background-repeat: repeat-x;
       background-position: bottom;
       color: #D5D0CC;
       background-image: url('../images/menu-underline-grey.svg');
+      display: inline-block;
+      overflow: hidden;
+      top: 8px;
 
-      &.activated {
-        color: #2C3C36;
-        background-image: url('../images/menu-underline.svg');
+      @media @medium {
+        &::after {
+          transition: 350ms cubic-bezier(0.64, 0.09, 0.08, 1);
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          .translateX(-100%);
+        }
 
         &:hover {
-          opacity: .5
+          &.activated{
+            color: #fff;
+            background-image: url('../images/menu-underline-white.svg');
+           &::after {
+             background-color: #FF5B5B;
+           }
+          }
+
+          color: #fff;
+          background-image: url('../images/menu-underline-white.svg');
+
+          &::after {
+            background-color: #90CB32;
+            .translateX(0%);
+          }
         }
       }
 
-      &:hover {
+      &.activated {
         color: #2C3C36;
         background-image: url('../images/menu-underline.svg');
       }
