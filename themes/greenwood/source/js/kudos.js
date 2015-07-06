@@ -154,7 +154,6 @@ var Kudos = (function(){
         animationRuning = true;
       }
     }
-
   };
   var hoverOutListener = function(e) {
     if(!(window.matchMedia("(max-width: 680px)").matches)){

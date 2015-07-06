@@ -94,7 +94,7 @@
   }
 
   pointer-events: none;
-  transition: 400ms 100ms;
+  transition: 100ms;
   opacity: 0;
   visibility: hidden;
   .translateY(40px);
@@ -116,6 +116,7 @@
 
 @media @medium {
   .menu-block:hover .kudos-view {
+    transition: 400ms 200ms;
     opacity: 1;
     visibility: visible;
     .translateY(0);

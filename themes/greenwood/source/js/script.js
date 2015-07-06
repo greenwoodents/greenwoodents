@@ -65,7 +65,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
     var sMq = window.matchMedia( "(min-width: 680px)" );
     var ssMq = window.matchMedia( "(max-width: 680px)" );
 
-    var space = 10;
+    var space = 15;
     var boxesOnRow = 4;
 
     if (sMq.matches) {
@@ -117,8 +117,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
   //Initial
   var initial = function() {
-
-
 
     //menu filtering init.
     var jsShow = document.querySelectorAll('.js-filtr a');
@@ -245,8 +243,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
     KudosFirebase.initMenu();
 
   };
-
-
 
   //Components
   var components = function(data) {
