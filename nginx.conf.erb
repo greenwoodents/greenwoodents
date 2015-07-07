@@ -13,6 +13,7 @@ http {
         server {
                 listen <%= ENV['PORT'] %>;
                 server_name  _;
+                                rewrite ^(.*[^/])$ $1/ permanent;
                 location / {
                         root /app/dist;
                         index index.html;
