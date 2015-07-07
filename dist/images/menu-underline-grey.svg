@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="4px" height="2px" viewBox="0 0 4 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="menu-underline" sketch:type="MSLayerGroup" fill="#D5D0CC">
-            <rect id="Rectangle-154" sketch:type="MSShapeGroup" x="0" y="0" width="2" height="2"></rect>
-            <rect id="Rectangle-154-Copy" fill-opacity="0" sketch:type="MSShapeGroup" x="2" y="0" width="2" height="2"></rect>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="4" height="2" viewBox="0 0 4 2" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#D5D0CC"><rect x="0" y="0" width="2" height="2"/><rect fill-opacity="0" x="2" y="0" width="2" height="2"/></g></g></svg>
