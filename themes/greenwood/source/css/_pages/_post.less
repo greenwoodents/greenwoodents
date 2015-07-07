@@ -29,8 +29,8 @@
   padding-top: 30px;
 
   .money-time-what-we-did {
+    cursor: auto;
     transition: 500ms;
-    cursor: pointer;
     display: inline-block;
     position: relative;
 
@@ -38,18 +38,9 @@
       transition: 500ms;
     }
 
-    @media @small {
-      transition: 200ms;
-      padding: 12px 25px;
-      &:active{
-      border-radius: 2px;
-      padding: 10px 25px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.13);
-      }
-    }
 
 
-    &:hover {
+    &.inHeader:hover {
       cursor: pointer;
       @media @large {
         .details:after {
@@ -78,7 +69,7 @@
 
     &.clicked {
       .alternative-detail {
-        height: 40px;
+        height: 50px;
         opacity: 1;
 
         @media @large {
@@ -446,7 +437,7 @@
       //height: 100%;
       display: inline-block;
       margin-right: 38px;
-      cursor: pointer;
+      cursor: default;
       position: relative;
       float: left;
 
@@ -678,6 +669,7 @@
   p {
     font-size: 20px;
     margin-top: 5px;
+    font-weight: 700;
   }
   .h2 {
     position: relative;
@@ -703,6 +695,7 @@
     color: #212E29;
     opacity: 0.5;
     font-weight: 400 !important;
+    padding: 10px 0;
   }
 }
 

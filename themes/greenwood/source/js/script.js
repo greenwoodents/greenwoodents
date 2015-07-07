@@ -240,7 +240,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
     });
 
 
-    KudosFirebase.initMenu();
+    //KudosFirebase.initMenu();
 
   };
 
