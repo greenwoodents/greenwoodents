@@ -103,8 +103,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
   //afterLoad
   var afterLoadInitial = function() {
-    document.querySelector('.body-wrap').classList.add('loaded');
-    document.querySelector('.loader').classList.add('loaded');
+    //document.querySelector('.body-wrap').classList.add('loaded');
+    //document.querySelector('.loader').classList.add('loaded');
 
     defferAll();
     feedInit();

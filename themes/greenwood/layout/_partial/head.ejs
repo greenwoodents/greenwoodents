@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
   <meta charset="utf-8">
+  <%- partial('inline-in-head') %>
   <%
     var title = page.title;
     var checkTitle = page.title || "Home";
@@ -36,7 +37,6 @@
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 
   <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6555912/759506/css/fonts.css" />
-
   <%- js('js/pace.min.js') %>
   <%- css('css/style') %>
   <%- partial('google-analytics') %>

@@ -1,11 +1,26 @@
 <%- partial('_partial/head') %>
 
 <body class="<% if (is_home()){ %>body-homepage<% } else { %>body-post<% } %>">
-  <%- partial('_partial/loader') %>
+  <!-- <%- partial('_partial/loader') %> -->
   <div class="body-wrap">
     <section class='main' id="main"><%- body %></section>
     <%- partial('_partial/menu') %>
   </div>
+
+
+  <script>
+  (function(){
+
+    var delays = [0, 1360, 2240],
+        els = document.querySelectorAll('.hiddenSoft');
+
+    [].forEach.call(els, function(el,i,a) {
+      setTimeout(function(){
+        el.classList.add('animated');
+      }, delays[i] )
+    });
+  })();
+</script>
 
 
   <%- js('js/libs') %>

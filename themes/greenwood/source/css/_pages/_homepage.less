@@ -4,6 +4,62 @@
 ///
 ///
 ///
+///
+///
+
+@fsTitle:          3.16s;
+@fsTitleDelay:     0s;
+
+@fsArrow:          1.8s;
+@fsArrowDelay:     0s;
+
+@fsContact:        2.72s;
+@fsContactDelay:   0s;
+
+
+
+.title {
+  z-index: 80;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40%;
+
+
+  &.animated {
+    opacity: 1;
+    visibility: visible;
+    //first section
+    animation: fadein @fsTitle ease-in;
+    -webkit-animation: fadein @fsTitle ease-in;
+  }
+
+  .homepage-title {
+    font-family: @sentinel;
+    color: #1c1f2c;
+    font-size: 71px;
+    font-weight: 900;
+    line-height: 71px;
+
+    .time-title {
+      font-size: 64px;
+      line-height: 64px;
+      position: relative;
+      left: -30px;
+      top: 31px;
+    }
+
+    .reveals-the-title {
+      font-size: 15px;
+      line-height: 15px;
+      position: relative;
+      top: 25px;
+      left: -37px;
+    }
+  }
+}
+
+
 .sipecka {
   width: 12px;
   height: 12px;
@@ -22,6 +78,7 @@
 .homepage-menu-button {
   transition: 300ms;
   position: relative;
+  top: -16px;
   font-family: @gotham;
   font-size: 10px;
   color: #282A3B;
@@ -32,6 +89,16 @@
   padding: 20px 20px;
   box-sizing: border-box;
   cursor: pointer;
+
+
+
+  &.animated {
+    opacity: 1;
+    visibility: visible;
+    //first section
+    animation: fadein @fsArrow  ease-in-out;
+    -webkit-animation: fadein @fsArrow  ease-in-out;
+  }
 
   .double-arr-ic {
     transition: 300ms;
@@ -94,17 +161,7 @@
 
 
 .pace-done .homepage {
-  .contact-info {
-    transition: 500ms 1700ms ease-out;
-    opacity: 1;
-    .translateY(0px);
-  }
-  .logo {
-    transition: 500ms 1650ms;
-    .translateY(0px);
-    opacity: 1;
-    visibility: visible;
-  }
+
 
   .background {
     &-back {
@@ -113,7 +170,6 @@
     }
 
     &-smoke {
-
       @media @large {
         -webkit-animation: smoke 20000ms 2000ms infinite ease-in-out; /* Safari 4+ */
         animation:         smoke 20000ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
@@ -138,14 +194,10 @@
       opacity: 1;
     }
   }
-
-  .title{
-    transition: all 1000ms 1000ms ease-out;
-    .translateY(0px);
-    opacity: 1;
-    visibility: visible;
-  }
 }
+
+
+
 
 
 .homepage{
@@ -169,8 +221,15 @@
     line-height: 12px;
     text-align: center;
     z-index: 80;
-    opacity: 0;
-    .translateY(10px);
+
+
+    &.animated {
+      opacity: 1;
+      visibility: visible;
+      //first section
+      animation: fadein @fsContact  ease-in-out;
+      -webkit-animation: fadein @fsContact  ease-in-out;
+    }
 
     p {
       line-height: 24px;
@@ -186,19 +245,6 @@
 
       }
     }
-  }
-
-  .logo {
-    display: block;
-    position: absolute;
-    z-index: 30;
-    top: 20px;
-    right: 20px;
-    width: 34px;
-    height: 40px;
-    opacity: 0;
-    visibility: hidden;
-    .translateY(-10px);
   }
 
   .background {
@@ -292,48 +338,7 @@
   }
 }
 
-.title{
-  z-index: 80;
-  position: absolute;
-  /* top: 0; */
-  left: 0;
-  right: 0;
-  bottom: 40%;
-  opacity: 0;
-  visibility: hidden;
-  .translateY(10px);
 
-  &.animate {
-    transition: all 1000ms 1000ms ease-out;
-    .translateY(0px);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .homepage-title {
-    font-family: @sentinel;
-    color: #1c1f2c;
-    font-size: 71px;
-    font-weight: 900;
-    line-height: 71px;
-
-    .time-title {
-      font-size: 64px;
-      line-height: 64px;
-      position: relative;
-      left: -30px;
-      top: 31px;
-    }
-
-    .reveals-the-title {
-      font-size: 15px;
-      line-height: 15px;
-      position: relative;
-      top: 25px;
-      left: -37px;
-    }
-  }
-}
 
 
 @media (min-width: 768px) {
