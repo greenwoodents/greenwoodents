@@ -40,3 +40,4 @@ _How to present quality work in “virtual reality”. Nowadays quality  is repr
           /primehammer/primehammer-long-homepage@small.png 800w,"
   sizes="100%"
   alt="Primehammer.com design">
+
