@@ -25,9 +25,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
     [].forEach.call(document.querySelectorAll('.defer'), function(el,i,a) {
       el.classList.remove('defer');
       el.classList.add('deferload');
-      console.log(el.hasAttribute("data-src"));
       if (el.hasAttribute("data-src")) {
-        console.log(el.hasAttribute("data-src"));
         el.style.backgroundImage = "url('"+ el.getAttribute('data-src') +"')";
       };
     });
@@ -317,7 +315,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
     }
 
     for (var i = executeExternalFunctions.length - 1; i >= 0; i--) {
-      console.log(executeExternalFunctions, executeExternalFunctions[i]);
       executeExternalFunctions[i].call()
     };
 

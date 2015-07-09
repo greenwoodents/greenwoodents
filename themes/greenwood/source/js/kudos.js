@@ -203,7 +203,7 @@ var KudosFirebase = (function() {
   'use strict';
   var firebase = new Firebase("https://ents-testing.firebaseio.com/"),
   firebaseKudos = firebase.child('kudos'),
-  authData = firebase.getAuth();
+  authData = firebase.getAuth(),
   visible = {};
 
   var init = function() {
@@ -303,11 +303,15 @@ var KudosFirebase = (function() {
       kudo()
     }
   };
+
+  init();
+  initMenu();
+
   visible.add = addKudo;
   return visible;
 })();
 
 app.extFn.push(KudosFirebase.init);
-KudosFirebase.initMenu();
+
 
 
