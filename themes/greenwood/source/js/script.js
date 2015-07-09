@@ -3,6 +3,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
 (function(){
   'use strict';
 
+  var mqMedium = window.matchMedia( "(min-width: 768px)" ).matches;
+
   var app = {};
   var executeExternalFunctions = [];
   app.extFn = executeExternalFunctions;
@@ -23,6 +25,11 @@ Pace.once('done', function(){app.afterLoadInitial();});
     [].forEach.call(document.querySelectorAll('.defer'), function(el,i,a) {
       el.classList.remove('defer');
       el.classList.add('deferload');
+      console.log(el.hasAttribute("data-src"));
+      if (el.hasAttribute("data-src")) {
+        console.log(el.hasAttribute("data-src"));
+        el.style.backgroundImage = "url('"+ el.getAttribute('data-src') +"')";
+      };
     });
   };
 
@@ -60,10 +67,10 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
   //Menu resize
   var menuSize = function() {
-    var lMq = window.matchMedia( "(min-width: 1300px)" );
-    var mMq = window.matchMedia( "(min-width: 960px)" );
-    var sMq = window.matchMedia( "(min-width: 680px)" );
-    var ssMq = window.matchMedia( "(max-width: 680px)" );
+    var lMq = window.matchMedia("(min-width: 1300px)");
+    var mMq = window.matchMedia("(min-width: 960px)");
+    var sMq = window.matchMedia("(min-width: 680px)");
+    var ssMq = window.matchMedia("(max-width: 680px)");
 
     var space = 15;
     var boxesOnRow = 4;
@@ -103,21 +110,21 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
   //afterLoad
   var afterLoadInitial = function() {
-    //document.querySelector('.body-wrap').classList.add('loaded');
-    //document.querySelector('.loader').classList.add('loaded');
-
     defferAll();
-    feedInit();
     components();
-    initial();
     menuSize();
+    initial();
+
+
+    if(mqMedium){
+      feedInit();
+    }
   };
   //make visible
   app.afterLoadInitial = afterLoadInitial;
 
   //Initial
   var initial = function() {
-
     //menu filtering init.
     var jsShow = document.querySelectorAll('.js-filtr a');
     [].forEach.call(jsShow , function(button, index, btnarray) {
@@ -238,10 +245,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
       },
       direction: ['right']
     });
-
-
-    //KudosFirebase.initMenu();
-
   };
 
   //Components
@@ -318,12 +321,15 @@ Pace.once('done', function(){app.afterLoadInitial();});
       executeExternalFunctions[i].call()
     };
 
+
     //init feed
-    feedInit();
+    if(mqMedium){
+      feedInit();
+    }
+
   };
   //make visible
   app.components = components;
-
   //make it global.
   window.app = app;
 

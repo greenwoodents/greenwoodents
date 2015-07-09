@@ -1,7 +1,6 @@
 <%- partial('_partial/head') %>
 
 <body class="<% if (is_home()){ %>body-homepage<% } else { %>body-post<% } %>">
-  <!-- <%- partial('_partial/loader') %> -->
   <div class="body-wrap">
     <section class='main' id="main"><%- body %></section>
     <%- partial('_partial/menu') %>
@@ -10,10 +9,8 @@
 
   <script>
   (function(){
-
     var delays = [0, 1360, 2240],
         els = document.querySelectorAll('.hiddenSoft');
-
     [].forEach.call(els, function(el,i,a) {
       setTimeout(function(){
         el.classList.add('animated');
@@ -26,8 +23,11 @@
   <%- js('js/libs') %>
   <%- js('js/script') %>
 
-  <!-- <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
-  <%- js('js/kudos') %> -->
+  <% if (!(config.offlineDevelopment)) { %>
+    <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+    <%- js('js/kudos') %>
+  <% } %>
+
 </body>
 </html>
 

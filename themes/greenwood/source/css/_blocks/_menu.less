@@ -132,8 +132,7 @@
     }
 
     &:active {
-      position: absolute;
-      top: 33px !important;
+      .translateY(2px);
     }
   }
 
@@ -197,9 +196,12 @@
       background-position: bottom;
       color: #D5D0CC;
       background-image: url('../images/menu-underline-grey.svg');
-      display: inline-block;
       overflow: hidden;
-      top: 8px;
+
+      @media @medium {
+        display: inline-block;
+        top: 8px;
+      }
 
       @media @medium {
         &::after {
@@ -274,6 +276,7 @@
         max-width: 0 !important;
         margin: 0 !important;
         padding:0;
+        position: absolute;
       }
 
       .project-info-title {
@@ -563,11 +566,18 @@
           padding: 10px 10px 68px 10px;
 
           .projects-pictures {
-            img {
-              max-width: 100%;
-              width: 100%;
-              max-height: 248px;
-            }
+            max-width: 100%;
+            width: 100%;
+            max-height: 248px;
+            height: 320px;
+            background-size: cover;
+            background-color: rgb(231, 231, 231);
+
+            // img {
+            //   max-width: 100%;
+            //   width: 100%;
+            //   max-height: 248px;
+            // }
           }
         }
 

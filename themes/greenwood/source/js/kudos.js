@@ -200,6 +200,7 @@ var Kudos = (function(){
 
 
 var KudosFirebase = (function() {
+  'use strict';
   var firebase = new Firebase("https://ents-testing.firebaseio.com/"),
   firebaseKudos = firebase.child('kudos'),
   authData = firebase.getAuth();
@@ -256,6 +257,8 @@ var KudosFirebase = (function() {
       var title = el.querySelector('.project-info-title').innerHTML.toLowerCase().replace('.','').replace('#','').replace('$','').replace(',','').trim();
       var counter = el.querySelector('.count-of-kudos');
 
+      el.querySelector('.kudos-view').classList.remove('hidden');
+
       firebaseKudos.child(title).on('value', function(snapshot){
         if(snapshot){
           var article = snapshot.val();
@@ -266,7 +269,7 @@ var KudosFirebase = (function() {
             }
           }
         }
-        counter.innerText = likeCount
+        counter.innerText = likeCount;
 
       });
     });
@@ -304,9 +307,7 @@ var KudosFirebase = (function() {
   return visible;
 })();
 
-
-
 app.extFn.push(KudosFirebase.init);
-
+KudosFirebase.initMenu();
 
 

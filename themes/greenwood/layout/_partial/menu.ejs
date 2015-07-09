@@ -40,10 +40,10 @@
       </a>
 
       <div class="project-padding">
-        <div class="projects-pictures">
-          <img class='lazyload' data-src="<%- post.projectPreviewImage %>">
+        <div class="projects-pictures defer" data-src="<%- post.projectPreviewImage %>" style="background-color: <%- post.projectColor %>;">
+
         </div>
-        <div class="kudos-view">
+        <div class="kudos-view hidden">
           <p>Kudos</p>
           <div class="kudos-line"></div>
           <div class="count-of-kudos">0</div>

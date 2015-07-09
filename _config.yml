@@ -2,6 +2,9 @@
 ## Docs: http://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
+#Development
+offlineDevelopment: true
+
 # Site
 title: Greenwood Ents
 subtitle: Time reveals the Quality
