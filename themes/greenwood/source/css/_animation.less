@@ -132,4 +132,27 @@
 
 
 
-
+@-webkit-keyframes hideMenuItem {
+  0%   { opacity: 1;  .scale(1); visibility: visible;}
+  100% { opacity: 0;  .scale(.5); visibility: visible;}
+}
+@keyframes hideMenuItem {
+  0%   {
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 1;
+    .scale(1);
+    visibility: visible;
+  }
+  70% {
+    opacity: 0;
+    .scale(.5);
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    max-width: 0;
+  }
+}

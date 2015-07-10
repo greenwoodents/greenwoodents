@@ -41,3 +41,4 @@ _How to present quality work in “virtual reality”. Nowadays quality  is repr
   sizes="100%"
   alt="Primehammer.com design">
 
+

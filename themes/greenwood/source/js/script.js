@@ -151,26 +151,44 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
         [].forEach.call(refs , function(reference, index, array) {
           var elementFilters = reference.getAttribute('filter-class').toLowerCase().trim().split(',');
-          reference.classList.add('fltr-hidden');
+          //reference.classList.add('fltr-hidden');
           var contains = 0;
 
           if (activeFilters.length > 0) {
             [].forEach.call(elementFilters , function(elementFilter, elementIndex, elementArray) {
-
               [].forEach.call(activeFilters , function(activeFilter, activeindex, activearray) {
                 elementFilter = elementFilter.trim();
                 if (activeFilter == elementFilter) {
                   contains++;
                 }
                 if (contains === activearray.length) {
-                  reference.classList.remove('fltr-hidden');
+                  showAnimation(reference);
+                } else {
+                  hideAnimation(reference);
                 }
               });
             });
           } else {
-            reference.classList.remove('fltr-hidden');
+            showAnimation(reference);
           }
         });
+
+
+        function hideAnimation(el) {
+          console.log('hide', el);
+
+          var tl = new TimelineLite();
+          tl.to(el, 0.5, {opacity: 0, scale: "0.5"})
+            .to(el, 0.5, {maxHeight: 0, maxWidth: 0,});
+        }
+
+        function showAnimation(el) {
+          console.log('show', el);
+
+          var tl = new TimelineLite();
+          tl.to(el, 0.5, {maxHeight: 100, maxWidth: 100, })
+            .to(el, 0.5, {opacity: 1, scale: "1"});
+        }
       }
     });
 

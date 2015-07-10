@@ -259,24 +259,29 @@
     }
 
     .menu-block {
-      @delay: 300ms;
       color: #d9d9d9;
       margin-top: 11px;
-      transition: all 300ms 0ms, opacity @delay @delay;
       width: auto;
       height: auto;
-      max-height: 100%;
-      max-width: 100% !important;
+      // max-height: 100%;
+      // max-width: 100% !important;
       position: relative;
 
+      //transition: 500ms;
+
       &.fltr-hidden {
-        transition: all 300ms @delay, opacity @delay 0ms;
-        opacity: 0;
-        max-height: 0;
-        max-width: 0 !important;
-        margin: 0 !important;
-        padding:0;
-        position: absolute;
+        // opacity: 0;
+        // max-height: 0;
+        // max-width: 0 !important;
+        // margin: 0 !important;
+        // padding:0;
+        // position: absolute;
+
+        // opacity: 0;
+        // visibility: hidden;
+        // max-height: 0;
+        // max-width: 0;
+        // animation: hideMenuItem 400ms ease-in;
       }
 
       .project-info-title {
@@ -463,8 +468,7 @@
         display: block;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
         position: relative;
-        @delay: 300ms;
-        transition: all 300ms 0ms, opacity @delay @delay;
+
         float: left;
 
         .project-overlay:hover {
