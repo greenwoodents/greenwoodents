@@ -253,12 +253,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
         }).data('smoothState');
     })(jQuery);
 
-    var swipe = new SwipeMe(document.body,{
-      accessClasses: {
-        right: 'menu-active'
-      },
-      direction: ['right']
-    });
+
 
 
     var lastScrollTop = 0,
@@ -285,6 +280,15 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
     //Add scroll listener
     addEvent(window, 'scroll', runOnScroll);
+
+
+    //dragable menu
+    new Dragdealer('dragMenu', {
+      steps: 2,
+      speed: 0.3,
+      loose: false,
+      requestAnimationFrame: true
+    });
 
 
   };
