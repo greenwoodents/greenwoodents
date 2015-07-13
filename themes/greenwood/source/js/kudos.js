@@ -1,8 +1,6 @@
 var Kudos = (function(){
   'use strict';
-  //todo
-  // - callback
-  // - display funkce pro menu, asi urpavit generate numbers
+
   var visible = {},
 
   config = {
@@ -39,6 +37,9 @@ var Kudos = (function(){
   visible.config = config;
 
   var init = function(startingNumberUser, initiDone){
+
+    console.log(startingNumberUser, initiDone);
+
     numbers = {
       raw: [],
       helpers: []

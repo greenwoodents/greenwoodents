@@ -143,12 +143,10 @@
   }
   70% {
     opacity: 0;
-    .scale(.5);
-    visibility: visible;
+    .scale(.8);
      margin: 15px !important;
   }
   100% {
-    opacity: 0;
     visibility: hidden;
     max-height: 0;
     max-width: 0;
@@ -179,6 +177,23 @@
 }
 
 @keyframes showMenuItem {
+  0%   {
+    opacity: 0;
+    .scale(.8);
+    visibility: hidden;
+
+    max-height: 100%;
+    max-width: 100%;
+    margin: 15px !important;
+  }
+  100% {
+    opacity: 1;
+    .scale(1);
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes showMenuItem {
   0%   {
     opacity: 0;
     .scale(.8);

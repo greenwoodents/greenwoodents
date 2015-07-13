@@ -82,6 +82,19 @@
   }
 }
 
+.fixed-menu-block {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 500ms;
+  .translateY(0px);
+
+  &.hidden {
+    .translateY(-40px);
+  }
+}
+
 .menu {
   font-family: @gotham;
   width: 100%;
@@ -115,7 +128,7 @@
   &-button {
     display: block;
     position: absolute;
-    left: 22px;
+    left: 11px;
     top: 17px;
     font-family: GothamBook;
     font-size: 10px;
@@ -123,12 +136,14 @@
     line-height: 12px;
     text-transform: uppercase;
     z-index: 90;
-    padding: 15px;
+    padding: 15px 14px 13px 26px;
+    background-color: white;
+    line-height: 9px;
 
     .project-ic {
       position: absolute;
       top: 12px;
-      left: -5px;
+      left: 7px;
     }
 
     &:active {
