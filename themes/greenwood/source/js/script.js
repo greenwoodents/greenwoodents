@@ -287,7 +287,23 @@ Pace.once('done', function(){app.afterLoadInitial();});
       steps: 2,
       speed: 0.3,
       loose: false,
-      requestAnimationFrame: true
+      requestAnimationFrame: true,
+      css3: true,
+      dragStopCallback: function(x,y) {
+        console.log(x);
+
+        if(x === 1){
+          document.querySelector('.body-wrap').classList.add('opened');
+        } else {
+          document.querySelector('.body-wrap').classList.remove('opened');
+        }
+      },
+      dragStartCallback: function(x, y) {
+        console.log(x,'z');
+        if(x === 0){
+          //
+        }
+      }
     });
 
 

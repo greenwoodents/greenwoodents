@@ -118,13 +118,27 @@
   .holder {
     width: 50%;
     height: 100%;
-    float: left;
-    background-color: green;
+
     position: relative;
-    display: block;
+    display: inline-block;
+    vertical-align: top;
 
     &:last-child {
       background-color: yellow;
+    }
+  }
+
+  .opened {
+    .fixed-menu-block,
+    .menu-drag {
+      position: relative;
+    }
+
+    .main {
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+      max-height: 0;
     }
   }
 
