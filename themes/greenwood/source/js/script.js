@@ -121,6 +121,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
   //Initial
   var initial = function() {
+    console.log('inital');
     //menu filtering init.
     var jsShow = document.querySelectorAll('.js-filtr a');
     [].forEach.call(jsShow , function(button, index, btnarray) {
@@ -261,28 +262,36 @@ Pace.once('done', function(){app.afterLoadInitial();});
     });
 
     var lastScrollTop = 0,
-        scrollTop = 0;
+        scrollTop = 0,
+        hp = document.body.classList.contains('body-homepage');
     var runOnScroll =  function(evt) {
-      console.log();
-      var menu = document.querySelector('.fixed-menu-block');
-      console.log(scrollTop);
-      if(menu && mqMedium.matches){
-        scrollTop = document.body.scrollTop;
+      if(!( hp )) {
+          var menu = document.querySelector('.fixed-menu-block');
 
-        if (scrollTop > lastScrollTop) {
-          menu.classList.add('hidden');
-        } else {
-          menu.classList.remove('hidden');
+          console.log('lastScrollTop', lastScrollTop);
+          console.log('scrollTop', scrollTop);
+
+
+        if( menu && mqMedium.matches){
+          console.log('here?');
+          scrollTop = document.body.scrollTop;
+
+          if (scrollTop > lastScrollTop) {
+            menu.classList.add('hidden');
+          } else {
+            menu.classList.remove('hidden');
+          }
+
+          lastScrollTop = scrollTop;
         }
-
-        lastScrollTop = scrollTop;
       }
+
 
 
     };
 
     //Add scroll listener
-    addEvent(window, 'scroll', runOnScroll);
+
 
 
   };
