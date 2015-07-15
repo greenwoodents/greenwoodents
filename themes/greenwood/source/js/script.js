@@ -121,7 +121,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
   //Initial
   var initial = function() {
-    console.log('inital');
     //menu filtering init.
     var jsShow = document.querySelectorAll('.js-filtr a');
     [].forEach.call(jsShow , function(button, index, btnarray) {
@@ -268,14 +267,9 @@ Pace.once('done', function(){app.afterLoadInitial();});
     var runOnScroll =  function(evt) {
       var hp = document.body.classList.contains('body-homepage');
       if(!( hp )) {
-          var menu = document.querySelector('.fixed-menu-block');
-
-          console.log('lastScrollTop', lastScrollTop);
-          console.log('scrollTop', scrollTop);
-
+        var menu = document.querySelector('.fixed-menu-block');
 
         if( menu && mqMedium.matches){
-          console.log('here?');
           scrollTop = document.body.scrollTop;
 
           if (scrollTop > lastScrollTop) {
@@ -353,7 +347,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
     var delays = [0, 1360, 2240],
         hiddenSoft = document.querySelectorAll('.hiddenSoft');
-        console.log(hiddenSoft);
     if(hiddenSoft){
       [].forEach.call(hiddenSoft, function(el,i,a) {
         if (!(el.classList.contains('animated'))) {
