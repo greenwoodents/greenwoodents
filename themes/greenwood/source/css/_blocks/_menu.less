@@ -279,10 +279,14 @@
       margin-top: 11px;
       width: auto;
       height: auto;
-
       position: relative;
-      -webkit-animation: showMenuItem 350ms ease-in-out;
-      animation: showMenuItem 350ms ease-in-out;
+
+
+
+      @media @medium {
+        -webkit-animation: showMenuItem 350ms ease-in-out;
+        animation: showMenuItem 350ms ease-in-out;
+      }
 
       &.fltr-hidden {
         opacity: 0;
@@ -290,8 +294,16 @@
         max-height: 0;
         max-width: 0;
         margin: 0 !important;
-        -webkit-animation: hideMenuItem 350ms ease-in;
-        animation: hideMenuItem 350ms ease-in;
+
+        @media @small {
+          position: absolute;
+        }
+
+        @media @medium {
+          -webkit-animation: hideMenuItem 350ms ease-in;
+          animation: hideMenuItem 350ms ease-in;
+        }
+
       }
 
       .project-info-title {
@@ -301,6 +313,7 @@
         margin: 1.25% 0.7%;
         font-family: 'Sentinel A','Sentinel B',Sentinel;
       }
+
       @media @medium {
         &:hover {
           .project-info-title {
@@ -534,6 +547,10 @@
           color: white;
           font-size: 31px;
           z-index: 10;
+
+          @media @small {
+            transition: 0ms;
+          }
 
           .backround {
             width: 100%;
