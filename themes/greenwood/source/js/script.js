@@ -261,10 +261,12 @@ Pace.once('done', function(){app.afterLoadInitial();});
       direction: ['right']
     });
 
+
     var lastScrollTop = 0,
-        scrollTop = 0,
-        hp = document.body.classList.contains('body-homepage');
+        scrollTop = 0;
+
     var runOnScroll =  function(evt) {
+      var hp = document.body.classList.contains('body-homepage');
       if(!( hp )) {
           var menu = document.querySelector('.fixed-menu-block');
 
@@ -285,13 +287,10 @@ Pace.once('done', function(){app.afterLoadInitial();});
           lastScrollTop = scrollTop;
         }
       }
-
-
-
     };
 
     //Add scroll listener
-
+    addEvent(window, 'scroll', runOnScroll);
 
 
   };
