@@ -38,8 +38,6 @@ var Kudos = (function(){
 
   var init = function(startingNumberUser, initiDone){
 
-    console.log(startingNumberUser, initiDone);
-
     numbers = {
       raw: [],
       helpers: []

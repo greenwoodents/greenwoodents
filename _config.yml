@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 #Development
-offlineDevelopment: true
+offlineDevelopment: false
 
 # Site
 title: Greenwood Ents

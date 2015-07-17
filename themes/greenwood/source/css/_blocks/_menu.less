@@ -89,6 +89,7 @@
   left: 0;
   transition: 500ms;
   .translateY(0px);
+  z-index: 100;
 
   &.hidden {
     .translateY(-40px);
@@ -96,12 +97,14 @@
 }
 
 
+@media only screen and (max-width: 768px) {
   .menu-drag {
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 100;
   }
 
   .handle {
@@ -125,6 +128,7 @@
 
     &:last-child {
       background-color: yellow;
+      z-index: 500;
     }
   }
 
@@ -141,6 +145,7 @@
       max-height: 0;
     }
   }
+}
 
 .menu {
   font-family: @gotham;
@@ -542,8 +547,11 @@
         display: block;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
         position: relative;
-
         float: left;
+
+        //fallback
+        width: 30%;
+        margin: 1.5%;
 
         .project-overlay:hover {
           .project-info {
@@ -732,6 +740,19 @@
 
 
 
+
+.desktop-menu {
+  background-color: grey;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 
 
