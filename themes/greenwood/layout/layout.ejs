@@ -1,9 +1,9 @@
 <%- partial('_partial/head') %>
 
 <body class="<% if (is_home()){ %>body-homepage<% } else { %>body-post<% } %>">
+  <%- partial('_partial/menu') %>
   <div class="body-wrap">
     <section class='main' id="main"><%- body %></section>
-    <%- partial('_partial/menu') %>
   </div>
 
 

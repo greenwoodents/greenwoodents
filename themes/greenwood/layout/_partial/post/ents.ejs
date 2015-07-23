@@ -1,6 +1,6 @@
 <div class="participants">
   <h2 class="project-color">ENTS WORKING ON THIS</h2>
-  <div id="team" class="team">
+  <div id="team" class="team ">
    <% var ents = site.data.ents,
           keys = Object.keys(ents),
           key = "",
@@ -13,7 +13,7 @@
       <div class="team-member">
         <div class="members-name">
           <p class="sentinel name"><%- ent.name %></p>
-          <a href="<%- ent.link %>" class="link-to-member"><%- ent.link.replace('http://', '') %></a>
+          <a href="<%- ent.link %>" class="link-to-member on-top"><%- ent.link.replace('http://', '') %></a>
         </div>
         <img class='lazyload participants-head ' data-src="<%- ent.img %>" >
       </div>
