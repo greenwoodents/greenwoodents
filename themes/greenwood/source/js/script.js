@@ -90,10 +90,12 @@ Pace.once('done', function(){app.afterLoadInitial();});
               window.scrollTo(0,0);
               window.location.hash='menu';
             }
-
           } else {
-            body.classList.remove('opened');
-            window.location.hash='';
+            setTimeout(function(){
+              body.classList.remove('opened');
+              window.location.hash='';
+            }, 300)
+
           }
         }
       });
