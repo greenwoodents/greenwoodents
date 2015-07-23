@@ -86,7 +86,11 @@ Pace.once('done', function(){app.afterLoadInitial();});
         dragStopCallback: function(x,y) {
           if(x === 1){
             body.classList.add('opened');
-            window.location.hash='menu';
+            if(mqMobile.matches){
+              window.scrollTo(0,0);
+              window.location.hash='menu';
+            }
+
           } else {
             body.classList.remove('opened');
             window.location.hash='';
@@ -117,7 +121,11 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
       closeButton.addEventListener('click', function() {
         event.stopImmediatePropagation();
-        window.location.hash='';
+
+        if(mqMobile.matches){
+
+          window.location.hash='';
+        }
         document.body.classList.add('button-click');
         setTimeout(function(){
           document.body.classList.remove('button-click');
@@ -294,7 +302,11 @@ Pace.once('done', function(){app.afterLoadInitial();});
       //claculate menu size
       menuSize();
 
-      window.location.hash='menu';
+      if(mqMobile.matches){
+
+         window.location.hash='menu';
+      }
+
     };
 
     var filtr = (function() {
