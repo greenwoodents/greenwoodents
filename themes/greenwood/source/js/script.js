@@ -200,6 +200,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
         if(!( openedMobile || openedDesktop )) {
           if(mqMobile.matches){
             //desktop
+            //spatna podminka tadz?
             openMenuFrom('left');
           } else {
             //mobile
@@ -213,6 +214,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
             clearAllMenuState();
           } else {
             //mobile
+            //
             mobileMenu('close');
           }
         }
