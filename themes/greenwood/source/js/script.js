@@ -68,6 +68,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
     drag,
     lastScrollTop = 0,
     scrollTop = 0,
+    animatedMenu = false,
     visible = {};
 
     var init = function() {
@@ -103,7 +104,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
       choseMenu();
       filtr.init();
 
-      if(mqMobile.matches){
+      if(!(mqMobile.matches) && animatedMenu === false){
+        console.log('true');
         document.body.classList.add('menu-in-out');
       }
     };
@@ -128,7 +130,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
         event.stopImmediatePropagation();
 
         if(mqMobile.matches){
-
           window.location.hash='';
         }
         document.body.classList.add('button-click');
@@ -199,7 +200,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
         if(!( openedMobile || openedDesktop )) {
           if(mqMobile.matches){
             //desktop
-            //spatna podminka tadz?
             openMenuFrom('left');
           } else {
             //mobile
@@ -213,7 +213,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
             clearAllMenuState();
           } else {
             //mobile
-            //
             mobileMenu('close');
           }
         }
