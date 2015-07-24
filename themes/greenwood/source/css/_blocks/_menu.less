@@ -23,7 +23,9 @@
     }
   }
 
-
+  .menu-on-top {
+    z-index: 900;
+  }
   //STATES
   //On Homepage and for mobile on all pages
   // <-|X
@@ -57,6 +59,11 @@
   }
 }
 
+
+.body-post.menu-in-out {
+  -webkit-animation: menuInOut  900ms 500ms ease-in-out;
+  animation:         menuInOut  900ms 500ms ease-in-out;
+}
 
 
 
@@ -749,6 +756,12 @@
   }
 }
 
+
+.opened .body-wrap {
+  max-height: 0;
+}
+
+
 .menu-mobile {
 
   &.active {
@@ -782,6 +795,3 @@
 
 
 
-  .opened .body-wrap {
-    max-height: 0;
-  }

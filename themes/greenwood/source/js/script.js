@@ -95,7 +95,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
               body.classList.remove('opened');
               window.location.hash='';
             }, 300)
-
           }
         }
       });
@@ -103,6 +102,10 @@ Pace.once('done', function(){app.afterLoadInitial();});
       checkUrlforHash();
       choseMenu();
       filtr.init();
+
+      if(mqMobile.matches){
+        document.body.classList.add('menu-in-out');
+      }
     };
 
     var addButtonListeners = function() {
