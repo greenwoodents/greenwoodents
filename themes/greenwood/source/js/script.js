@@ -111,8 +111,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
       choseMenu();
       filtr.init();
 
-      if(!(mqMobile.matches) && animatedMenu === false && !(window.location.hash = 'menu')){
-        console.log('true');
+      if(!(mqMobile.matches) && animatedMenu === false && !(window.location.hash === 'menu')){
         document.querySelector('.menu-drag').classList.add('menu-in-out');
       }
     };
@@ -222,6 +221,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
           } else {
             //mobile
             //
+
             mobileMenu('close');
           }
         }
@@ -351,13 +351,10 @@ Pace.once('done', function(){app.afterLoadInitial();});
       visible.init = init;
 
       var filter = function() {
-        console.log('filter');
-
         var activeButtons = document.querySelectorAll('.activated'),
             activeFilters = [];
 
         [].forEach.call(activeButtons , function(btn, index, array) {
-          console.log(activeButtons);
           var att = btn.getAttribute('filter').toLowerCase().trim();
           activeFilters.push(att);
         });
@@ -399,9 +396,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
       return visible;
     })();
-
-
-
 
     init();
     visible.drag = drag;
