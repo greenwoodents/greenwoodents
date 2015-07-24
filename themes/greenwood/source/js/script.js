@@ -71,6 +71,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
     animatedMenu = false,
     visible = {};
 
+
+
     var init = function() {
       //event listeners
       addEvent(window, 'resize', choseMenu);
@@ -97,6 +99,11 @@ Pace.once('done', function(){app.afterLoadInitial();});
               window.location.hash='';
             }, 300)
           }
+        },
+        dragStartCallback: function(x,y) {
+          if(x === 1){
+            body.classList.remove('opened');
+          }
         }
       });
 
@@ -104,9 +111,9 @@ Pace.once('done', function(){app.afterLoadInitial();});
       choseMenu();
       filtr.init();
 
-      if(!(mqMobile.matches) && animatedMenu === false){
+      if(!(mqMobile.matches) && animatedMenu === false && !(window.location.hash = 'menu')){
         console.log('true');
-        document.body.classList.add('menu-in-out');
+        document.querySelector('.menu-drag').classList.add('menu-in-out');
       }
     };
 
@@ -312,7 +319,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
          window.location.hash='menu';
       }
-
     };
 
     var filtr = (function() {
@@ -395,7 +401,10 @@ Pace.once('done', function(){app.afterLoadInitial();});
     })();
 
 
+
+
     init();
+    visible.drag = drag;
     return visible;
   })();
 
@@ -404,9 +413,11 @@ Pace.once('done', function(){app.afterLoadInitial();});
     //todo replace smoothstate, replace by smth wihout jquery
     //Bind Menu Buttons to Smoothstate.
     var projectOverlay = document.querySelectorAll('.project-overlay');
+    console.log(projectOverlay);
     [].forEach.call(projectOverlay , function(element, index, array) {
       addEvent(element, 'click', function(e) {
         e.preventDefault();
+        event.stopImmediatePropagation();
         var content  = $('#main').smoothState().data('smoothState');
         content.load(this.href);
       });
@@ -447,14 +458,20 @@ Pace.once('done', function(){app.afterLoadInitial();});
                   $body.find('a').css('cursor', 'pointer');
                   $container.html($content);
 
+                  var body = document.body;
 
                   document.getElementById('main').classList.remove('content-pending');
 
-                  if (document.body.classList.contains('menu-active')) {
+                  if (body.classList.contains('menu-active')) {
                     menu.clearAllMenuState();
                     document.getElementById('main').classList.add('is-here');
                   } else {
                     document.getElementById('main').classList.add('is-here');
+                  }
+
+                  if(body.classList.contains('opened')){
+                    body.classList.remove('opened');
+                    menu.drag.setValue(0,0);
                   }
 
                   window.scrollTo(0,0);
