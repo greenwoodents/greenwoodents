@@ -6,6 +6,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
   var mqMedium = window.matchMedia( "(min-width: 768px)" ),
       mqMobile = window.matchMedia( "(min-width: 680px)" ),
       app = {},
+      animatedMenu = false,
       executeExternalFunctions = [];
 
   app.extFn = executeExternalFunctions;
@@ -68,10 +69,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
     drag,
     lastScrollTop = 0,
     scrollTop = 0,
-    animatedMenu = false,
     visible = {};
-
-
 
     var init = function() {
       //event listeners
@@ -87,20 +85,29 @@ Pace.once('done', function(){app.afterLoadInitial();});
         requestAnimationFrame: true,
         css3: true,
         dragStopCallback: function(x,y) {
+
           if(x === 1){
-            body.classList.add('opened');
+
+            setTimeout(function(){
+              document.querySelector('.menu-drag').classList.remove('menu-on-top');
+              body.classList.add('opened');
+            }, 300)
+
             if(mqMobile.matches){
               window.scrollTo(0,0);
               window.location.hash='menu';
             }
           } else {
             setTimeout(function(){
+
               body.classList.remove('opened');
               window.location.hash='';
             }, 300)
           }
         },
         dragStartCallback: function(x,y) {
+          document.querySelector('.menu-drag').classList.add('menu-on-top');
+
           if(x === 1){
             body.classList.remove('opened');
           }
@@ -110,10 +117,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
       checkUrlforHash();
       choseMenu();
       filtr.init();
-
-      if(!(mqMobile.matches) && animatedMenu === false && !(window.location.hash === 'menu')){
-        document.querySelector('.menu-drag').classList.add('menu-in-out');
-      }
     };
 
     var addButtonListeners = function() {
@@ -220,8 +223,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
             clearAllMenuState();
           } else {
             //mobile
-            //
-
             mobileMenu('close');
           }
         }
@@ -485,6 +486,11 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
     if(mqMedium.matches){
       feedInit();
+    }
+
+
+    if(!(mqMobile.matches) && animatedMenu === false && !(window.location.hash === 'menu')){
+      document.querySelector('.menu-drag').classList.add('menu-in-out');
     }
   };
   //make visible
