@@ -78,6 +78,9 @@ Pace.once('done', function(){app.afterLoadInitial();});
       addEvent(window, 'scroll', runOnScroll);
       addEvent(window, 'popstate', checkUrlforHash);
 
+
+      var dragMenu = document.querySelector('.menu-drag');
+
       drag = new Dragdealer('dragMenu', {
         steps: 2,
         speed: 0.3,
@@ -85,32 +88,28 @@ Pace.once('done', function(){app.afterLoadInitial();});
         requestAnimationFrame: true,
         css3: true,
         dragStopCallback: function(x,y) {
-
           if(x === 1){
-
+            dragMenu.style.zIndex = "900";
             setTimeout(function(){
-              document.querySelector('.menu-drag').classList.remove('menu-on-top');
               body.classList.add('opened');
-            }, 300)
-
+              body.style.overflow = 'hidden';
+            }, 300);
             if(mqMobile.matches){
+              //desktop
               window.scrollTo(0,0);
               window.location.hash='menu';
             }
           } else {
             setTimeout(function(){
-
               body.classList.remove('opened');
-              window.location.hash='';
+              body.style.overflow = 'auto';
+              dragMenu.style.zIndex = "10";
+              window.location.hash = '';
             }, 300)
           }
         },
         dragStartCallback: function(x,y) {
-          document.querySelector('.menu-drag').classList.add('menu-on-top');
-
-          if(x === 1){
-            body.classList.remove('opened');
-          }
+          dragMenu.style.zIndex = "900";
         }
       });
 
