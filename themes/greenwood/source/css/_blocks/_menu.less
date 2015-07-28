@@ -61,8 +61,9 @@
 
 
 .body-post .menu-in-out {
-  -webkit-animation: menuInOut  1000ms 800ms ease-in-out;
-  animation:         menuInOut  1000ms 800ms ease-in-out;
+  -webkit-animation: menuInOut  1500ms 800ms cubic-bezier(0.390, 0.575, 0.095, 1.260);
+  animation:         menuInOut  1500ms 800ms cubic-bezier(0.390, 0.575, 0.095, 1.260);
+  z-index: 900;
 }
 
 
@@ -74,7 +75,6 @@
   @media @medium {
     z-index: 99;
   }
-
 }
 
 
