@@ -328,7 +328,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
       refs;
 
       var init = function() {
-        console.log('init');
         var jsShow = document.querySelectorAll('.js-filtr a');
 
         [].forEach.call(jsShow , function(button, index, btnarray) {
@@ -375,7 +374,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
                 [].forEach.call(activeFilters , function(activeFilter, activeindex, activearray) {
                   elementFilter = elementFilter.trim();
                   if (activeFilter == elementFilter) {
-                    console.log('activeFilter');
                     contains++;
                   }
                   if (contains === activearray.length) {
@@ -407,7 +405,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
     //todo replace smoothstate, replace by smth wihout jquery
     //Bind Menu Buttons to Smoothstate.
     var projectOverlay = document.querySelectorAll('.project-overlay');
-    console.log(projectOverlay);
     [].forEach.call(projectOverlay , function(element, index, array) {
       addEvent(element, 'click', function(e) {
         e.preventDefault();
