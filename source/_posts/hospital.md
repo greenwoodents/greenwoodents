@@ -5,7 +5,7 @@ subTitle: Liberec & Turnov
 country: Czech republic
 
 howMuch: $ 203
-howWeCalc: Client’s budget
+howWeCalc: Competition
 
 howLongItTake: 3 man-days
 whatWasPlan: 3 man-days
@@ -17,8 +17,8 @@ whenWeDidIt: January 2014
 projectColor: '#BA2225'
 
 projectPreviewImage: /hospital/menu.png
-projectImage: /hospital/homepage@2x.png
-projectImagePosition: -83%
+projectImage: /hospital/screen.png
+projectImagePosition: -12%
 
 jh: true
 
@@ -27,8 +27,8 @@ jh: true
 
 
 <div id="description" class="description">
-Visit of hospital website isn't usually very happy but don't have to be confusing.
-_It was a closed competition. The rule was create 2 subpages from their wireframes._
+Visit of hospital's website isn't usually great experience so we tried to ease the pain.
+_It was a closed competition. The task was create 2 subpages from their wireframes._
 </div>
 
 ##HOMEPAGE & SUBPAGE
