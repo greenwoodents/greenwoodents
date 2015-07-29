@@ -18,6 +18,7 @@ projectColor: '#BA2225'
 
 projectPreviewImage: /hospital/menu.png
 projectImage: /hospital/homepage@2x.png
+projectImagePosition: -83%
 
 jh: true
 
