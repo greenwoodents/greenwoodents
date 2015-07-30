@@ -10,8 +10,6 @@ var gulp = require('gulp'),
     useref = require('gulp-useref'),
     cachebust = require('gulp-cache-bust');
 
-
-
 gulp.task('css', function() {
    gulp.src('public/css/style.css')
    .pipe(cssmin())
@@ -40,15 +38,15 @@ gulp.task('images', function(cb) {
 
 
 
-// gulp.task('html', function() {
-//   var assets = useref.assets();
-//   return gulp.src('public/**/*.html')
-//     .pipe(assets)
-//     .pipe(gulpif('*.js', uglify()))
-//     .pipe(assets.restore())
-//     .pipe(useref())
-//     .pipe(gulp.dest('./dist/'));
-// });
+gulp.task('html', ['css', 'scripts', 'fonts', 'images:copy'], function() {
+  var assets = useref.assets();
+  return gulp.src('public/**/*.html')
+    .pipe(assets)
+    .pipe(gulpif('*.js', uglify()))
+    .pipe(assets.restore())
+    .pipe(useref())
+    .pipe(gulp.dest('./dist/'));
+});
 
 
 
@@ -65,12 +63,12 @@ gulp.task('images:copy', function() {
    .pipe(gulp.dest('./dist/'));
 });
 //default
-gulp.task('default', ['css', 'scripts', 'fonts', 'images:copy'],function(){
+gulp.task('default', ['html'],function(){
 
-  return gulp.src('public/**/*.html')
+  return gulp.src('dist/**/*.html')
     .pipe(cachebust({type: 'timestamp'}))
     .pipe(minifyHTML())
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('dist/'));
 });
 
 

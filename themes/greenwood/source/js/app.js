@@ -32,6 +32,21 @@ Pace.once('done', function(){app.afterLoadInitial();});
       };
     });
   };
+
+  var loadJS = function(src, callback) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.async = true;
+    s.onreadystatechange = s.onload = function() {
+        var state = s.readyState;
+        if (!callback.done && (!state || /loaded|complete/.test(state))) {
+            callback.done = true;
+            callback();
+        }
+      };
+    document.getElementsByTagName('head')[0].appendChild(s);
+  };
+  app.loadJS = loadJS;
   ///////
 
   var feedInit = function(){
@@ -405,72 +420,43 @@ Pace.once('done', function(){app.afterLoadInitial();});
     //todo replace smoothstate, replace by smth wihout jquery
     //Bind Menu Buttons to Smoothstate.
     var projectOverlay = document.querySelectorAll('.project-overlay');
+
     [].forEach.call(projectOverlay , function(element, index, array) {
       addEvent(element, 'click', function(e) {
         e.preventDefault();
         event.stopImmediatePropagation();
-        var content  = $('#main').smoothState().data('smoothState');
-        content.load(this.href);
-      });
-      addEvent(element, 'mouseover', function(e) {
-        e.preventDefault();
-        var content  = $('#main').smoothState().data('smoothState');
-        content.fetch(this.href);
+        pjax.invoke(this.href, 'main');
       });
     });
 
-    //smoothstate init
-    ;(function($) {
-      'use strict';
 
-        var $body    = $('html, body'),
-        content  = $('#main').smoothState({
-            prefetch: true,
-            pageCacheSize: 0,
-            onStart: {
-              duration: 300,
-              render: function (url, $container) {
-                document.getElementById('main').classList.remove('is-here');
-                content.toggleAnimationClass('is-exiting');
-              }
-            },
-            onProgress : {
-              duration: 0, // Duration of the animations, if any.
-              render: function (url, $container) {
-                  $body.css('cursor', 'wait');
-                  $body.find('a').css('cursor', 'wait');
-                  document.getElementById('main').classList.add('content-pending');
-              }
-            },
-            onEnd : {
-              duration: 300, // Duration of the animations, if any.
-              render: function (url, $container, $content) {
-                  $body.css('cursor', 'auto');
-                  $body.find('a').css('cursor', 'pointer');
-                  $container.html($content);
+    var body = document.body,
+        container = document.getElementById('main');
 
-                  var body = document.body;
+    pjax.connect({
+      autoAnalytics: false,
+      'container': 'main',
+      'beforeSend': function(e){
+        container.classList.remove('is-here');
+        container.classList.add('is-exiting');
+      },
+      'complete': function(e){
+        container.classList.remove('is-exiting');
 
-                  document.getElementById('main').classList.remove('content-pending');
+        if (body.classList.contains('menu-active')) {
+          menu.clearAllMenuState();
+          container.classList.add('is-here');
+        } else {
+          container.classList.add('is-here');
+        }
 
-                  if (body.classList.contains('menu-active')) {
-                    menu.clearAllMenuState();
-                    document.getElementById('main').classList.add('is-here');
-                  } else {
-                    document.getElementById('main').classList.add('is-here');
-                  }
-
-                  if(body.classList.contains('opened')){
-                    body.classList.remove('opened');
-                    menu.drag.setValue(0,0);
-                  }
-
-                  window.scrollTo(0,0);
-                  window.app.components($content);
-                }
-            }
-        }).data('smoothState');
-    })(jQuery);
+        if(body.classList.contains('opened')){
+          body.classList.remove('opened');
+          menu.drag.setValue(0,0);
+        }
+        window.app.components();
+      }
+    });
   };
 
   //afterLoad

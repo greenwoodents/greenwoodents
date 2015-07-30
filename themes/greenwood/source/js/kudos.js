@@ -33,8 +33,7 @@ var Kudos = (function(){
     raw: [],
     helpers: []
   };
-  //make config public
-  visible.config = config;
+
 
   var init = function(startingNumberUser, initiDone){
 
@@ -82,8 +81,7 @@ var Kudos = (function(){
     wrapper.classList.remove('hidden');
     wrapper.classList.add('show-from-bottom');
   };
-  //make public
-  visible.init = init;
+
 
   var generateNumbers = function() {
     var docFrag = document.createDocumentFragment();
@@ -165,14 +163,12 @@ var Kudos = (function(){
       }
     }
   };
-
   var click = function() {
     if(window.matchMedia("(max-width: 680px)").matches) {
       document.querySelector('.kudos-number-visible').setAttribute('style', 'top:'+config.animation.helperPosition[0]+'px; opacity: 0;');
       document.querySelector('.kudos-number-helper').setAttribute('style', 'top:'+config.animation.numberPosition[0]+'px; opacity: 1;');
     }
   };
-
   var _done = function() {
     done();
     setTimeout(function() {
@@ -188,12 +184,17 @@ var Kudos = (function(){
     //   history.replaceState( {} , document.title, window.location.href  + '#😮' );
     // }
   }
-  visible.done = done;
+
 
   //callback
   var extendDone = function() {
-    KudosFirebase.add();
+    window.KudosFirebase.add();
   }
+
+  //make public
+  visible.config = config;
+  visible.init = init;
+  visible.done = done;
   visible.extendDone = extendDone;
 
   return visible;
@@ -201,120 +202,126 @@ var Kudos = (function(){
 
 
 
-var KudosFirebase = (function() {
-  'use strict';
-  var firebase = new Firebase("https://ents-testing.firebaseio.com/"),
-  firebaseKudos = firebase.child('kudos'),
-  authData = firebase.getAuth(),
-  visible = {};
 
-  var init = function() {
-    var kudos = document.querySelectorAll('.script-kudos') || false;
-    if(kudos.length <= 0) {
-      return false;
-    }
+//Load Firebase
+app.loadJS('https://cdn.firebase.com/js/client/2.2.7/firebase.js', function() {
 
-    var authData = firebase.getAuth();
-    if(authData == null){
-      // authenticate the user
-      firebase.authAnonymously(function(err, authenticationData) {});
-    }
+  var KudosFirebase = (function() {
+    'use strict';
+    var firebase = new Firebase("https://ents-testing.firebaseio.com/"),
+    firebaseKudos = firebase.child('kudos'),
+    authData = firebase.getAuth(),
+    visible = {};
 
-    var key = document.location.pathname.replace(/[\/-]/g,'');
-    firebaseKudos.child(key).on('value', function(snapshot){
-      var initKudos = function(authData) {
-        if(snapshot){
-          var article = snapshot.val();
-          var likeCount = 0;
-          if(article){
-            for(var prop in article.likes){
-              likeCount++;
-            }
-          }
-        }
+    var init = function() {
+      var kudos = document.querySelectorAll('.script-kudos') || false;
+      if(kudos.length <= 0) {
+        return false;
+      }
 
-        firebaseKudos.child(key).child('likes').child(authData.uid).once('value', function(snap){
-          if(snap.val() !== null){
-            Kudos.init(likeCount, true);
-          } else {
-            Kudos.init(likeCount);
-          }
-        });
-      };
       var authData = firebase.getAuth();
       if(authData == null){
-        firebase.authAnonymously(function(err, authenticationData) {
-          initKudos(authenticationData);
-        });
-      } else {
-        initKudos(authData);
+        // authenticate the user
+        firebase.authAnonymously(function(err, authenticationData) {});
       }
-    });
-  };
-  visible.init = init;
 
-  var initMenu = function() {
-    var menuBlock = document.querySelectorAll('.menu-block');
-    [].forEach.call(menuBlock, function(el,i,a) {
-      var title = el.querySelector('.project-info-title').innerHTML.toLowerCase().replace('.','').replace('#','').replace('$','').replace(',','').trim();
-      var counter = el.querySelector('.count-of-kudos');
-
-      if(counter){
-        el.querySelector('.kudos-view').classList.remove('hidden');
-
-        firebaseKudos.child(title).on('value', function(snapshot){
+      var key = document.location.pathname.replace(/[\/-]/g,'');
+      firebaseKudos.child(key).on('value', function(snapshot){
+        var initKudos = function(authData) {
           if(snapshot){
             var article = snapshot.val();
             var likeCount = 0;
             if(article){
-              for(var prop in article.likes) {
+              for(var prop in article.likes){
                 likeCount++;
               }
             }
           }
-          counter.innerText = likeCount;
-        });
-      }
-    });
-  };
-  visible.initMenu = initMenu;
 
-  var addKudo = function(){
-    var kudo = function() {
-      if (authData) {
-        firebaseKudos
-          .child(key)
-          .child('likes')
-          .child(authData.uid)
-          .set({
-              count: 1
+          firebaseKudos.child(key).child('likes').child(authData.uid).once('value', function(snap){
+            if(snap.val() !== null){
+              Kudos.init(likeCount, true);
+            } else {
+              Kudos.init(likeCount);
+            }
           });
+        };
+        var authData = firebase.getAuth();
+        if(authData == null){
+          firebase.authAnonymously(function(err, authenticationData) {
+            initKudos(authenticationData);
+          });
+        } else {
+          initKudos(authData);
+        }
+      });
+    };
+    var initMenu = function() {
+      var menuBlock = document.querySelectorAll('.menu-block');
+      [].forEach.call(menuBlock, function(el,i,a) {
+        var title = el.querySelector('.project-info-title').innerHTML.toLowerCase().replace('.','').replace('#','').replace('$','').replace(',','').trim();
+        var counter = el.querySelector('.count-of-kudos');
 
-        //GA EVENT
-        ga('send', 'event', 'kudos', 'added');
+        if(counter){
+          el.querySelector('.kudos-view').classList.remove('hidden');
+
+          firebaseKudos.child(title).on('value', function(snapshot){
+            if(snapshot){
+              var article = snapshot.val();
+              var likeCount = 0;
+              if(article){
+                for(var prop in article.likes) {
+                  likeCount++;
+                }
+              }
+            }
+            counter.innerText = likeCount;
+          });
+        }
+      });
+    };
+    var addKudo = function(){
+      var kudo = function() {
+        if (authData) {
+          firebaseKudos
+            .child(key)
+            .child('likes')
+            .child(authData.uid)
+            .set({
+                count: 1
+            });
+
+          //GA EVENT
+          ga('send', 'event', 'kudos', 'added');
+        }
+      };
+
+      var key = document.location.pathname.replace(/[\/-]/g,'');
+      var authData = firebase.getAuth();
+      if(authData == null){
+        // authenticate the user
+        firebase.authAnonymously(function(err, authenticationData) {
+          kudo();
+        });
+      } else {
+        kudo()
       }
     };
 
-    var key = document.location.pathname.replace(/[\/-]/g,'');
-    var authData = firebase.getAuth();
-    if(authData == null){
-      // authenticate the user
-      firebase.authAnonymously(function(err, authenticationData) {
-        kudo();
-      });
-    } else {
-      kudo()
-    }
-  };
+    visible.init = init;
+    visible.initMenu = initMenu;
+    visible.add = addKudo;
 
-  init();
-  initMenu();
+    return visible;
+  })();
 
-  visible.add = addKudo;
-  return visible;
-})();
+  window.KudosFirebase = KudosFirebase;
 
-app.extFn.push(KudosFirebase.init);
+  app.extFn.push(KudosFirebase.init);
+  KudosFirebase.init();
+  KudosFirebase.initMenu();
+});
+
 
 
 

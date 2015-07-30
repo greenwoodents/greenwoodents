@@ -81,13 +81,17 @@
 }
 
 .is-here {
-  -webkit-animation: page-enter 300ms ease-in-out; /* Safari 4+ */
-  animation:         page-enter 300ms ease-in-out; /* IE 10+, Fx 29+ */
+  -webkit-animation: page-enter 450ms ease-in-out; /* Safari 4+ */
+  animation:         page-enter 450ms ease-in-out; /* IE 10+, Fx 29+ */
 }
 
 .main.is-exiting {
-  -webkit-animation: page-exit 300ms ease-in-out; /* Safari 4+ */
-  animation:         page-exit 300ms ease-in-out; /* IE 10+, Fx 29+ */
+  transition: 100ms;
+  // -webkit-animation: page-exit 100ms ease-in-out; /* Safari 4+ */
+  // animation:         page-exit 100ms ease-in-out; /* IE 10+, Fx 29+ */
+
+
+  opacity: 0;
 
 }
 

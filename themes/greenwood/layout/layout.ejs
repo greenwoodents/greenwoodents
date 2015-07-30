@@ -6,35 +6,38 @@
     <section class='main' id="main"><%- body %></section>
   </div>
 
-
-  <script>
-  (function(){
-    var delays = [0, 1360, 2240],
-        els = document.querySelectorAll('.hiddenSoft');
-    [].forEach.call(els, function(el,i,a) {
-      setTimeout(function(){
-        el.classList.add('animated');
-      }, delays[i] )
-    });
-  })();
-  </script>
-
-
-  <%- js('js/libs') %>
-  <%- js('js/script') %>
-
-  <% if (!(config.offlineDevelopment)) { %>
-    <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
-    <%- js('js/kudos') %>
+  <% if (is_home()){ %>
+    <script>
+    (function(){
+      var delays = [0, 1360, 2240],
+          els = document.querySelectorAll('.hiddenSoft');
+      [].forEach.call(els, function(el,i,a) {
+        setTimeout(function(){
+          el.classList.add('animated');
+        }, delays[i] )
+      });
+    })();
+    </script>
   <% } %>
+
+  <!-- build:js /js/combined.js -->
+  <%- js('/js/libs/pjax-standalone.min.js') %>
+  <%- js('/js/libs/gsap-EasePack.min.js') %>
+  <%- js('/js/libs/gsap-TimelineLite.min.js') %>
+  <%- js('/js/libs/gsap-TweenLite.min.js') %>
+  <%- js('/js/libs/gsap-CSSPlugin.min.js') %>
+  <%- js('/js/libs/lazysizes.min.js') %>
+  <%- js('/js/libs/instafeed.min.js') %>
+  <%- js('/js/libs/dragdealer.min.js') %>
+
+  <%- js('/js/app') %>
+  <%- js('/js/kudos') %>
+  <!-- endbuild -->
 
   <script type="text/javascript">
     window.heap=window.heap||[],heap.load=function(t,e){window.heap.appid=t,window.heap.config=e;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+t+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(t){return function(){heap.push([t].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
     heap.load("3891062150");
   </script>
-
-
-
 </body>
 </html>
 
