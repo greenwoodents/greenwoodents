@@ -4,37 +4,43 @@
     height: @height;
 }
 
+.scene {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .clouds {
 
-  li {
-    background-image: url(../images/hp-sprite.png);
-    background-repeat: no-repeat;
-    display: block;
-  }
+  background-image: url(../images/hp-sprite.png);
+  background-repeat: no-repeat;
+  display: block;
 
-  &.inline-bottom-clouds li {
+  &.inline-bottom-clouds {
     .spritegen(-5px, -5px, 198px, 19px);
   }
 
-  &.inline-small-clouds li {
+  &.inline-small-clouds {
      .spritegen(-213px, -5px, 146px, 14px);
   }
 
-  &.inline-top-clouds li {
+  &.inline-top-clouds {
     .spritegen(-213px, -29px, 66px, 16px);
   }
 
-  &.inline-clouds li {
-    .spritegen(-5px, -55px, 382px, 31px);
+  &.inline-clouds {
+    background-image: url(../images/hp-mrak-wide.png);
   }
 }
 
 .clouds {
-  li {
-    position: absolute;
-    z-index: 45;
-    opacity: 0;
-  }
+  position: absolute;
+  z-index: 45;
+  opacity: 0;
 }
 
 .clouds-wrap {
@@ -49,41 +55,40 @@
 }
 
 .pace-done {
-  .inline-clouds li {
+  .inline-clouds {
     -webkit-animation: wide-mrak 20000ms infinite linear; /* Safari 4+ */
     animation:         wide-mrak 20000ms infinite linear; /* IE 10+, Fx 29+ */
   }
 
-  .inline-small-clouds li {
+  .inline-small-clouds {
     -webkit-animation: small-mrak 17000ms infinite linear; /* Safari 4+ */
     animation:         small-mrak 17000ms infinite linear; /* IE 10+, Fx 29+ */
   }
 
-  .inline-bottom-clouds li {
+  .inline-bottom-clouds {
     -webkit-animation: quick-mrak  10000ms infinite linear; /* Safari 4+ */
     animation:         quick-mrak  10000ms infinite linear; /* IE 10+, Fx 29+ */
   }
 
-  .inline-top-clouds li {
+  .inline-top-clouds {
     -webkit-animation: small-mrak 17000ms infinite linear; /* Safari 4+ */
     animation:         small-mrak 17000ms infinite linear; /* IE 10+, Fx 29+ */
   }
 }
 
 .inline-clouds {
-  position: absolute;
+  background-color: red;
+  width: 100%;
+  height: 100%;
 
-  li {
+  &:nth-child(1) {
+    -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+    animation-delay: 2s;
+  }
 
-    &:nth-child(1) {
-      -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
-      animation-delay: 2s;
-    }
-
-    &:nth-child(2) {
-      -webkit-animation-delay: 12s; /* Chrome, Safari, Opera */
-      animation-delay: 12s;
-    }
+  &:nth-child(2) {
+    -webkit-animation-delay: 12s; /* Chrome, Safari, Opera */
+    animation-delay: 12s;
   }
 }
 
@@ -102,18 +107,16 @@
 
 
 .inline-small-clouds {
-  position: absolute;
+  background-color: green;
 
-  li {
-    &:nth-child(1) {
-      -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
-      animation-delay: 2s;
-    }
+  &:nth-child(1) {
+    -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+    animation-delay: 2s;
+  }
 
-    &:nth-child(2) {
-      -webkit-animation-delay: 11s; /* Chrome, Safari, Opera */
-      animation-delay: 11s;
-    }
+  &:nth-child(2) {
+    -webkit-animation-delay: 11s; /* Chrome, Safari, Opera */
+    animation-delay: 11s;
   }
 }
 
@@ -131,14 +134,11 @@
 
 
 .inline-bottom-clouds {
-  position: absolute;
+  background-color: yellow;
 
-  li {
-
-    &:nth-child(1) {
-      -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
-      animation-delay: 2s;
-    }
+  &:nth-child(1) {
+    -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+    animation-delay: 2s;
   }
 }
 
@@ -157,18 +157,16 @@
 
 .inline-top-clouds {
   position: absolute;
+  background-color: purple;
 
-  li {
+  &:nth-child(1) {
+    -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+    animation-delay: 2s;
+  }
 
-    &:nth-child(1) {
-      -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
-      animation-delay: 2s;
-    }
-
-    &:nth-child(2) {
-      -webkit-animation-delay: 11s; /* Chrome, Safari, Opera */
-      animation-delay: 11s;
-    }
+  &:nth-child(2) {
+    -webkit-animation-delay: 11s; /* Chrome, Safari, Opera */
+    animation-delay: 11s;
   }
 }
 
