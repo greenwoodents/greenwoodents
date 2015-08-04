@@ -415,6 +415,35 @@ Pace.once('done', function(){app.afterLoadInitial();});
     return visible;
   })();
 
+  var animationRatio = function(){
+    var scale = 1,
+        videoRatio = 16 / 15,
+        viewportRatio = 0,
+        fw = window.innerWidth,
+        fh = window.innerHeight,
+        iw = 1920,
+        ih = 1800,
+        wrapper = document.querySelector('.ratio-wrapper'),
+        el = document.querySelector('.ratio-wrapper > .content'),
+        video = document.querySelector('.ratio-wrapper  video');
+
+        scale = Math.max(fh/ih,fw/iw);
+        iw = iw * scale;
+        ih = ih * scale;
+
+    //el.style.transform = "scale("+scale+")";
+    console.log("iamge height: " + ih, "image Width: " + iw);
+    console.log("scale factor " + scale);
+
+    wrapper.style.height = ih+"px";
+    wrapper.style.width = iw+"px";
+
+    wrapper.style.transform = "translateY(-"+(ih-fh)/2 + "px)";
+    video.style.transform = "scale("+ scale + ")";
+
+
+  };
+
   //Initial
   var initial = function() {
     //todo replace smoothstate, replace by smth wihout jquery
@@ -458,6 +487,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
       }
     });
   };
+  addEvent(window, 'resize', animationRatio)
 
   //afterLoad
   var afterLoadInitial = function() {
@@ -465,6 +495,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
     defferAll();
     components();
     initial();
+    animationRatio();
 
     if(mqMedium.matches){
       feedInit();
