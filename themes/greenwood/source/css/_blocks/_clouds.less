@@ -32,7 +32,7 @@
     .spritegen(-213px, -29px, 66px, 16px);
   }
 
-  &.inline-clouds {
+  &.inline-clouds .item {
     background-image: url(../images/hp-mrak-wide.png);
   }
 }
@@ -60,7 +60,7 @@
 }
 
 .pace-done {
-  .inline-clouds {
+  .inline-clouds .item {
     -webkit-animation: wide-mrak 20000ms infinite linear; /* Safari 4+ */
     animation:         wide-mrak 20000ms infinite linear; /* IE 10+, Fx 29+ */
   }
@@ -88,12 +88,17 @@
   top: 54%;
   left: 59%;
 
-  -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
-  animation-delay: 2s;
+  .item {
+    -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+    animation-delay: 2s;
+  }
+
 
     &.delayed {
+      .item {
       -webkit-animation-delay: 12s; /* Chrome, Safari, Opera */
       animation-delay: 12s;
+      }
     }
 }
 
