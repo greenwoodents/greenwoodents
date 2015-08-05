@@ -112,10 +112,10 @@
     right: -1px;
     .translateX(0px);
 
-    @media @medium {
-      -webkit-animation: puls-right 4500ms 2000ms infinite ease-in-out; /* Safari 4+ */
-      animation:         puls-right 4500ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
-    }
+    // @media @medium {
+    //   -webkit-animation: puls-right 4500ms 2000ms infinite ease-in-out;  Safari 4+
+    //   animation:         puls-right 4500ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
+    // }
 
     @media @small {
       .rotate(180deg);
@@ -172,7 +172,7 @@
 
     &-smoke {
       @media @large {
-        -webkit-animation: smoke 20000ms 2000ms infinite ease-in-out; /* Safari 4+ */
+        -webkit-animation: smoke 20000ms 2000ms infinite ease-in-out;
         animation:         smoke 20000ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
       }
     }
@@ -180,14 +180,14 @@
     &-front-tree {
       transition: all 2000ms ease-in-out;
       opacity: 1;
-      bottom: -5%;
+      bottom: 0%;
       visibility: visible;
     }
 
-    &-clouds {
-      -webkit-animation: from-left-to-right 700000ms 2000ms infinite linear; /* Safari 4+ */
-      animation:         from-left-to-right 700000ms 2000ms infinite linear; /* IE 10+, Fx 29+ */
-    }
+    // &-clouds {
+    //   -webkit-animation: from-left-to-right 700000ms 2000ms infinite linear;  Safari 4+
+    //   animation:         from-left-to-right 700000ms 2000ms infinite linear; /* IE 10+, Fx 29+ */
+    // }
 
     &-front {
       transition: all 2000ms ease-in-out;
@@ -268,17 +268,20 @@
     }
 
     &-smoke {
-      width: 100%;
+      width: 1368px;
       height: 737px;
       background-image: url(../images/hp-smog.png);
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
       position: absolute;
-      bottom: 9%;
+      bottom: 0;
       left: 0;
+      top: 50%;
+      right: 0;
       z-index: 35;
       opacity: 0;
+      margin-top: -367px;
 
       &.animate {
         -webkit-animation: smoke 20000ms 2000ms infinite ease-in-out; /* Safari 4+ */
@@ -415,32 +418,45 @@
   position: absolute;
 
       z-index: 90;
-          opacity: .2;
+          // opacity: .2;
 
   .content {
     height: 100%;
-    background-color: green;
+    // background-color: green;
   }
 
-  .brick  {
+  .line2,
+  .line1  {
+    opacity: .2;
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 2px;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    left: -1px;
+    right: 0;
+    bottom: 0;
+
+  }
+  .line2  {
+    display: block;
+    width: 100%;
+    height: 2px;
     background-color: red;
     position: absolute;
     top: 50%;
     left: 0;
     right: 0;
     bottom: 0;
-    margin-top: -25px;
+    margin-top: -1px;
   }
 
-  video {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin-top: -300px;
-  }
+  // video {
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   margin-top: -300px;
+  // }
 }
