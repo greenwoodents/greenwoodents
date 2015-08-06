@@ -421,7 +421,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
         fh = window.innerHeight,
         iw = 1920,
         ih = 1800,
-        origOffset = 10, // %
+        origOffset = 15, // %
         offset = 0,
         position = 0,
         offsetedPosition = 0,
@@ -435,13 +435,13 @@ Pace.once('done', function(){app.afterLoadInitial();});
         ih = ih * scale;
         offset = origOffset / 100;
         position = (ih-fh)/2;
-        offsetedPosition = position + (position * offset);
+        offsetedPosition = (position * offset) + position ;
 
     //el.style.transform = "scale("+scale+")";
     console.log("image height: " + ih, "image Width: " + iw);
     console.log("scale factor " + scale);
     console.log('wrapper orig position' + position );
-    console.log('wrapper position', offsetedPosition );
+    console.log('wrapper offset position', (position * offset) + position  );
 
     wrapper.style.height = ih + "px";
     wrapper.style.width = iw + "px";
@@ -453,9 +453,9 @@ Pace.once('done', function(){app.afterLoadInitial();});
       el.style.transform = "scale("+ scale + ")";
     });
 
-    [].forEach.call(document.querySelectorAll('.background'), function(el,i,a) {
-      el.style.backgroundPosition = "50%" + (50 + origOffset) + "%";
-    });
+    // [].forEach.call(document.querySelectorAll('.background'), function(el,i,a) {
+    //   el.style.backgroundPosition = "50%" + (50 + origOffset) + "%";
+    // });
   };
 
   var homepageAnimation = function() {
