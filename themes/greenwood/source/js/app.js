@@ -417,32 +417,44 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
   var animationRatio = function(){
     var scale = 1,
-        videoRatio = 16 / 15,
-        viewportRatio = 0,
         fw = window.innerWidth,
         fh = window.innerHeight,
         iw = 1920,
         ih = 1800,
+        origOffset = 10, // %
+        offset = 0,
+        position = 0,
+        offsetedPosition = 0,
         wrapper = document.querySelector('.ratio-wrapper'),
         el = document.querySelector('.ratio-wrapper > .content'),
-        cloud = document.querySelectorAll('.ratio-wrapper  .scale');
+        cloud = document.querySelectorAll('.ratio-wrapper  .scale'),
+        scene = document.querySelectorAll('.scene');
 
         scale = Math.max(fh/ih,fw/iw);
         iw = iw * scale;
         ih = ih * scale;
+        offset = origOffset / 100;
+        position = (ih-fh)/2;
+        offsetedPosition = position + (position * offset);
 
     //el.style.transform = "scale("+scale+")";
-    console.log("iamge height: " + ih, "image Width: " + iw);
+    console.log("image height: " + ih, "image Width: " + iw);
     console.log("scale factor " + scale);
+    console.log('wrapper orig position' + position );
+    console.log('wrapper position', offsetedPosition );
 
-    wrapper.style.height = ih+"px";
-    wrapper.style.width = iw+"px";
+    wrapper.style.height = ih + "px";
+    wrapper.style.width = iw + "px";
+    wrapper.style.transform = "translateY(-" + position + "px)";
 
-    wrapper.style.transform = "translateY(-"+(ih-fh)/2 + "px)";
 
 
     [].forEach.call(cloud, function(el,i,a) {
       el.style.transform = "scale("+ scale + ")";
+    });
+
+    [].forEach.call(document.querySelectorAll('.background'), function(el,i,a) {
+      el.style.backgroundPosition = "50%" + (50 + origOffset) + "%";
     });
   };
 

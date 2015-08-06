@@ -25,6 +25,7 @@
   left: 0;
   right: 0;
   bottom: 40%;
+  z-index: 300;
 
 
   &.animated {
@@ -172,8 +173,8 @@
 
     &-smoke {
       @media @large {
-        -webkit-animation: smoke 20000ms 2000ms infinite ease-in-out;
-        animation:         smoke 20000ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
+        -webkit-animation: smoke 20000ms 5500ms infinite ease-in-out;
+        animation:         smoke 20000ms 5500ms infinite ease-in-out; /* IE 10+, Fx 29+ */
       }
     }
 
@@ -184,10 +185,14 @@
       visibility: visible;
     }
 
-    // &-clouds {
-    //   -webkit-animation: from-left-to-right 700000ms 2000ms infinite linear;  Safari 4+
-    //   animation:         from-left-to-right 700000ms 2000ms infinite linear; /* IE 10+, Fx 29+ */
-    // }
+    &-clouds {
+      opacity: .3;
+      transition: 2000ms;
+      -webkit-transition-delay: 2s; /* Safari */
+      transition-delay: 2s;
+      // -webkit-animation: from-left-to-right 700000ms 2000ms infinite linear;  Safari 4+
+      // animation:         from-left-to-right 700000ms 2000ms infinite linear; /* IE 10+, Fx 29+ */
+    }
 
     &-front {
       transition: all 2000ms ease-in-out;
@@ -222,7 +227,7 @@
     color: #A2957F;
     line-height: 12px;
     text-align: center;
-    z-index: 80;
+    z-index: 100;
 
 
     &.animated {
@@ -279,14 +284,9 @@
       left: 0;
       top: 50%;
       right: 0;
-      z-index: 35;
+      z-index: 120;
       opacity: 0;
       margin-top: -367px;
-
-      &.animate {
-        -webkit-animation: smoke 20000ms 2000ms infinite ease-in-out; /* Safari 4+ */
-        animation:         smoke 20000ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
-      }
     }
 
     &-front-tree {
@@ -299,7 +299,7 @@
       position: absolute;
       top: auto;
       left: 0;
-      z-index: 60;
+      z-index: 90;
       bottom: -10%;
       opacity: 0;
       visibility: hidden;
@@ -321,10 +321,10 @@
       opacity: 0;
       .translateX(-20%);
 
-      &.animate {
-        -webkit-animation: from-left-to-right 700000ms 2000ms infinite linear; /* Safari 4+ */
-        animation:         from-left-to-right 700000ms 2000ms infinite linear; /* IE 10+, Fx 29+ */
-      }
+      // &.animate {
+      //   -webkit-animation: from-left-to-right 700000ms 2000ms infinite linear;  Safari 4+
+      //   animation:         from-left-to-right 700000ms 2000ms infinite linear; /* IE 10+, Fx 29+ */
+      // }
     }
 
     &-front {
@@ -417,7 +417,7 @@
   overflow: hidden;
   position: absolute;
 
-      z-index: 90;
+  z-index: 80;
           // opacity: .2;
 
   .content {
