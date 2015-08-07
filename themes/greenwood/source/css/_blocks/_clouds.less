@@ -101,30 +101,35 @@
 .pace-done {
 
   .clouds {
-    // transition: 5000ms;
-    // -webkit-transition-delay: 2s; /* Safari */
-    // transition-delay: 2s;
     opacity: 1;
   }
 
-  .inline-clouds .item {
-    -webkit-animation: wide-mrak 20000ms infinite linear; /* Safari 4+ */
-    animation:         wide-mrak 20000ms infinite linear; /* IE 10+, Fx 29+ */
+  .hp-first-fade .clouds {
+    transition: 5000ms;
+    -webkit-transition-delay: 2s; /* Safari */
+    transition-delay: 2s;
   }
 
-  .inline-small-clouds .item {
-    -webkit-animation: small-mrak 17000ms infinite linear; /* Safari 4+ */
-    animation:         small-mrak 17000ms infinite linear; /* IE 10+, Fx 29+ */
-  }
+  @media @large {
+    .inline-clouds .item {
+      -webkit-animation: wide-mrak 20000ms infinite linear; /* Safari 4+ */
+      animation:         wide-mrak 20000ms infinite linear; /* IE 10+, Fx 29+ */
+    }
 
-  .inline-bottom-clouds .item {
-    -webkit-animation: quick-mrak  10000ms infinite linear; /* Safari 4+ */
-    animation:         quick-mrak  10000ms infinite linear; /* IE 10+, Fx 29+ */
-  }
+    .inline-small-clouds .item {
+      -webkit-animation: small-mrak 17000ms infinite linear; /* Safari 4+ */
+      animation:         small-mrak 17000ms infinite linear; /* IE 10+, Fx 29+ */
+    }
 
-  .inline-top-clouds .item {
-    -webkit-animation: small-mrak 17000ms infinite linear; /* Safari 4+ */
-    animation:         small-mrak 17000ms infinite linear; /* IE 10+, Fx 29+ */
+    .inline-bottom-clouds .item {
+      -webkit-animation: quick-mrak  10000ms infinite linear; /* Safari 4+ */
+      animation:         quick-mrak  10000ms infinite linear; /* IE 10+, Fx 29+ */
+    }
+
+    .inline-top-clouds .item {
+      -webkit-animation: small-mrak 17000ms infinite linear; /* Safari 4+ */
+      animation:         small-mrak 17000ms infinite linear; /* IE 10+, Fx 29+ */
+    }
   }
 }
 
@@ -134,12 +139,17 @@
   // background-color: purple;
   width: 66px;
   height: 16px;
-  top: 48.5%;
-  left: 72%;
+  top: 52.5%;
+  left: 74%;
 
   .item {
     -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
     animation-delay: 2s;
+  }
+
+  &.delayed .item {
+    -webkit-animation-delay: 11s; /* Chrome, Safari, Opera */
+    animation-delay: 11s;
   }
 }
 
@@ -147,8 +157,8 @@
   // background-color: red;
   width: 382px;
   height: 31px;
-  top: 49%;
-  left: 55%;
+  top: 54%;
+  left: 59%;
 
 
   .item {
@@ -166,8 +176,8 @@
   // background-color: #1A45BF;
   width: 146px;
   height: 14px;
-  top: 57%;
-  left: 59%;
+  top: 61%;
+  left: 61%;
 
   .item {
     -webkit-animation-delay: 0s; /* Chrome, Safari, Opera */
@@ -185,8 +195,8 @@
   // background-color: yellow;
   width: 198px;
   height: 19px;
-  top: 60%;
-  left: 54%;
+  top: 65%;
+  left: 55%;
 
   .item {
     -webkit-animation-delay: 2s;

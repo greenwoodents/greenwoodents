@@ -95,6 +95,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
 
       var dragMenu = document.querySelector('.menu-drag');
+      var wrap = document.querySelector('.body-wrap');
 
       drag = new Dragdealer('dragMenu', {
         steps: 2,
@@ -424,7 +425,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
         origOffset = 15, // %
         offset = 0,
         position = 0,
-        offsetedPosition = 0,
+        positionX = 0,
+        positionY = 0,
         wrapper = document.querySelector('.ratio-wrapper'),
         el = document.querySelector('.ratio-wrapper > .content'),
         cloud = document.querySelectorAll('.ratio-wrapper  .scale'),
@@ -434,18 +436,16 @@ Pace.once('done', function(){app.afterLoadInitial();});
         iw = iw * scale;
         ih = ih * scale;
         offset = origOffset / 100;
-        position = (ih-fh)/2;
-        offsetedPosition = (position * offset) + position ;
+        positionX = (iw-fw)/2
+        positionY = (ih-fh)/2;
 
     //el.style.transform = "scale("+scale+")";
     console.log("image height: " + ih, "image Width: " + iw);
     console.log("scale factor " + scale);
-    console.log('wrapper orig position' + position );
-    console.log('wrapper offset position', (position * offset) + position  );
 
     wrapper.style.height = ih + "px";
     wrapper.style.width = iw + "px";
-    wrapper.style.transform = "translateY(-" + position + "px)";
+    wrapper.style.transform = "translate(-" + positionX + "px,-" + positionY + "px)";
 
 
 
@@ -459,22 +459,13 @@ Pace.once('done', function(){app.afterLoadInitial();});
   };
 
   var homepageAnimation = function() {
+    var fade = document.querySelector('.hp-first-fade') || false;
 
-    // [].forEach.call(document.querySelectorAll('.inline-clouds'), function(el,i,a) {
-    //   var anim = TweenLite.fromTo(el, 20,
-    //     {
-    //       x: "0%",
-    //       ease: Power0.linear,
-    //     },
-    //     {
-    //       x: "100%",
-    //       ease: Power0.linear,
-    //       onComplete:function(){
-    //         anim.restart();
-    //       }
-    //     }
-    //   );
-    // });
+    if(fade){
+      setTimeout(function(){
+        fade.classList.remove('hp-first-fade')
+      }, 5000);
+    }
   }
 
   // @-webkit-keyframes wide-mrak {
@@ -603,6 +594,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
     };
 
     menu.addButtonListeners();
+    animationRatio();
+    homepageAnimation();
 
     //init feed
     if(mqMedium.matches){

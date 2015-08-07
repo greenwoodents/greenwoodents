@@ -1,4 +1,5 @@
 
+
 .menu-active-left,
 .menu-active {
   overflow-y: visible;
@@ -10,6 +11,13 @@
   .main {
     max-height: 0px;
     overflow: hidden;
+  }
+
+  @media @medium {
+    &.body-homepage .main {
+      max-height: initial;
+      overflow: initial;
+    }
   }
 
   .menu {
@@ -786,6 +794,11 @@
 
   }
 }
+
+  .body-homepage.menu-active-left .menu,
+  .body-homepage.menu-active .menu {
+    position: absolute;
+  }
 
 
 

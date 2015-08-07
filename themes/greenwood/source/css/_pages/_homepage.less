@@ -113,10 +113,12 @@
     right: -1px;
     .translateX(0px);
 
-    // @media @medium {
-    //   -webkit-animation: puls-right 4500ms 2000ms infinite ease-in-out;  Safari 4+
-    //   animation:         puls-right 4500ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
-    // }
+    @media @medium {
+      svg {
+        -webkit-animation: puls-right 4500ms 2000ms infinite ease-in-out;
+        animation:         puls-right 4500ms 2000ms infinite ease-in-out; /* IE 10+, Fx 29+ */
+      }
+    }
 
     @media @small {
       .rotate(180deg);
@@ -203,8 +205,13 @@
 }
 
 
-
-
+@media @medium {
+  .body-homepage .main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
 
 .homepage{
   overflow: hidden;
@@ -260,7 +267,7 @@
     height: 100%;
     background-image: url(../images/hp-background.jpg);
     background-repeat: no-repeat;
-    background-position: 50% 62%;
+    background-position: center;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -286,6 +293,7 @@
       right: 0;
       z-index: 120;
       opacity: 0;
+      margin: 0;
       margin-top: -367px;
     }
 
@@ -422,6 +430,7 @@
 
   .content {
     height: 100%;
+    transform: translateY(-2%);
     // background-color: green;
   }
 
