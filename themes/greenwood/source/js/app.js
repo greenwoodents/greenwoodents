@@ -141,17 +141,17 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
       [].forEach.call(jsOpenMenu , function(element, index, array) {
         addEvent(element, 'click', function() {
-          event.stopImmediatePropagation();
-          openMenuFrom('right')})
+          try { event.stopImmediatePropagation(); } catch (err) { console.log(err); }
+          openMenuFrom('right')});
       });
       [].forEach.call(jsOpenMenuLeft , function(element, index, array) {
         addEvent(element, 'click', function() {
-          event.stopImmediatePropagation();
-          openMenuFrom('left')})
+          try { event.stopImmediatePropagation(); } catch (err) { console.log(err); }
+          openMenuFrom('left')}, false);
       });
 
       closeButton.addEventListener('click', function() {
-        event.stopImmediatePropagation();
+        try { event.stopImmediatePropagation(); } catch (err) { console.log(err); }
 
         if(mqMobile.matches){
           window.location.hash='';
@@ -446,11 +446,11 @@ Pace.once('done', function(){app.afterLoadInitial();});
     wrapper.style.height = ih + "px";
     wrapper.style.width = iw + "px";
     wrapper.style.transform = "translate(-" + positionX + "px,-" + positionY + "px)";
-
-
+    wrapper.style.webkitTransform = "translate(-" + positionX + "px,-" + positionY + "px)";
 
     [].forEach.call(cloud, function(el,i,a) {
       el.style.transform = "scale("+ scale + ")";
+      el.style.webkitTransform = "scale("+ scale + ")";
     });
 
     // [].forEach.call(document.querySelectorAll('.background'), function(el,i,a) {
@@ -468,16 +468,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
     }
   }
 
-  // @-webkit-keyframes wide-mrak {
-//   0%   { opacity: 0;  .translate3d(0%, 0, 0);}
-//   10%  { opacity: .8}
-//   100% { opacity: .8;  .translate3d(250%, 0, 0);}
-// }
-// @keyframes wide-mrak {
-//   0%   { opacity: 0;  .translate3d(0%, 0, 0);}
-//   10%  { opacity: .8}
-//   100% { opacity: .8;  .translate3d(250%, 0, 0);}
-// }
 
   //Initial
   var initial = function() {
@@ -488,7 +478,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
     [].forEach.call(projectOverlay , function(element, index, array) {
       addEvent(element, 'click', function(e) {
         e.preventDefault();
-        event.stopImmediatePropagation();
+        try { event.stopImmediatePropagation(); } catch (err) { console.log(err); }
         pjax.invoke(this.href, 'main');
       });
     });
