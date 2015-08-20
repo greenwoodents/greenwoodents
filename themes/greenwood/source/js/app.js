@@ -417,6 +417,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
   })();
 
   var animationRatio = function(){
+    if(!document.querySelector('.bodz-homepage')){ return false; }
+
     var scale = 1,
         fw = window.innerWidth,
         fh = window.innerHeight,
@@ -439,10 +441,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
         positionX = (iw-fw)/2
         positionY = (ih-fh)/2;
 
-    //el.style.transform = "scale("+scale+")";
-    console.log("image height: " + ih, "image Width: " + iw);
-    console.log("scale factor " + scale);
-
     wrapper.style.height = ih + "px";
     wrapper.style.width = iw + "px";
     wrapper.style.transform = "translate(-" + positionX + "px,-" + positionY + "px)";
@@ -452,10 +450,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
       el.style.transform = "scale("+ scale + ")";
       el.style.webkitTransform = "scale("+ scale + ")";
     });
-
-    // [].forEach.call(document.querySelectorAll('.background'), function(el,i,a) {
-    //   el.style.backgroundPosition = "50%" + (50 + origOffset) + "%";
-    // });
   };
 
   var homepageAnimation = function() {
