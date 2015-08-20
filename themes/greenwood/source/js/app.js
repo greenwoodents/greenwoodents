@@ -417,7 +417,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
   })();
 
   var animationRatio = function(){
-    if(!document.querySelector('.bodz-homepage')){ return false; }
+    if(!document.querySelector('.body-homepage')){ return false; }
 
     var scale = 1,
         fw = window.innerWidth,
