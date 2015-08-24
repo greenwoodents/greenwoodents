@@ -1,4 +1,4 @@
-date: 2015-08-24 01:00:00
+date: 2015-08-23 01:00:00
 
 title: Sparkle
 subTitle: Design and publish
@@ -14,10 +14,10 @@ filterSetting: design
 whenWeDidIt: May 2015
 
 projectColor: "#2DA097"
-projectPreviewImage: /sparkle/sparkle-previeww@2x.png
+projectPreviewImage: /sparkle/menu.png
 
 projectImage: /sparkle/sparkle-preview@2x.png
-projectImagePosition:
+projectImagePosition: -18%
 
 mh: true
 jh: false

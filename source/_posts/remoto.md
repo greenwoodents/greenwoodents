@@ -3,7 +3,7 @@ date: 2015-08-24 01:00:00
 title: Remoto
 subTitle: Skype for business
 web:
-country:
+country: Brazil
 
 howMuch: $ 2 700 ~
 howWeCalc: $ 360/man-day
@@ -13,11 +13,11 @@ whatWeDid: Design
 filterSetting: design
 whenWeDidIt: June 2015
 
-projectColor: "#2DA097"
+projectColor: "#45525A"
 projectPreviewImage: /remoto/menu.png
 
 projectImage: /remoto/remoto-preview@2x.png
-projectImagePosition:
+projectImagePosition: -8%
 
 mh: true
 jh: false
@@ -70,7 +70,7 @@ _Skype is for people. Remoto is for businesses. You can hold, forward calls or s
   sizes="100%"
   alt="First concept calls">
 
-## First Concept
+##Final Concept
 <img class="lazyload container-page"
   data-src="/remoto/remoto-final-concept.png"
   data-srcset="/remoto/remoto-final-concept@2x.png 2000w,
