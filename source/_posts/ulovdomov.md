@@ -14,7 +14,7 @@ filterSetting: design
 whenWeDidIt: May 2014
 
 projectColor: "#E74D3D"
-projectPreviewImage: /ulovdomov/ulovdomov-project-preview.png
+projectPreviewImage: /ulovdomov/ulovdomov-project-preview@2x.png
 
 projectImage: /ulovdomov/ulovdomov-preview@2x.png
 projectImagePosition: -20%

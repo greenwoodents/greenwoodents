@@ -93,7 +93,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
       addEvent(window, 'scroll', runOnScroll);
       addEvent(window, 'popstate', checkUrlforHash);
 
-
       var dragMenu = document.querySelector('.menu-drag');
       var wrap = document.querySelector('.body-wrap');
 
@@ -419,32 +418,40 @@ Pace.once('done', function(){app.afterLoadInitial();});
   var animationRatio = function(){
     if(!document.querySelector('.body-homepage')){ return false; }
 
-    var scale = 1,
-        fw = window.innerWidth,
-        fh = window.innerHeight,
-        iw = 1920,
-        ih = 1800,
-        origOffset = 15, // %
-        offset = 0,
-        position = 0,
-        positionX = 0,
-        positionY = 0,
-        wrapper = document.querySelector('.ratio-wrapper'),
-        el = document.querySelector('.ratio-wrapper > .content'),
-        cloud = document.querySelectorAll('.ratio-wrapper  .scale'),
-        scene = document.querySelectorAll('.scene');
+    var
+    scale = 1,
+    fw = window.innerWidth,
+    fh = window.innerHeight,
+    iw = 1920,
+    ih = 1800,
+    origOffset = 15, // %
+    offset = 0,
+    position = 0,
+    positionX = 0,
+    positionY = 0,
+    wrapper = document.querySelector('.ratio-wrapper'),
+    el = document.querySelector('.ratio-wrapper > .content'),
+    cloud = document.querySelectorAll('.ratio-wrapper  .scale'),
+    scene = document.querySelectorAll('.scene');
 
-        scale = Math.max(fh/ih,fw/iw);
-        iw = iw * scale;
-        ih = ih * scale;
-        offset = origOffset / 100;
-        positionX = (iw-fw)/2
-        positionY = (ih-fh)/2;
+    scale = Math.max(fh/ih,fw/iw);
+    iw = iw * scale;
+    ih = ih * scale;
+    offset = origOffset / 100;
+    positionX = (iw-fw)/2
+    positionY = (ih-fh)/2;
 
     wrapper.style.height = ih + "px";
     wrapper.style.width = iw + "px";
     wrapper.style.transform = "translate(-" + positionX + "px,-" + positionY + "px)";
     wrapper.style.webkitTransform = "translate(-" + positionX + "px,-" + positionY + "px)";
+
+
+    var bf = document.querySelector('.background-front');
+    console.log("windows height: " + fh);
+    console.log('offset height: ' + bf.offsetHeight);
+    console.log('scroll heifht: ' + bf.scrollHeight);
+    console.log('client height: ' + bf.clientHeight);
 
     [].forEach.call(cloud, function(el,i,a) {
       el.style.transform = "scale("+ scale + ")";

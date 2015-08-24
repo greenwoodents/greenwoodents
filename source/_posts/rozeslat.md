@@ -14,7 +14,7 @@ filterSetting: design, code, develop
 whenWeDidIt: November 2014
 
 projectColor: "#169DD4"
-projectPreviewImage: /rozeslat/rozeslat-project-preview.png
+projectPreviewImage: /rozeslat/rozeslat-project-preview@2x.png
 
 projectImage: /rozeslat/rozeslat-preview@2x.png
 projectImagePosition:

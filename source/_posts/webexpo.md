@@ -14,7 +14,7 @@ filterSetting: design
 whenWeDidIt: April 2014
 
 projectColor: "#FF5AAF"
-projectPreviewImage: /webexpo/webexpo-project-preview.png
+projectPreviewImage: /webexpo/webexpo-project-preview@2x.png
 
 projectImage: /webexpo/webexpo-preview@2x.png
 projectImagePosition: -7%

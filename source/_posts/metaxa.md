@@ -14,7 +14,7 @@ filterSetting: design, code, develop
 whenWeDidIt: August 2014
 
 projectColor: "#ed8929"
-projectPreviewImage: /metaxa/metaxa-project-preview.png
+projectPreviewImage: /metaxa/metaxa-project-preview@2x.png
 
 projectImage: /metaxa/metaxa-preview@2x.png
 projectImagePosition:

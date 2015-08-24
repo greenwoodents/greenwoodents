@@ -13,7 +13,7 @@ filterSetting: design
 whenWeDidIt: December 2014
 
 projectColor: "#278DCA"
-projectPreviewImage: /webnode/webnode-project-preview.png
+projectPreviewImage: /webnode/webnode-project-preview@2x.png
 
 projectImage: /webnode/webnode-preview@2x.png
 projectImagePosition: -48%
