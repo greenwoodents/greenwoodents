@@ -14,7 +14,7 @@ filterSetting: design, code
 whenWeDidIt: September 2014
 
 projectColor: "#169DD4"
-projectPreviewImage: /khanovaskola/khanovaskola-project-preview@medium.png
+projectPreviewImage: /khanovaskola/khanovaskola-project-preview@2x.png
 
 projectImage: /khanovaskola/khanovaskola-preview@2x.png
 projectImagePosition: -20%

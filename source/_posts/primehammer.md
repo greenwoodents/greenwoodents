@@ -14,7 +14,7 @@ filterSetting: design
 whenWeDidIt: January 2014
 
 projectColor: "#6B6F86"
-projectPreviewImage: /primehammer/primehammer-project-preview.png
+projectPreviewImage: /primehammer/primehammer-project-preview@2x.png
 
 projectImage: /primehammer/primehammer-preview@2x.png
 projectImagePosition: -19%

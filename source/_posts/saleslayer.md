@@ -14,7 +14,7 @@ filterSetting: design, code
 whenWeDidIt: March 2014
 
 projectColor: "#0FA474"
-projectPreviewImage: /saleslayer/saleslayer-project-preview.png
+projectPreviewImage: /saleslayer/saleslayer-project-preview@2x.png
 
 projectImage: /saleslayer/saleslayer-preview@2x.png
 projectImagePosition: -30%

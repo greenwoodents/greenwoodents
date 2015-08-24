@@ -14,7 +14,7 @@ filterSetting: design
 whenWeDidIt: May 2014
 
 projectColor: "#AD50FF"
-projectPreviewImage: /playerme/playerme-project-preview.png
+projectPreviewImage: /playerme/playerme-project-preview@2x.png
 
 projectImage: /playerme/playerme-preview@2x.png
 projectImagePosition: -30%

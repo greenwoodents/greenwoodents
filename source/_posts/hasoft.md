@@ -14,7 +14,7 @@ filterSetting: design
 whenWeDidIt: June 2014
 
 projectColor: "#E7AB4A"
-projectPreviewImage: /hasoft/hasoft-project-preview.png
+projectPreviewImage: /hasoft/hasoft-project-preview@2x.png
 
 projectImage: /hasoft/hasoft-preview@2x.png
 projectImagePosition: -38%
