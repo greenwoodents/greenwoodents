@@ -26,7 +26,6 @@ fd: false
 ---
 
 
-
 <div id="description" class="description">
 Player.me is Facebook for gamers with large community where you hear “let’s play one more time”.
 _It has come in the hard times (~leaving [abdoc](http://www.madebysource.com)), so we lowered our rates on half. However we’re glad that we’ve become part of their journey._
