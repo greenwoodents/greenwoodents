@@ -77,7 +77,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
       active: 'menu-active',
       activeLeft: 'menu-active-left',
       openRight: 'menu-from-right-open',
-      openLeft: 'menu-from-left-open'
+      openLeft: 'menu-from-left-open',
+      goingBack: 'goingback'
     },
 
     body = document.body,
@@ -91,7 +92,9 @@ Pace.once('done', function(){app.afterLoadInitial();});
       addEvent(window, 'resize', choseMenu);
       addEvent(window, 'resize', menuSize);
       addEvent(window, 'scroll', runOnScroll);
-      addEvent(window, 'popstate', checkUrlforHash);
+      addEvent(window, 'popstate', function(event){
+        checkUrlforHash(event);
+      });
 
       var dragMenu = document.querySelector('.menu-drag');
       var wrap = document.querySelector('.body-wrap');
@@ -141,12 +144,15 @@ Pace.once('done', function(){app.afterLoadInitial();});
       [].forEach.call(jsOpenMenu , function(element, index, array) {
         addEvent(element, 'click', function() {
           try { event.stopImmediatePropagation(); } catch (err) { console.log(err); }
-          openMenuFrom('right')});
+          openMenuFrom('right');
+        });
       });
       [].forEach.call(jsOpenMenuLeft , function(element, index, array) {
         addEvent(element, 'click', function() {
+          console.log('Listener');
           try { event.stopImmediatePropagation(); } catch (err) { console.log(err); }
-          openMenuFrom('left')}, false);
+          openMenuFrom('left');
+        });
       });
 
       closeButton.addEventListener('click', function() {
@@ -215,7 +221,9 @@ Pace.once('done', function(){app.afterLoadInitial();});
     };
     visible.size = menuSize;
 
-    var checkUrlforHash = function() {
+    var checkUrlforHash = function(event) {
+      console.log('runing che for url with event: ' + event);
+
       var openedMobile = body.classList.contains('opened'),
           openedDesktop = body.classList.contains(states.active);
 
@@ -223,6 +231,11 @@ Pace.once('done', function(){app.afterLoadInitial();});
         if(!( openedMobile || openedDesktop )) {
           if(mqMobile.matches){
             //desktop
+            if(event && event.state){
+              console.log(event.state);
+              document.querySelector('body').classList.add('goingback');
+            }
+
             openMenuFrom('left');
           } else {
             //mobile
@@ -304,28 +317,27 @@ Pace.once('done', function(){app.afterLoadInitial();});
      }
     };
 
-    var openMenuFrom = function(side) {
+    var openMenuFrom = function(side, hash) {
 
       window.scrollTo(0, 0);
 
       if(!(body.classList.contains(states.active))) {
-      setTimeout(function(){
-        switch(side) {
-          case 'left':
-              body.classList.add(states.active);
-              body.classList.add(states.activeLeft);
-              body.classList.add(states.openLeft);
-              break;
-          case 'right':
-              body.classList.add(states.active);
-              body.classList.add(states.openRight);
-              break;
-          default:
-              body.classList.add(states.active);
-              body.classList.add(states.openRight);
-        }
-      }, 100)
-
+        setTimeout(function(){
+          switch(side) {
+            case 'left':
+                body.classList.add(states.active);
+                body.classList.add(states.activeLeft);
+                body.classList.add(states.openLeft);
+                break;
+            case 'right':
+                body.classList.add(states.active);
+                body.classList.add(states.openRight);
+                break;
+            default:
+                body.classList.add(states.active);
+                body.classList.add(states.openRight);
+          }
+        }, 100);
       };
 
       //claculate menu size
@@ -449,10 +461,10 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
 
     var bf = document.querySelector('.background-front');
-    console.log("windows height: " + fh);
-    console.log('offset height: ' + bf.offsetHeight);
-    console.log('scroll heifht: ' + bf.scrollHeight);
-    console.log('client height: ' + bf.clientHeight);
+    // console.log("windows height: " + fh);
+    // console.log('offset height: ' + bf.offsetHeight);
+    // console.log('scroll heifht: ' + bf.scrollHeight);
+    // console.log('client height: ' + bf.clientHeight);
 
     [].forEach.call(cloud, function(el,i,a) {
       el.style.transform = "scale("+ scale + ")";
