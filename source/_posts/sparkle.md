@@ -39,14 +39,13 @@ _A unique work inquiry. We are always thrilled with new wysiwyg editor, but neve
                /sparkle/sparkle-kenozersky-template@small.png 800w,"
   sizes="100%"
   alt=" ">
-<img class="lazyload mobile-portrait left"
+<img class="lazyload container-page left"
      data-src="/sparkle/sparkle-david-psalms-footer.png"
      data-srcset="/sparkle/sparkle-youth-group@2x.png 2000w,
                   /sparkle/sparkle-youth-group.png 1280w,
                   /sparkle/sparkle-youth-group.png 800w,"
      sizes="100%"
-     alt=" ">
-<img class="lazyload mobile-portrait right"
+     alt=" "><img class="lazyload container-page right"
     data-src="/sparkle/sparkle-david-psalms-footer.png"
     data-srcset="/sparkle/sparkle-david-psalms-footer@2x.png 2000w,
             /sparkle/sparkle-david-psalms-footer.png 1280w,

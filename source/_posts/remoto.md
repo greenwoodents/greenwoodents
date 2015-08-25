@@ -17,14 +17,12 @@ projectColor: "#45525A"
 projectPreviewImage: /remoto/menu.png
 
 projectImage: /remoto/remoto-preview@2x.png
-projectImagePosition: -8%
+projectImagePosition: -48%
 
 mh: true
 jh: false
 fd: false
 ---
-
-
 
 <div id="description" class="description">
 2 weeks hackathon BR-CZ-RU
@@ -32,7 +30,7 @@ _Skype is for people. Remoto is for businesses. You can hold, forward calls or s
 </div>
 
 ##First Concept - Android
-<div class="portraits">
+<div class="portraits android">
   <div class="portrait left">
     <img class="lazyload mobile-portrait"
     data-src="/remoto/remoto-android-concept-call.png"
@@ -44,10 +42,10 @@ _Skype is for people. Remoto is for businesses. You can hold, forward calls or s
   </div>
   <div class="portrait right">
     <img class="lazyload mobile-portrait"
-    data-src="/remoto/remoto-android-concept-list.png"
-    data-srcset="/remoto/remoto-android-concept-list@2x.png 2000w,
-            /remoto/remoto-android-concept-list.png 1280w,
-            /remoto/remoto-android-concept-list.png 800w,"
+    data-src="/remoto/remoto-android-cals.png"
+    data-srcset="/remoto/remoto-android-cals@2x.png 2000w,
+            /remoto/remoto-android-cals.png 1280w,
+            /remoto/remoto-android-cals.png 800w,"
     sizes="100%"
     alt="List of calls">
   </div>
