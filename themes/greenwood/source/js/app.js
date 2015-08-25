@@ -223,7 +223,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
         if(!( openedMobile || openedDesktop )) {
           if(mqMobile.matches){
             //desktop
-            //spatna podminka tadz?
             openMenuFrom('left');
           } else {
             //mobile
@@ -306,10 +305,11 @@ Pace.once('done', function(){app.afterLoadInitial();});
     };
 
     var openMenuFrom = function(side) {
+
       window.scrollTo(0, 0);
 
       if(!(body.classList.contains(states.active))) {
-
+      setTimeout(function(){
         switch(side) {
           case 'left':
               body.classList.add(states.active);
@@ -317,7 +317,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
               body.classList.add(states.openLeft);
               break;
           case 'right':
-
               body.classList.add(states.active);
               body.classList.add(states.openRight);
               break;
@@ -325,6 +324,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
               body.classList.add(states.active);
               body.classList.add(states.openRight);
         }
+      }, 100)
+
       };
 
       //claculate menu size
@@ -539,9 +540,14 @@ Pace.once('done', function(){app.afterLoadInitial();});
   //Components
   var components = function(data) {
 
-    if (data) {
-      var page = data[0].getAttribute('page') || "Home";
-      document.querySelector('.menu-page-title').innerHTML = page;
+    var title = document.title,
+    line = title.indexOf('|'),
+    titleEl = document.querySelector('.menu-page-title');
+
+    if( line > -1 ) {
+      titleEl.innerText = title.slice(0,line).trim();
+    } else {
+      titleEl.innerText = "Home";
     }
 
     var jsDetails = document.querySelectorAll('.js-hidden-box');
@@ -553,7 +559,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
 
     var delays = [0, 1360, 2240],
-        hiddenSoft = document.querySelectorAll('.hiddenSoft');
+    hiddenSoft = document.querySelectorAll('.hiddenSoft');
     if(hiddenSoft){
       [].forEach.call(hiddenSoft, function(el,i,a) {
         if (!(el.classList.contains('animated'))) {
