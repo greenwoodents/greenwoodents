@@ -149,7 +149,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
       });
       [].forEach.call(jsOpenMenuLeft , function(element, index, array) {
         addEvent(element, 'click', function() {
-          console.log('Listener');
           try { event.stopImmediatePropagation(); } catch (err) { console.log(err); }
           openMenuFrom('left');
         });
@@ -222,7 +221,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
     visible.size = menuSize;
 
     var checkUrlforHash = function(event) {
-      console.log('runing che for url with event: ' + event);
 
       var openedMobile = body.classList.contains('opened'),
           openedDesktop = body.classList.contains(states.active);
@@ -231,8 +229,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
         if(!( openedMobile || openedDesktop )) {
           if(mqMobile.matches){
             //desktop
-            if(event && event.state){
-              console.log(event.state);
+            if(event && event.state) {
+              //console.log(event.state);
               document.querySelector('body').classList.add('goingback');
             }
 
