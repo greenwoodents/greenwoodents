@@ -65,7 +65,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
       document.querySelector('.button-instagram').addEventListener('click', function(){
         //GA Event
-        ga('send', 'event', 'instagram', 'clicked');
+        //ga('send', 'event', 'instagram', 'clicked');
+        analytics.track('Went to Instagram');
       });
     });
   };
@@ -145,12 +146,17 @@ Pace.once('done', function(){app.afterLoadInitial();});
         addEvent(element, 'click', function() {
           try { event.stopImmediatePropagation(); } catch (err) { console.log(err); }
           openMenuFrom('right');
+
+          if(element.classList.contains('homepage-menu-button')){
+            analytics.track('Went from Homepage to Menu');
+          }
         });
       });
       [].forEach.call(jsOpenMenuLeft , function(element, index, array) {
         addEvent(element, 'click', function() {
           try { event.stopImmediatePropagation(); } catch (err) { console.log(err); }
           openMenuFrom('left');
+          analytics.track('Opened menu');
         });
       });
 
@@ -339,12 +345,16 @@ Pace.once('done', function(){app.afterLoadInitial();});
       };
 
       //claculate menu size
-      menuSize();
+
 
       if(mqMobile.matches){
 
          window.location.hash='menu';
       }
+      setTimeout(function(){
+        menuSize();
+      }, 300)
+
     };
 
     var filtr = (function() {
@@ -520,6 +530,10 @@ Pace.once('done', function(){app.afterLoadInitial();});
           body.classList.remove('opened');
           menu.drag.setValue(0,0);
         }
+
+        //Event
+        analytics.page();
+
         window.app.components();
       }
     });
@@ -598,6 +612,12 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
     for (var i = executeExternalFunctions.length - 1; i >= 0; i--) {
       executeExternalFunctions[i].call()
+    };
+
+    if (document.querySelector('.js-event-next-page')) {
+      document.querySelector('.js-event-next-page').addEventListener('click', function() {
+        analytics.track('Clicked on next project.');
+      });
     };
 
     menu.addButtonListeners();

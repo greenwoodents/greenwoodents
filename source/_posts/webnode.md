@@ -27,8 +27,10 @@ fd: false
 
 <div id="description" class="description">
 Webnode is Czech company that solves websites for 15 million users worldwide.
-_It was all about designing the best homepage in the world. This project was led by [@VitaValka](http://vitavalka.cz) and it was closed competition made in rounds. The winner is unknown to us._
+_It was all about designing the best homepage in the world. This project was led by [@VitaValka](http://vitavalka.cz) and it was about 5 designers working on the same problem._
 </div>
+
+
 
 ##3rd round
 <img class="lazyload container-page"

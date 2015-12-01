@@ -291,8 +291,10 @@ app.loadJS('https://cdn.firebase.com/js/client/2.2.7/firebase.js', function() {
                 count: 1
             });
 
-          //GA EVENT
-          ga('send', 'event', 'kudos', 'added');
+          //EVENTS
+          //ga('send', 'event', 'kudos', 'added');
+          analytics.track('Added kudo');
+
         }
       };
 

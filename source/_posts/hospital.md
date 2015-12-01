@@ -4,7 +4,7 @@ title: Hospital
 subTitle: Liberec & Turnov
 country: Czech republic
 
-howMuch: $ 203
+howMuch: $ 0
 howWeCalc: Competition
 
 howLongItTake: 3 man-days
@@ -28,7 +28,7 @@ jh: true
 
 <div id="description" class="description">
 Visit of hospital's website isn't usually great experience so we tried to ease the pain.
-_It was a closed competition. The task was create 2 pages from their wireframes._
+_Hospital Liberec has decided to redesign a web and ask us for a mockup how we would approach it._
 </div>
 
 ##HOMEPAGE
