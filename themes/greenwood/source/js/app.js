@@ -557,6 +557,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
     if(!(mqMobile.matches) && animatedMenu === false && !(window.location.hash === 'menu')){
       document.querySelector('.menu-drag').classList.add('menu-in-out');
     }
+
+    analytics.track('Page Loaded');
   };
   //make visible
   app.afterLoadInitial = afterLoadInitial;
