@@ -1,0 +1,88 @@
+.testimonials {
+  position: absolute;
+  left: 35px;
+  bottom: 35px;
+  z-index: 100;
+  width: 435px;
+  box-sizing: border-box;
+
+  @media @small {
+    width: 100%;
+    padding: 0 25px;
+    left: 0;
+    bottom: 85px;
+  }
+
+  &.animated {
+    opacity: 1;
+    visibility: visible;
+    animation: fadein 1s ease-in;
+    -webkit-animation: fadein 1s ease-in;
+  }
+}
+
+.testimonial {
+  text-align: left;
+}
+
+.testimonial_left {
+  width: 80px;
+  height: 100%;
+
+  @media @medium {
+    float: left;
+  }
+  @media @small {
+
+  }
+}
+
+.testimonial_right {
+  @media @small {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.testimonial_head {
+
+}
+
+
+
+.testimonial_qoute {
+  font-family: @sentinel;
+  font-size: 18px;
+  color: #DCD3BD;
+  line-height: 22px;
+  quotes: '“' '”' '‘' '’';
+  padding: 3px 0 5px;
+
+  @media @small {
+    max-width: 380px;
+  }
+
+}
+.testimonial_qoute:before {content: '“'; content: open-quote;}
+.testimonial_qoute:after {content: '”'; content: close-quote;}
+
+.testimonial_person_name {
+  font-family: GothamBook;
+  font-size: 12px;
+  color: #A2957F;
+  line-height: 18px;
+
+  @media @small {
+    margin-top: 6px;
+  }
+}
+
+
+.testimonials .testimonial_person_link {
+  transition: 300ms;
+  color: #72BF2F;
+
+  &:hover {
+    opacity: .8;
+  }
+}

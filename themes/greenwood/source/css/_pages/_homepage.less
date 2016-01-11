@@ -226,16 +226,15 @@
 
   .contact-info {
     position: absolute;
-    bottom: 47px;
+    bottom: 71px;
     left: 0;
     right: 0;
     font-family: @gotham;
-    font-size: 10px;
-    color: #A2957F;
+    font-size: 12px;
     line-height: 12px;
     text-align: center;
     z-index: 100;
-
+    color: #D7CFB9;
 
     &.animated {
       opacity: 1;
@@ -245,20 +244,31 @@
       -webkit-animation: fadein @fsContact  ease-in-out;
     }
 
-    p {
-      line-height: 24px;
-      opacity: .8;
 
-      a {
-        color: #CFC6AC;
-        opacity: 1;
-
-        &:hover {
-          color: rgb(158, 184, 59);
-        }
-
-      }
+    @media only screen and (min-width: 768px) and (max-width: 1100px) {
+      padding-left:  300px;
     }
+
+
+    .contact-info_tel {
+      color: #D7CFB9;
+    }
+    .contact-info_mail {
+      margin-top: 7px;
+      color: #A2957F;
+      display: block;
+    }
+
+     @media @small {
+       bottom: 20px;
+
+      .contact-info_tel,
+      .contact-info_mail {
+          display: inline-block;
+        }
+      }
+
+
   }
 
   .background {

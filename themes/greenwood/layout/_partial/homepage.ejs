@@ -38,9 +38,7 @@
     <div class="title hiddenSoft">
       <h1 class="homepage-title">
           <span class="time-title">Time</span>
-          <div class="reveals-the-title nobr">reveals the</div>
-          Quality
-      </h1>
+          <div class="reveals-the-title nobr">reveals the</div>Quality</h1>
       <div class='js-open-menu homepage-menu-button hiddenSoft'><span class="desktop">Check our projects</span><span class="mobile">SLIDE TO SEE PROJECTS</span>
         <div class="double-arr-ic">
           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="13" viewBox="0 0 11 13" version="1.1"><g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Desktop-1920---ready-for-export" transform="translate(-1018.000000, -1071.000000)" stroke="#282A3B"><g id="text" transform="translate(0.000000, 471.000000)"><g id="check-our-projects" transform="translate(891.500000, 600.000000)"><g id="sipecka-+-Path-287" transform="translate(127.000000, 0.000000)"><path d="M4.11 0.05L9.77 6.71 4.25 12.24" id="sipecka"/><path d="M0.11 0.05L5.77 6.71 0.25 12.24" id="Path-287"/></g></g></g></g></g></svg>
@@ -49,8 +47,30 @@
     </div>
 
     <div class="contact-info hiddenSoft">
-      <p>Orli 18, Brno, Czech republic</p>
-      <p>+420 603 541 668 / <a href="mailto:treebeard@ents.co">treebeard@ents.co</a></p>
+      <a class='contact-info_tel' href="tel:+420603541668">+420 603 541 668</a>
+      <a class='contact-info_mail' href="mailto:treebeard@ents.co">treebeard@ents.co</a>
+    </div>
+
+    <div class="testimonials hiddenSoft">
+    <% var testimonials = site.data.testimonials,
+          keys = Object.keys(testimonials),
+          key = "",
+          ref = "";
+
+      for (var i = 0; i < keys.length; i++) {
+        key = keys[i];
+        ref = testimonials[key]; %>
+
+        <div class="testimonial">
+          <div class="testimonial_left">
+            <img class='lazyload testimonial_head' data-src="<%- ref.img %>">
+          </div>
+          <div class="testimonial_right">
+            <blockquote class="testimonial_qoute"><%- ref.qoute %></blockquote>
+            <p class="testimonial_person_name"><%- ref.name %>, <span class="testimonial_person_position"><%- ref.position %></span> at <a class="testimonial_person_link" href="<%- ref.link %>"><%-ref.link.replace('http://', '').replace('www.', '').replace('.com', '')%></a></p>
+          </div>
+        </div>
+    <% }; %>
     </div>
 
     <div class="background background-front"></div>

@@ -1,10 +1,12 @@
-@entiZelena: #92CD00;
+@entiZelena: #72BF2F;
 
 @xlarge:  ~"only screen and (min-width: 1280px)";
 @large:   ~"only screen and (min-width: 960px)";
 @xmedium :  ~"only screen and (min-width: 959px)";
 @medium:    ~"only screen and (min-width: 768px)";
-@small:    ~"only screen and (max-width: 680px)";
+@small:    ~"only screen and (max-width: 768px)";
+
+
 
 @maximalni: 555px;
 
@@ -67,6 +69,10 @@ body {
 }
 
 .body-homepage {
+  @media @small {
+    min-height: 700px;
+  }
+
   .main {
     position: relative;
     z-index: 50;
