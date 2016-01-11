@@ -9,10 +9,10 @@ $ npm install
 
 For server run
 ```
-$ hexo server
+$ npm run local
 ```
 
 Build
 ```
-$ hexo generate && gulp clean && gulp && hexo clean
+$ npm run build
 ```

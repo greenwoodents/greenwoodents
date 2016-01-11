@@ -38,5 +38,9 @@
     "gulp-useref": "^1.2.0",
     "imagemin-pngquant": "^4.0.0",
     "uglify-js": "^2.4.23"
+  },
+  "scripts" : {
+    "local" : "hexo server",
+    "build" : "hexo generate && gulp clean && gulp && hexo clean"
   }
 }
