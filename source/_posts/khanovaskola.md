@@ -1,6 +1,6 @@
 date: 2015-03-07 01:00:00
 
-title: Khanova škola
+title: Khanova skola
 subTitle: You can learn anything
 web: www.khanovaskola.cz
 country: Czech Republic
