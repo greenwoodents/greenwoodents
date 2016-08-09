@@ -481,6 +481,7 @@ Pace.once('done', function(){app.afterLoadInitial();});
   };
 
   var homepageAnimation = function() {
+    console.log("hp animation");
     var fade = document.querySelector('.hp-first-fade') || false;
 
     if(fade){
@@ -546,8 +547,8 @@ Pace.once('done', function(){app.afterLoadInitial();});
     defferAll();
     components();
     initial();
-    animationRatio();
-    homepageAnimation();
+    //animationRatio();
+    //homepageAnimation();
 
     if(mqMedium.matches){
       feedInit();
@@ -636,30 +637,3 @@ Pace.once('done', function(){app.afterLoadInitial();});
   //make it global.
   window.app = app;
 })(this);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
