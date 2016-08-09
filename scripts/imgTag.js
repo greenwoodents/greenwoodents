@@ -1,5 +1,4 @@
 hexo.extend.tag.register('responsive', function(args,content){
-  console.log('ru');
   var src = '',
       template = '',
       alt = content || false,
@@ -75,5 +74,3 @@ hexo.extend.tag.register('responsive', function(args,content){
 
   return template;
 }, {ends: true});
-
-

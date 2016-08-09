@@ -236,7 +236,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
           if(mqMobile.matches){
             //desktop
             if(event && event.state) {
-              //console.log(event.state);
               document.querySelector('body').classList.add('goingback');
             }
 
@@ -469,10 +468,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
 
 
     var bf = document.querySelector('.background-front');
-    // console.log("windows height: " + fh);
-    // console.log('offset height: ' + bf.offsetHeight);
-    // console.log('scroll heifht: ' + bf.scrollHeight);
-    // console.log('client height: ' + bf.clientHeight);
 
     [].forEach.call(cloud, function(el,i,a) {
       el.style.transform = "scale("+ scale + ")";
@@ -481,7 +476,6 @@ Pace.once('done', function(){app.afterLoadInitial();});
   };
 
   var homepageAnimation = function() {
-    console.log("hp animation");
     var fade = document.querySelector('.hp-first-fade') || false;
 
     if(fade){

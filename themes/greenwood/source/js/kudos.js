@@ -260,7 +260,6 @@ app.loadJS('https://cdn.firebase.com/js/client/2.2.7/firebase.js', function() {
       var menuBlock = document.querySelectorAll('.menu-block');
       [].forEach.call(menuBlock, function(el,i,a) {
         var title = el.querySelector('.project-info-title').innerHTML.toLowerCase().replace('.','').replace('#','').replace('$','').replace(',','').replace(' ','').trim();
-        console.log(title);
         var counter = el.querySelector('.count-of-kudos');
 
         if(counter){
@@ -324,7 +323,3 @@ app.loadJS('https://cdn.firebase.com/js/client/2.2.7/firebase.js', function() {
   KudosFirebase.init();
   KudosFirebase.initMenu();
 });
-
-
-
-
