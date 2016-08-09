@@ -54,9 +54,9 @@ Pace.once('done', function(){app.afterLoadInitial();});
     [].forEach.call(feed , function(element, index, array) {
       var feed = new Instafeed({
         get: 'user',
-        clientId: '1fbd28fc3ac2446190809988d7bdbab7',
+        clientId: 'd408c5e5b88543a29e06b212a5138a3d',
         userId: 1650642267,
-        accessToken: '1650642267.467ede5.f7b1d8f9e1f4423b910d327f28f7b517',
+        accessToken: '1650642267.1677ed0.b328c53b251a4648a37683f018c41fb7',
         resolution: 'standard_resolution',
         limit: 7,
         template: '<img src="{{image}}" />'
